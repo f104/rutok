@@ -1,0 +1,27 @@
+form.form-help
+    .form-help__inner
+        picture.form-help__picture
+            source(type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/form-help-sm.webp" srcset="assets/img/dot.webp")
+            source(type="image/webp" data-srcset="assets/img/form-help-lg.webp" srcset="assets/img/dot.webp")
+            source(type="image/png" media="(max-width:1199px)" data-srcset="assets/img/form-help-sm.png" srcset="assets/img/dot.png")
+            source(type="image/png" data-srcset="assets/img/form-help-lg.png" srcset="assets/img/dot.png")
+            img.lazyload(data-src="assets/img/form-help-lg.png" src="assets/img/dot.png" alt="Нужна квалифицированная помощь?")
+        h3.form-help__h Нужна квалифицированная
+            br 
+            strong помощь в подборе аккумулятора?
+        p.form-help__lead Подберем подходящие аккумуляторные батареи под конкретные задачи за 10 минут
+        .form-help__grid
+            .input.form-help__grid__item
+                input(placeholder="Введите ваше имя" required)
+                label Имя
+            .input.form-help__grid__item
+                input(type="tel" placeholder="Введите ваш телефон" required)
+                label Телефон
+            .input.form-help__grid__item._col2
+                textarea(required placeholder="Введите ваше сообщение")
+                label Сообщение
+            button(type="submit").btn._block.form-help__grid__item._col2 Отправить заявку
+        p.form-agree Нажимая на кнопку, вы даете свое согласие на обработку персональных данных и соглашаетесь 
+            a(href="#" target="_blank") c политикой конфиденциальности
+            | .
+        

@@ -1,0 +1,42 @@
+extends _includes/layout
+include _includes/mixins/r-adds
+
+block config
+    - var pagetitle = 'Контакты'
+    - var bodyClass = ''
+
+block content
+    .container
+        +bk(['Главная', 'Контакты'])
+
+        .block
+            .tabs.js-tabs
+                .tabs__slider.swiper-container.js-tabs__slider
+                    .swiper-wrapper
+                        .tabs__item.swiper-slide._active.js-tabs__trigger(data-href="#tab_1") Москва
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_2") Санкт-Петербург
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_3") Нижний Новгород
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_4") Казань
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_5") Самара
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_6") Екатеринбург
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_7") Краснодар
+                .input._addon.select.tabs__select.js-label.js-select.js-tabs__select
+                    select
+                        option(value="#tab_1" selected) Москва
+                        option(value="#tab_2") Санкт-Петербург
+                        option(value="#tab_3") Нижний Новгород
+                        option(value="#tab_4") Казань
+                        option(value="#tab_5") Самара
+                        option(value="#tab_6") Екатеринбург
+                        option(value="#tab_7") Краснодар
+                    label Категория
+                    span.input__addon
+                        i.icon-input-arrow
+                .js-tabs__wrapper
+                    #tab_1.js-tabs__target 1
+                    #tab_2.js-tabs__target 2
+                    #tab_3.js-tabs__target 3
+                    #tab_4.js-tabs__target 4
+                    #tab_5.js-tabs__target 5
+                    #tab_6.js-tabs__target 6
+                    #tab_7.js-tabs__target 7

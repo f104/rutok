@@ -1,0 +1,78 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Гарантия'
+    - var bodyClass = ''
+
+block content
+    .container
+        +bk(['Главная', 'Гарантия'])
+        h1.page-h Гарантия
+    
+        .block
+            .rte
+                p Если в течении гарантийного срока, указанного в гарантийном талоне, Вы обнаружили некорректную работу купленного оборудования, то для проведения ремонта (согласно Законодательству РФ и «Закона о защите прав потребителя») необходимо произвести следующие действия:
+            ul.r-list
+                li.r-list__item Проверьте гарантийный срок товара
+                    span.r-list__item__muted Указан на товаре или в гарантийном талоне
+                li.r-list__item Обратитесь в сервисный центр
+                    span.r-list__item__muted их адреса можно найти в инструкции или на сайте производителя
+                li.r-list__item Ремонт гарантийных товаров
+                    span.r-list__item__muted в сервисном центре вам бесплатно починят товар или выдадут заключение, что его нельзя починить
+        
+        .block
+            h2.block-h Как найти ближайший сервисный центр:
+            .rte
+                p Уважаемые покупатели, для ускорения проведения гарантийного ремонта рекомендуем Вам обращаться в любой из авторизованных сервисных центров производителей. Перечень сервисных центров производителей Вы можете найти в этом разделе:
+            .warranty-table
+                .warranty-table__filter
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Все
+                            option(value="1" selected) Москва
+                            option(value="2") Санкт-Петербург
+                            option(value="3") Нижний Новгород
+                        label Город
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Все
+                            option(value="1" selected) Тяговые аккумуляторы
+                            option(value="2") Литий-ионные аккумуляторы
+                            option(value="3") Стартерные аккумуляторы
+                            option(value="4") Гелевые аккумуляторы
+                            option(value="5") Стационарные аккумуляторы
+                        label Категория
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Все
+                            option(value="1") Enersys
+                            option(value="2") Balkancar
+                            option(value="3") Chaobao
+                        label Бренд
+                        span.input__addon
+                            i.icon-input-arrow
+                .warranty-table__inner
+                    .warranty-table__item
+                        span.warranty-table__title Сервисный центр «Enersys»
+                        span.warranty-table__address г. Москва, Большой Бульвар, д.42, стр. 1
+                        a(href="#").warranty-table__phone 8 (800) 500-06-02
+                        span.warranty-table__time пн-сб, с 9:00 до 20:00
+                    .warranty-table__item
+                        span.warranty-table__title Сервисный центр «Энергоэлемент с очень длинным названием в две строки»
+                        span.warranty-table__address г. Москва,  ул. Калинина, 105а
+                        a(href="#").warranty-table__phone 8 (800) 687-32-80
+                        span.warranty-table__time с 10:00 до 22:00
+                    .warranty-table__item
+                        span.warranty-table__title Сервисный центр «Искра»
+                        span.warranty-table__address г. Москва, Юго-западное направление, Новорижское шоссе, территория завода «Красный партизан»
+                        a(href="#").warranty-table__phone 8 (800) 330-58-47 
+                        span.warranty-table__time пн-пт, с 8:00 до 21:00
+                    .warranty-table__item
+                        span.warranty-table__title Сервисный центр «Delta»
+                        span.warranty-table__address г. Москва, Щелковское шоссе, д. 7, стр. 1
+                        a(href="#").warranty-table__phone 8 (800) 870-08-55
+                        span.warranty-table__time с 8:00 до 21:00

@@ -1,0 +1,76 @@
+.qa {
+    $root: &;
+
+    &-tab {
+        @include media-breakpoint-up(lg) {
+            display: flex;
+        }
+
+        &__list {
+            @include media-breakpoint-up(lg) {
+                margin-right: 30px;
+                width: 770px;
+                flex-shrink: 0;
+            }
+
+            .btn._more {
+                margin-top: 24px;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 32px;
+                }
+            }
+        }
+
+        &__summary {
+            flex: 1;
+            margin-top: 24px;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 32px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 17px;
+
+            }
+
+            &__h {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 26px;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+
+            &__text {
+                margin-top: 8px;
+                font-size: 14px;
+                line-height: 24px;
+                color: rgba($color-text, .5);
+
+                @include media-breakpoint-up(md) {
+                    font-size: 15px;
+                    line-height: 24px;
+                }
+            }
+
+            .btn {
+                margin-top: 24px;
+
+                @include media-breakpoint-up(md) {
+                    width: auto;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 46px;
+                }
+            }
+
+        }
+
+    }
+}

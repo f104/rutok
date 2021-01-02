@@ -1,0 +1,25 @@
+.tippy-content {
+    background-color: $color-text;
+    border-radius: $border-radius;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 17px;
+    color: #D2D2D2;
+}
+
+.tippy-arrow:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3[x];
+    width: 6px;
+    height: 6px;
+    background: $color-text;
+    border-radius: 2px 0px 1.5px;
+    transform: rotate(45deg);
+}
+
+[data-tippy-content] {
+    cursor: help;
+}

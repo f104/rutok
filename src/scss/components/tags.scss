@@ -1,0 +1,113 @@
+.tag {
+    $root: &;
+
+    display: inline-block;
+    background-color: $color-gray;
+    padding: 8px 8px 5px 11px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: rgba($color-text, .4);
+    border-radius: 8px;
+
+    &::before {
+        font-family: $font-family-fontello;
+        content: '\e801';
+        display: inline-block;
+        color: rgba($color-text, .8);
+        margin-right: 9px;
+    }
+
+}
+
+.tags {
+    &-nav {
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 4px;
+            background-color: $color-gray;
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        &__select {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+
+        &__link {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: initial;
+                border-radius: 8px;
+                height: 33px;
+                padding: 0 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 11px;
+                line-height: 1;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: rgba($color-text, .4);
+                @include transition((color, background-color));
+            }
+
+            &._active {
+                background-color: $color-white;
+                color: $color-text;
+                pointer-events: none;
+            }
+
+            @include hover-desktop {
+                color: rgba($color-text, .4);
+                background-color: $color-gray-dark;
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        justify-content: flex-start;
+        line-height: 31px;
+        margin-right: -8px;
+        margin-bottom: -8px;
+
+        &__title {
+            font-weight: 500;
+            font-size: 13px;
+            margin-right: 12px;
+            @include media-breakpoint-up(md) {
+                font-size: 14px;
+                margin-right: 14px;
+
+            }
+        }
+
+        &__items {
+            font-size: 0;
+        }
+
+        &__item {
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            background: $color-gray;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 12px;
+            padding: 0 12px;
+            color: rgba($color-text, .4);
+            white-space: nowrap;
+            @include hover-desktop {
+                color: $color-text;
+            }
+        }
+    }
+}

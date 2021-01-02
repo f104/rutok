@@ -1,0 +1,15 @@
+mixin r-adds()
+    label.r-adds
+        input(type="radio" name=attributes.name checked=attributes.checked)
+        span.r-adds__inner
+            span.r-adds__header=attributes.title
+                if attributes.price
+                    span.r-adds__price=attributes.price
+                        | 
+                        span.price-muted ₽
+            span.r-adds__text=attributes.text
+            span.r-adds__list
+                each item in attributes.list
+                    span.r-adds__list__item
+                        i(class=item.icon)
+                        =item.text

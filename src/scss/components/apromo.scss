@@ -1,0 +1,86 @@
+// Верхний промо-блок в "О нас"
+.apromo {
+    $root: &;
+
+    margin-top: 32px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 0;
+    }
+
+    .feats {
+        margin-top: 24px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 16px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 32px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column-reverse;
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__picture {
+        height: 194px;
+        flex-shrink: 0;
+        margin-bottom: 16px;
+        @include media-breakpoint-up(md) {
+            width: 354px;
+            height: auto;
+            margin-bottom: 0;
+            margin-left: 30px;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 642px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__h {
+        font-size: 22px;
+        line-height: 27px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 28px;
+            line-height: 34px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &__lead {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba($color-text, .6);
+
+        @include media-breakpoint-up(md) {
+            margin-top: 12px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            line-height: 28px;
+        }
+
+    }
+}

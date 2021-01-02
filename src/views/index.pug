@@ -1,0 +1,189 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Index'
+    - var bodyClass = 'dev'
+
+block content
+    // одинаковый rte
+    // документацию на мобиле как слайдер унифицированный с остальными слайдерами
+    .container
+        ul.dev-menu
+            li.dev-menu__item
+                a(href="main.html") Главная
+            li.dev-menu__item
+                a(href="catalog.html") Каталог
+            li.dev-menu__item
+                a(href="product.html") Товар
+            li.dev-menu__item
+                a(href="about.html") О нас
+            li.dev-menu__item
+                a(href="delivery.html") Доставка и оплата
+            li.dev-menu__item
+                a(href="warranty.html") Гарантия
+            li.dev-menu__item
+                a(href="cart-empty.html") Пустая корзина
+            li.dev-menu__item
+                a(href="articles.html") Статьи
+            li.dev-menu__item
+                a(href="article.html") Статья
+            li.dev-menu__item
+                a(href="profile.html") Профиль
+            li.dev-menu__item
+                a(href="404.html") 404
+            //li.dev-menu__item
+                span.link.js-popup(data-href="#login") Авторизация
+            //li.dev-menu__item
+                span.link.js-popup(data-href="#register") Регистрация
+                
+        .block
+            pre .block
+        .block._mb-none
+            pre .block._mb-none
+        .block._bg._mb-small
+            pre .block._bg._mb-small
+        .block
+            span.text-muted .text-muted
+            | 
+            span.text-nowrap .text-nowrap
+            | 
+            span.text-uppercase .text-uppercase
+            | 
+            span.color-primary .color-primary
+            | 
+            span.color-secondary .color-secondary
+            | 
+            a(href="#") a
+            | 
+            span.link span.link
+            | 
+            span(data-tippy-content="Внутренняя среда аккумулятора постоянно изменяется. Аккумуляторной жидкости свойственно испаряться.") span[data-tippy-content]
+        .block
+            .row
+                .col-sm-12.col-md-4.col-lg-3
+                    button.btn .btn 
+                .col-sm-12.col-md-4.col-lg-3
+                    button.btn(disabled) .btn(disabled)
+                .col-sm-12.col-md-4.col-lg-3
+                    button.btn._block 
+                        i.icon-checkout
+                        | .btn._block 
+            .row
+                .col-sm-12.col-md-4.col-lg-3
+                    .input.js-label
+                        input
+                        label .input.js-label input
+                .col-sm-12.col-md-4.col-lg-3
+                    .input.js-label
+                        input(value="John Dow" disabled)
+                        label .input.js-label input(disabled)
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._error.js-label
+                        input(value="<xss>")
+                        label .input._error.js-label input
+                .col-sm-12.col-md-4.col-lg-3
+                    .input.js-label
+                        input(type="tel")
+                        label .input.js-label input(type="tel")
+            .row
+                .col-sm-12.col-md-4.col-lg-3
+                    .input
+                        input(placeholder="Введите ваше имя" required)
+                        label .input input(placeholder)
+                .col-sm-12.col-md-4.col-lg-3
+                    .input
+                        input(value="John Dow" disabled)
+                        label .input input(placeholder disabled)
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._error
+                        input(value="<xss>")
+                        label .input._error input(placeholder)
+                .col-sm-12.col-md-4.col-lg-3
+                    .input
+                        input(placeholder="Введите ваш телефон" type="tel")
+                        label .input.js-label input(placeholder type="tel")
+            .row
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._addon.js-label
+                        input(type="email" value="user@host.com")
+                        label .input.js-label._addon
+                        span.input__addon
+                            i.icon-input-mail
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Все
+                            option(value="1" selected) Тяговые аккумуляторы
+                            option(value="2") Литий-ионные аккумуляторы
+                            option(value="3") Стартерные аккумуляторы
+                            option(value="4") Гелевые аккумуляторы
+                            option(value="5") Стационарные аккумуляторы
+                        label Категория
+                        span.input__addon
+                            i.icon-input-arrow
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Любое
+                            option(value="1") 12 В
+                            option(value="2") 220 В
+                            option(value="3") 100 500 В
+                        label Напряжение
+                        span.input__addon
+                            i.icon-input-arrow
+            .row
+                .col-sm-12.col-md-4.col-lg-3
+                    .counter.js-counter
+                        button(type="button").counter__btn._minus.js-counter__minus -
+                        input(type="number" min="1" max="10" value="3").counter__input
+                        button(type="button").counter__btn._plus.js-counter__plus +
+                .col-sm-12.col-md-4.col-lg-3
+                    .counter._sm.js-counter
+                        button(type="button").counter__btn._minus.js-counter__minus -
+                        input(type="number" min="1" max="10" value="3").counter__input
+                        button(type="button").counter__btn._plus.js-counter__plus +
+                .col-sm-12.col-lg-6
+                    .input._sm._addon.select.js-label.js-select
+                        select
+                            option(value="1") 12
+                            option(value="2" selected) 24
+                            option(value="3") 36
+                        label Показывать по:
+                        span.input__addon
+                            i.icon-input-arrow
+                        
+        .block
+            pre .bk
+            ul.bk
+                li.bk__item
+                    a(href="#").bk__link .bk__item a(href="#").bk__link
+                li.bk__item
+                    a(href="#").bk__link .bk__item a(href="#").bk__link
+                li.bk__item .bk__item
+        .block
+            pre div.rte
+            .rte
+                h3 Title H3
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas iaculis nisl, in fermentum urna scelerisque nec. Mauris enim erat, bibendum sed condimentum at, ultrices non arcu. Morbi eu sem porttitor, vulputate justo ut, fringilla turpis. Donec in elementum nunc. Cras maximus faucibus dictum. Duis sodales lacus ut eros sollicitudin tristique. Duis vitae tincidunt sem, eget ullamcorper turpis. Maecenas tristique eget leo sed sodales.
+                ul
+                    li One
+                    li Two
+                    li Three
+                    li Four
+                h4 Title H3
+                p Vivamus risus erat, dictum vel facilisis non, consectetur id eros. Mauris pretium libero libero, quis malesuada ante eleifend nec. Vivamus massa lorem, tempus non nibh in, egestas facilisis augue. Vestibulum eleifend erat ante, et interdum lacus posuere sodales. Nam elementum dignissim nisi et pretium. Nunc tristique ipsum purus, ut rutrum leo vestibulum a. Praesent fringilla arcu orci, at faucibus ante convallis a.
+                ol
+                    li One
+                    li Two
+                    li Three
+                    li Four
+                p Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
+                blockquote Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
+        .row
+            .col-sm-12.col-md-4.col-lg-6
+                .dev-col .col-sm-12.col-md-4.col-lg-6
+            .col-sm-12.col-md-4.col-lg-3
+                .dev-col .col-sm-12.col-md-4.col-lg-3
+            .col-sm-12.col-md-4.col-lg-3
+                .dev-col .col-sm-12.col-md-4.col-lg-3
+        

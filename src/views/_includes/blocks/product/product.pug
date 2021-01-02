@@ -1,0 +1,75 @@
+.product
+    .product-header
+        .product-header__info
+            .product-header__cat Тяговый аккумулятор
+            h1.product-header__h NexSys Bloc 12NXS137
+            .product-header__codes
+                span.product-header__codes__item Код товара: 146484
+                span.product-header__codes__item Артикул: В00006150
+        .product-badges
+            .product-badges__item._hit Хит продаж
+            .product-badges__item._available В наличии
+            //.product-badges__item._new Новинка
+            //.product-badges__item._bestprice Лучшая цена
+        .product-rating
+            .product-rating__rating 3,65
+            .product-rating__stars
+                - var i = 1
+                while i++ <= 5
+                    i.icon-star(class = i <= 4 ? 'color-primary' : '')
+            a(href="#tab_6").more.js-tabs__link
+                span.more__inner 9 отзывов
+    .product-slider
+        .product-slider__main.swiper-container.js-slider-product
+            .swiper-wrapper
+                each i in [1,2,3,4,5,6]
+                    picture.swiper-slide
+                        source(type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/products/slider-sm.webp" srcset="assets/img/dot.webp")
+                        source(type="image/webp" data-srcset="assets/img/products/slider.webp" srcset="assets/img/dot.webp")
+                        source(type="image/png" media="(max-width:1199px)" data-srcset="assets/img/products/slider-sm.png" srcset="assets/img/dot.png")
+                        source(type="image/png" data-srcset="assets/img/products/slider.png" srcset="assets/img/dot.png")
+                        img.lazyload(data-src="assets/img/products/slider.png" src="assets/img/dot.png" alt="alt text")
+        .product-slider__nav.swiper-container.js-slider-product-nav
+            .swiper-wrapper
+                each i in [1,2,3,4,5,6]
+                    picture.swiper-slide
+                        source(type="image/webp" data-srcset="assets/img/products/slider-nav.webp" srcset="assets/img/dot.webp")
+                        source(type="image/png" data-srcset="assets/img/products/slider-nav.png" srcset="assets/img/dot.png")
+                        img.lazyload(data-src="assets/img/products/slider-nav.png" src="assets/img/dot.png" alt="alt text")
+    p.product-lead Тяговая аккумуляторная батарея NexSys с функцией быстрого и промежуточного заряда XFC FLEX & LTM.
+    .product__info
+        dl.product-tth
+            dt Напряжение
+            dd 12В
+            dt Емкость
+            dd 137 Ач
+            dt Габариты
+            dd 455 x 172 x 238 мм 
+            dt Страна производитель
+            dd Германия
+        .product-feat-list
+            .product-feat
+                +svgsprite('delivery')
+                .product-feat__content Доставка
+                    span.product-feat__content__muted Во все регионы РФ
+            .product-feat
+                +svgsprite('warranty')
+                .product-feat__content 5 лет гарантии
+                    span.product-feat__content__muted Расширенная гарантия
+        .product-amount
+            .product-amount__head
+                .product-amount__price 367 000 
+                    span.price-muted ₽
+                .product-amount__services
+                    .product-amount__services__price +25 000 
+                        span.price-muted ₽
+                    .product-amount__services__text Дополнительные услуги
+            .product-amount__text * – Poзничнaя цeнa зa 1 шт нocит cпpaвoчный xapaктep, утoчняйтe oптoвыe цeны пo тeлeфoну
+        form.product-form
+            .counter.js-counter
+                button(type="button").counter__btn._minus.js-counter__minus -
+                input(type="number" min="1" max="10" value="3").counter__input
+                button(type="button").counter__btn._plus.js-counter__plus +
+            button(type="submit").btn
+                i.icon-cart
+                | Добавить в корзину

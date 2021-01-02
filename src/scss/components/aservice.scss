@@ -1,0 +1,67 @@
+// Блок "Сервис и услуги" в "О нас"
+.aservice {
+    $root: &;
+
+    &-list {
+        margin-top: 24px;
+        overflow: visible;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 32px;
+            overflow: hidden;
+        }
+
+        &:not(.swiper-container-initialized) {
+            .swiper-wrapper {
+                display: grid;
+                gap: 20px;
+                @include media-breakpoint-up(md) {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 30px;
+                }
+                @include media-breakpoint-up(lg) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+    }
+
+    &-item {
+        background: $color-gray;
+        border-radius: $border-radius;
+        width: 270px;
+        height: auto;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include media-breakpoint-up(md) {
+            width: auto;
+        }
+
+        .r-icon {
+            margin-bottom: 24px;
+        }
+
+        &__h {
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 24px;
+            /* identical to box height, or 141% */
+        }
+
+        &__text {
+            font-size: 13px;
+            line-height: 24px;
+            /* or 185% */
+            margin-top: 8px;
+            margin-bottom: 56px;
+        }
+
+        .more {
+            margin-top: auto;
+        }
+    }
+
+}

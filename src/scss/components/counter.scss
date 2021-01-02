@@ -1,0 +1,86 @@
+.counter {
+    $root: &;
+
+    display: inline-flex;
+    align-items: center;
+    width: 147px;
+    background-color: $color-gray;
+    border-radius: 12px;
+    padding: 4px;
+
+    &._sm {
+        width: 100px;
+        padding: 3px;
+
+        @include media-breakpoint-up(md) {
+            width: 112px;
+            padding: 4px;
+        }
+    }
+
+    &__btn {
+        font-size: 0;
+        background-color: $color-white;
+        border-radius: 9px;
+        width: 41px;
+        height: 41px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include hover-desktop {
+            background-color: #E8EDF0;
+        }
+
+        @include transition((color, background-color));
+
+        &:after {
+            font-family: $font-family-fontello;
+            font-size: 19px;
+        }
+
+        &._minus {
+            &:after {
+                content: '\E81B';
+            }
+        }
+
+        &._plus {
+            &:after {
+                content: '\E81C';
+            }
+        }
+
+        &._disabled {
+            pointer-events: none;
+            color: rgba($color-text, .3);
+        }
+
+        #{$root}._sm & {
+            width: 30px;
+            height: 28px;
+
+            @include media-breakpoint-up(md) {
+                width: 32px;
+                height: 32px;
+            }
+
+            &:after {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__input {
+        padding: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        flex: 1;
+        min-width: 3em;
+        pointer-events: none;
+    }
+}

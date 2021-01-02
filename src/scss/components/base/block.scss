@@ -1,0 +1,69 @@
+// base blocks
+.block {
+    $root: &;
+
+    max-width: map-get($grid-breakpoints, xl);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: map-get($block-margins, sm);
+
+    @each $key in (md, lg, xl) {
+        @include media-breakpoint-up($key) {
+            margin-bottom: map-get($block-margins, $key);
+        }
+    }
+
+    &._mb-small {
+        margin-bottom: map-get($block-margins-sm, sm);
+
+        @each $key in (md, lg, xl) {
+            @include media-breakpoint-up($key) {
+                margin-bottom: map-get($block-margins-sm, $key);
+            }
+        }
+    }
+
+    &._mb-none {
+        margin-bottom: 0;
+    }
+
+    &._mb-none-down-md {
+        @include media-breakpoint-down(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    &._bg {
+        background-color: $color-gray;
+        padding-top: map-get($block-margins, sm);
+        padding-bottom: map-get($block-margins, sm);
+
+        @each $key in (md, lg, xl) {
+            @include media-breakpoint-up($key) {
+                padding-top: map-get($block-margins, $key);
+                padding-bottom: map-get($block-margins, $key);
+            }
+        }
+    }
+
+    &._full {
+        max-width: 100%;
+    }
+
+    &-h {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+            line-height: 27px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}

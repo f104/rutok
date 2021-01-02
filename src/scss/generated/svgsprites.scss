@@ -1,0 +1,16 @@
+.svgsprite {
+    display:inline-block;
+    width:1em;
+    height:1em;
+    fill:currentColor;
+    vertical-align:middle;
+
+    &._delivery {
+    	font-size:(56/10)*1rem;
+    	width:(56/56)*1em;
+    }
+    &._warranty {
+    	font-size:(56/10)*1rem;
+    	width:(56/56)*1em;
+    }
+}

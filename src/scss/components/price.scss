@@ -1,0 +1,43 @@
+.price {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 22px;
+    }
+
+    &__muted,
+    &-muted {
+        display: inline;
+        font-weight: normal;
+        color: rgba($color-text, .45);
+    }
+
+    &-old {
+        font-weight: normal;
+        white-space: nowrap;
+        &__del {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 17px;
+            text-decoration-line: line-through;
+            color: rgba($color-text, .45);
+        }
+
+        &__discount {
+            display: inline-block;
+            vertical-align: middle;
+            top: -1px;
+            margin-left: 8px;
+            background: $color-discount;
+            border-radius: $border-radius;
+            padding: 0 8px;
+            font-size: 12px;
+            line-height: 23px;
+            letter-spacing: 0.08em;
+            color: $color-white;
+        }
+    }
+}

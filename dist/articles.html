@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Статьи :: RUTOK</title>
+    <!--
+    link(rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png")
+    link(rel="manifest" href="assets/site.webmanifest")
+    link(rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#ffffff")
+    link(rel="shortcut icon" href="assets/favicon.ico")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="msapplication-config" content="assets/browserconfig.xml")
+    meta(name="theme-color" content="#ffffff")
+    
+    -->
+    <meta name="description" content="Description">
+    <meta property="og:url" content="https://">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="title">
+    <meta property="twitter:title" content="title">
+    <meta property="og:description" content="description">
+    <meta property="twitter:description" content="description">
+    <meta property="og:image" content="assets/share.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body class="body">
+    <header>
+      <div class="header-top">
+        <div class="header-top__cnt">
+          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__city-toggler">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
+          <nav class="header-top__menu js-header__menu">
+            <ul class="header-top__menu__ul">
+              <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">O кoмпaнии</a></li>
+              <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">Cкидки</a></li>
+              <li class="header-top__menu__li"><a class="header-top__menu__a _active" href="#">Доставка и оплата</a></li>
+              <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">Гарантия</a></li>
+              <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">Koнтaкты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header__inner"><a class="header__logo" href="index.html" title="На главную"><img class="header__logo__img" src="assets/img/logo.svg" alt="RUTOK"></a>
+          <div class="header__right">
+            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__city-toggler">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
+            <div class="header__icons"><a class="header__icon" href="#"><i class="icon-header-user"></i></a><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
+          </div>
+          <div class="header__search">
+            <form>
+              <div class="search-input">
+                <input placeholder="Поиск по товарам">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="block container">
+            <ul class="bk">
+              <li class="bk__item"><a class="bk__link" href="#">Главная</a></li>
+              <li class="bk__item">Статьи</li>
+            </ul>
+        <h1 class="page-h">Статьи</h1>
+        <div class="articles-header">
+          <div class="tags-nav">
+            <!-- логику писать не стал, нужно понять что здесь будет - mFilter или просто переходы по урл-->
+            <!-- переносы дизайнер не предусмотрел, так что нужно следить за кол-вом выводимых элементов--><a class="tags-nav__link _active" href="#">Все</a><a class="tags-nav__link" href="#">Аккумуляторы</a><a class="tags-nav__link" href="#">Зарядные устройства</a><a class="tags-nav__link" href="#">Инструкции</a>
+            <div class="input _addon select tags-nav__select js-label js-select">
+              <select>
+                <option value="0" selected>Все</option>
+                <option value="1">Аккумуляторы</option>
+                <option value="2">Зарядные устройства</option>
+                <option value="3">Инструкции</option>
+              </select>
+              <label>Категория</label><span class="input__addon"><i class="icon-input-arrow"></i></span>
+            </div>
+          </div>
+          <div class="pagination _sm">
+            <ul class="pagination__list">
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">1</a></li>
+              <li class="pagination__list__item">…</li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">6</a></li>
+              <li class="pagination__list__item _active"><a class="pagination__list__link _active" href="#">7</a></li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">8</a></li>
+              <li class="pagination__list__item">…</li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">99</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="articles-list">
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/1-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/1-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/1-md.jpg" src="assets/img/dot.jpg" alt="Как правильно подобрать батарею на погрузчик?">
+                  </picture></a><a class="article-item__h" href="#">Как правильно подобрать батарею на погрузчик?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">18 ноября 2020</span></div>
+                <p class="article-item__text">Определиться с видом аккумулятора для конкретно вашей погрузочной тележки помогут наши специалисты</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/2-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/2-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/2-md.jpg" src="assets/img/dot.jpg" alt="Сравнение аккумуляторов: кислотные и гелевые">
+                  </picture></a><a class="article-item__h" href="#">Сравнение аккумуляторов: кислотные и гелевые</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">20 сентября 2020</span></div>
+                <p class="article-item__text">Выбрать эффективный, надежный и недорогой аккумулятор сейчас несложно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/3-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/3-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/3-md.jpg" src="assets/img/dot.jpg" alt="Как понять что АКБ на погрузчике пора менять?">
+                  </picture></a><a class="article-item__h" href="#">Как понять что АКБ на погрузчике пора менять?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Инструкции»">Инструкции</a><span class="article-item__date">4 августа 2020</span></div>
+                <p class="article-item__text">Правильное функционирование складских помещений на сегодняшний день</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/4-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/4-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/4-md.jpg" src="assets/img/dot.jpg" alt="Зарядное устройство для тягового аккумулятора">
+                  </picture></a><a class="article-item__h" href="#">Зарядное устройство для тягового аккумулятора</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Зарядные устройства»">Зарядные устройства</a><span class="article-item__date">24 июля 2020</span></div>
+                <p class="article-item__text">Изготовление аккумуляторных батарей в РФ развивалось и сейчас развивается очень бурно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/2-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/2-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/2-md.jpg" src="assets/img/dot.jpg" alt="Сравнение аккумуляторов: кислотные и гелевые">
+                  </picture></a><a class="article-item__h" href="#">Сравнение аккумуляторов: кислотные и гелевые</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">20 сентября 2020</span></div>
+                <p class="article-item__text">Выбрать эффективный, надежный и недорогой аккумулятор сейчас несложно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/3-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/3-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/3-md.jpg" src="assets/img/dot.jpg" alt="Как понять что АКБ на погрузчике пора менять?">
+                  </picture></a><a class="article-item__h" href="#">Как понять что АКБ на погрузчике пора менять?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Инструкции»">Инструкции</a><span class="article-item__date">4 августа 2020</span></div>
+                <p class="article-item__text">Правильное функционирование складских помещений на сегодняшний день</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/4-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/4-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/4-md.jpg" src="assets/img/dot.jpg" alt="Зарядное устройство для тягового аккумулятора">
+                  </picture></a><a class="article-item__h" href="#">Зарядное устройство для тягового аккумулятора</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Зарядные устройства»">Зарядные устройства</a><span class="article-item__date">24 июля 2020</span></div>
+                <p class="article-item__text">Изготовление аккумуляторных батарей в РФ развивалось и сейчас развивается очень бурно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/1-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/1-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/1-md.jpg" src="assets/img/dot.jpg" alt="Как правильно подобрать батарею на погрузчик?">
+                  </picture></a><a class="article-item__h" href="#">Как правильно подобрать батарею на погрузчик?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">18 ноября 2020</span></div>
+                <p class="article-item__text">Определиться с видом аккумулятора для конкретно вашей погрузочной тележки помогут наши специалисты</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/3-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/3-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/3-md.jpg" src="assets/img/dot.jpg" alt="Как понять что АКБ на погрузчике пора менять?">
+                  </picture></a><a class="article-item__h" href="#">Как понять что АКБ на погрузчике пора менять?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Инструкции»">Инструкции</a><span class="article-item__date">4 августа 2020</span></div>
+                <p class="article-item__text">Правильное функционирование складских помещений на сегодняшний день</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/4-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/4-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/4-md.jpg" src="assets/img/dot.jpg" alt="Зарядное устройство для тягового аккумулятора">
+                  </picture></a><a class="article-item__h" href="#">Зарядное устройство для тягового аккумулятора</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Зарядные устройства»">Зарядные устройства</a><span class="article-item__date">24 июля 2020</span></div>
+                <p class="article-item__text">Изготовление аккумуляторных батарей в РФ развивалось и сейчас развивается очень бурно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/1-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/1-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/1-md.jpg" src="assets/img/dot.jpg" alt="Как правильно подобрать батарею на погрузчик?">
+                  </picture></a><a class="article-item__h" href="#">Как правильно подобрать батарею на погрузчик?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">18 ноября 2020</span></div>
+                <p class="article-item__text">Определиться с видом аккумулятора для конкретно вашей погрузочной тележки помогут наши специалисты</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/2-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/2-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/2-md.jpg" src="assets/img/dot.jpg" alt="Сравнение аккумуляторов: кислотные и гелевые">
+                  </picture></a><a class="article-item__h" href="#">Сравнение аккумуляторов: кислотные и гелевые</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">20 сентября 2020</span></div>
+                <p class="article-item__text">Выбрать эффективный, надежный и недорогой аккумулятор сейчас несложно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/4-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/4-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/4-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/4-md.jpg" src="assets/img/dot.jpg" alt="Зарядное устройство для тягового аккумулятора">
+                  </picture></a><a class="article-item__h" href="#">Зарядное устройство для тягового аккумулятора</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Зарядные устройства»">Зарядные устройства</a><span class="article-item__date">24 июля 2020</span></div>
+                <p class="article-item__text">Изготовление аккумуляторных батарей в РФ развивалось и сейчас развивается очень бурно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/1-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/1-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/1-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/1-md.jpg" src="assets/img/dot.jpg" alt="Как правильно подобрать батарею на погрузчик?">
+                  </picture></a><a class="article-item__h" href="#">Как правильно подобрать батарею на погрузчик?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">18 ноября 2020</span></div>
+                <p class="article-item__text">Определиться с видом аккумулятора для конкретно вашей погрузочной тележки помогут наши специалисты</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/2-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/2-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/2-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/2-md.jpg" src="assets/img/dot.jpg" alt="Сравнение аккумуляторов: кислотные и гелевые">
+                  </picture></a><a class="article-item__h" href="#">Сравнение аккумуляторов: кислотные и гелевые</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Аккумуляторы»">Аккумуляторы</a><span class="article-item__date">20 сентября 2020</span></div>
+                <p class="article-item__text">Выбрать эффективный, надежный и недорогой аккумулятор сейчас несложно</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+              <div class="article-item"><a class="article-item__img-wrapper" href="#">
+                  <picture class="article-item__img">
+                    <source type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.webp" srcset="assets/img/dot.webp">
+                    <source type="image/webp" data-srcset="assets/img/articles/3-sm.webp" srcset="assets/img/dot.webp">
+                    <source type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/3-md.jpg" srcset="assets/img/dot.jpg">
+                    <source type="image/jpeg" data-srcset="assets/img/articles/3-sm.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/articles/3-md.jpg" src="assets/img/dot.jpg" alt="Как понять что АКБ на погрузчике пора менять?">
+                  </picture></a><a class="article-item__h" href="#">Как понять что АКБ на погрузчике пора менять?</a>
+                <div class="article-item__info"><a class="tag" href="#" title="Все статьи с тегом «Инструкции»">Инструкции</a><span class="article-item__date">4 августа 2020</span></div>
+                <p class="article-item__text">Правильное функционирование складских помещений на сегодняшний день</p><a class="more" href="#"><span class="more__inner">Читать далее</span></a>
+              </div>
+        </div>
+        <div class="articles-footer">
+          <div class="pagination"><span class="pagination__total">Показано 24 из 186</span>
+            <ul class="pagination__list">
+              <li class="pagination__list__item"><a class="pagination__list__link _disabled _prev" href="#">Предыдущая</a></li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">1</a></li>
+              <li class="pagination__list__item">…</li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">6</a></li>
+              <li class="pagination__list__item _active"><a class="pagination__list__link _active" href="#">7</a></li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">8</a></li>
+              <li class="pagination__list__item">…</li>
+              <li class="pagination__list__item"><a class="pagination__list__link" href="#">99</a></li>
+              <li class="pagination__list__item"><a class="pagination__list__link _next" href="#">Следующая</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__top__inner"><a class="footer__top__logo" href="index.html" title="На главную"><img class="lazyload" data-src="assets/img/logo.svg" src="assets/img/dot.svg" alt="RUTOK"></a>
+            <p class="footer__top__address">117405, Poccия, г. Mocквa, улица Дopoжнaя, д. 60Б</p>
+            <p class="footer__top__contacts"><a class="footer__top__contacts__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><a class="footer__top__contacts__email" href="mailto:msk@rutok.ru">msk@rutok.ru</a></p>
+            <div class="footer__top__menu-wrapper">
+              <ul class="footer__top__menu">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">O кoмпaнии</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Cкидки</a></li>
+              </ul>
+              <ul class="footer__top__menu">
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Oплaтa и дocтaвкa</a></li>
+                <li><a href="#">Aдpeca oтдeлoв пpoдaж</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__bottom__inner">
+            <p class="footer__bottom__copyright">© 2017-2020 RUTOK.  Публикуeмый мaтepиaл oxpaняeтcя aвтopcким пpaвoм. </p>
+            <p class="footer__bottom__text">Пpoизвoдитeль ocтaвляeт зa coбoй пpaвo внocить измeнeния в кoнcтpукцию издeлия, нe уxудшaющиe eгo пoтpeбитeльcкиx cвoйcтв.</p>
+            <ul class="footer__bottom__menu">
+              <li><a href="#">Политика конфиденциальности</a></li>
+              <li><a href="#">Юpидичecкaя инфopмaция</a></li>
+              <li><a href="#">Kapтa caйтa</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="hidden">
+      <!-- include popups here-->
+    </div>
+    <ul class="city-select js-header__city">
+      <li class="city-select__item _selected"><a href="#">Москва</a></li>
+      <li class="city-select__item"><a href="#">Санкт-Петербург</a></li>
+      <li class="city-select__item"><a href="#">Нижний Новгород</a></li>
+      <li class="city-select__item"><a href="#">Петропавловск-Камчатский</a></li>
+    </ul>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/common.css?v=1.0.0">
+    <script>
+      /* изменяемые настройки скриптов, указаны значения по умолчанию */
+      var appConfig = {
+          /*
+          scrollToOffset: 150, // оффсет при скролле до элемента
+          scrollToSpeed: 500, // скорость скролла 
+          mainSliderDelay: 5000, // время показа одного слайда в главном сдайдере
+          */
+      }
+    </script>
+    <script src="assets/js/vendors~main.bundle.js"></script>
+    <script src="assets/js/main.bundle.js?v=1.0.0"></script>
+  </body>
+</html>

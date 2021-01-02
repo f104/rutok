@@ -1,0 +1,50 @@
+mixin cat-item()
+    .cat-item(class=attributes.complect ? '_complect' : '')
+        a(href="#").cat-item__img-wrapper
+            picture.cat-item__img
+                source(type="image/webp" data-srcset="assets/img/products/"+attributes.img+".webp" srcset="assets/img/dot.webp")
+                source(type="image/png" data-srcset="assets/img/products/"+attributes.img+".png" srcset="assets/img/dot.png")
+                img.lazyload(data-src="assets/img/products/"+attributes.img+".png" src="assets/img/dot.png" alt=attributes.title)
+        .cat-item__content
+            .cat-item__content__header
+                .cat-item__cat=attributes.category
+                a(href="#").cat-item__h=attributes.title
+                .cat-item__tth
+                    span.cat-item__tth__item
+                        i.icon-battery
+                        =attributes.tags[0]
+                    span.cat-item__tth__item
+                        i.icon-battery-charge
+                        =attributes.tags[1]
+                    span.cat-item__tth__item
+                        i.icon-warranty
+                        =attributes.tags[2]
+                if attributes.stars
+                    .cat-item__rating.product-rating
+                        .product-rating__stars
+                            - var i = 1
+                            while i++ <= 5
+                                i.icon-star(class = i <= attributes.stars ? 'color-primary' : '')
+                        a(href="product.html#tab_6").more
+                            span.more__inner=attributes.reviews
+            .cat-item__content__footer
+                if attributes.oldprice
+                    .price-old
+                        span.price-old__del=attributes.oldprice
+                            |
+                            | ₽
+                        span.price-old__discount=attributes.discount
+                .price=attributes.price
+                    | 
+                    span.price__muted ₽
+                if (!attributes.complect)
+                    form
+                        button.btn._cart(title="Добавить в корзину") Добавить в корзину
+        if (attributes.hit || attributes.new || attributes.bestprice)
+            .cat-item__badges
+                if attributes.hit
+                    .cat-item__badges__item._hit Хит продаж
+                if attributes.new
+                    .cat-item__badges__item._new Новинка
+                if attributes.bestprice
+                    .cat-item__badges__item._bestprice Лучшая цена

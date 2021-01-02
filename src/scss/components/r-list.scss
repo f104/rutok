@@ -1,0 +1,48 @@
+// акцентированный список
+.r-list {
+    margin-top: 18px;
+    display: grid;
+    gap: 16px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 16px;
+        gap: 12px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 24px;
+    }
+
+    &__item {
+        padding-left: 16px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 24px;
+        /* identical to box height, or 185% */
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 4px;
+            height: 4px;
+            background-color: $color-primary;
+        }
+
+        &__muted {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgba($color-text, .6);
+            text-transform: none;
+
+            @include media-breakpoint-up(md) {
+                line-height: 24px;
+            }
+        }
+    }
+}

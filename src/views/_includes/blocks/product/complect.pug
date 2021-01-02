@@ -1,0 +1,37 @@
+h3.block-h С этим товаром дешевле
+
+.complect
+    +cat-item(
+        category="Тяговый аккумулятор"
+        title="NexSys Bloc 12NXS85"
+        tags=["85 Ач", "12 В", "3 года"]
+        stars=4
+        reviews="37 отзывов"
+        oldprice="58 000"
+        discount="–1 800"
+        price="56 200"
+        img="5"
+        complect=true
+    )
+    +cat-item(
+        category="Зарядное устройство"
+        title="PowerFinn PAP/PAC 800"
+        tags=["50 Ач", "12 В", "2 года"]
+        stars=4
+        reviews="18 отзывов"
+        oldprice="59 800"
+        discount="–5 890"
+        price="53 910"
+        img="9"
+        complect=true
+    )
+    .complect__summary
+        .complect__summary__h Скидка за комплект
+        .complect__summary__price
+            del.complect__summary__price__old 117 800 ₽
+            span 107 600 
+                span.price-muted ₽
+        button.btn.complect__summary__btn(title="Купить комплект") 
+            i.icon-plus
+            i.icon-cart
+            span Купить комплект

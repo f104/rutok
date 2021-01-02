@@ -1,0 +1,135 @@
+.pagination {
+    $root: &;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-gray;
+    border-radius: 8px;
+    height: 49px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: rgba($color-text, .4);
+    padding: 0 4px;
+
+    @include media-breakpoint-up(md) {
+        height: 57px;
+    }
+
+    &._sm {
+        height: 41px;
+        border-radius: 12px;
+    }
+
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 2px;
+
+        @include media-breakpoint-up(md) {
+            gap: 4px;
+        }
+
+        &__item {
+            // overflow: hidden;
+            display: flex;
+            // @include
+            align-items: center;
+            justify-content: center;
+            min-width: 33px;
+            height: 33px;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: inherit;
+            @include transition((color, background-color));
+
+            &._active {
+                background-color: $color-white;
+                color: $color-text;
+                pointer-events: none;
+            }
+
+            @include hover-desktop {
+                color: inherit;
+                background-color: $color-gray-dark;
+            }
+
+            &._prev,
+            &._next {
+                font-size: 0;
+                color: $color-text;
+                font-weight: 600;
+                text-transform: uppercase;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 11px;
+                    height: auto;
+                    top: 1px;
+                    align-items: flex-start;
+                }
+
+                &:before,
+                &:after {
+                    font-family: $font-family-fontello;
+                    font-size: 8px;
+                    font-weight: normal;
+                }
+
+                &._disabled {
+                    pointer-events: none;
+                    color: rgba($color-text, .4);
+                }
+
+                @include hover-desktop {
+                    background-color: transparent;
+                }
+            }
+
+            &._prev {
+                margin-right: 24px;
+
+                &:before {
+                    content: '\e800';
+                    transform: rotate(180deg);
+
+                    @include media-breakpoint-up(md) {
+                        margin-right: 9px;
+                    }
+                }
+            }
+
+            &._next {
+                margin-left: 24px;
+
+                &:after {
+                    content: '\e800';
+
+                    @include media-breakpoint-up(md) {
+                        margin-left: 9px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__total {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

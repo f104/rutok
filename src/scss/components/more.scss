@@ -1,0 +1,53 @@
+.more {
+    $root: &;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba($color-text, .8);
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: none !important;
+    cursor: pointer;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    &__inner {
+        display: inline;
+        border-bottom: 1px solid #BFBFBF;
+
+        &:after {
+            font-family: $font-family-fontello;
+            content: '\e800';
+            position: absolute;
+            right: -10px;
+            bottom: -1px;
+            font-size: 8px;
+            color: $color-primary;
+            pointer-events: none;
+            @include transition(transform);
+
+            #{$root}._cut & {
+                transform: rotate(90deg);
+            }
+            #{$root}._cut._active & {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &._lg {
+        font-size: 14px;
+        line-height: 22px;
+
+        #{$root}__inner {
+            &:after {
+                bottom: -2px;
+            }
+        }
+    }
+
+}

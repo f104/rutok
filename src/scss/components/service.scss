@@ -1,0 +1,145 @@
+// дополнительный услуги
+.service {
+    $root: &;
+
+    cursor: pointer;
+    display: block;
+
+    &s-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    background-color: $color-gray;
+    border-radius: 8px;
+    padding: 24px;
+
+    @include media-breakpoint-up(lg) {
+        padding: 24px 32px;
+
+    }
+
+    &__inner {
+        display: block;
+        padding-left: 30px;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 38px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: $color-white;
+            border: 1px solid $color-gray-dark;
+            border-radius: 6px;
+        }
+
+        &:after {
+            position: absolute;
+            left: 2px;
+            top: 21px;
+            font-family: $font-family-fontello;
+            content: '\e821';
+            color: transparent;
+            @include transition(color);
+        }
+
+        @include hover-desktop {
+            &:before {
+                border-color: $input-border-color-hover;
+            }
+        }
+    }
+
+    input {
+        display: none;
+
+        &:checked+#{$root}__inner:after {
+            color: $color-primary;
+        }
+    }
+
+    &__cat {
+        display: block;
+        font-size: 12px;
+        line-height: 15px;
+        color: rgba($color-text, .6);
+    }
+
+    &__title {
+        display: block;
+        margin-top: 6px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &__list {
+        display: block;
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba($color-text, .8);
+
+        &__item {
+            display: block;
+            padding-left: 15px;
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 6px;
+                width: 3px;
+                height: 3px;
+                background-color: rgba($color-text, .2);
+            }
+        }
+    }
+
+    &__content {
+        display: block;
+    }
+
+    &__amount {
+        display: block;
+        margin-top: 16px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-left: 50px;
+            text-align: right;
+        }
+
+        .price-old {
+            display: block;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__price {
+        white-space: nowrap;
+    }
+
+    .more {
+        margin-top: 10px;
+    }
+}

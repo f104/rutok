@@ -1,0 +1,94 @@
+// slide in/out cards
+.slide {
+    $root: &;
+
+    &-list {
+        display: grid;
+        gap: 18px;
+    }
+
+    &__header {
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+    }
+
+    &__content {
+        padding-top: 24px;
+
+        &__inner {
+            background-color: $color-gray;
+            border-radius: $border-radius;
+            padding: 24px;
+
+            @include media-breakpoint-up(md) {
+                padding: 24px 32px;
+            }
+        }
+    }
+
+    &__title {
+        display: flex;
+        // align-items: center;
+
+        .r-icon {
+            margin-right: 16px;
+        }
+
+        &__content {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+
+            @include media-breakpoint-up(md) {
+                font-size: 17px;
+                line-height: 24px;
+            }
+
+            &__muted {
+                display: block;
+                font-size: 11px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: rgba($color-text, .4);
+            }
+        }
+    }
+
+    &__toggler {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        margin-left: 15px;
+        background: $color-gray;
+        color: #868A8E;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition((color, background-color));
+        cursor: pointer;
+        top: 6px;
+
+        @include hover-desktop {
+            background-color: $color-primary-hover;
+            color: $color-primary;
+        }
+
+        &:after {
+            content: '\e805';
+            font-family: $font-family-fontello;
+            transform: rotate(90deg);
+            font-size: 18px;
+            line-height: 1;
+            @include transition(transform);
+        }
+
+        #{$root}._active & {
+            &:after {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

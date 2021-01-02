@@ -1,0 +1,63 @@
+include mixins/review
+
+h3.block-h Отзывы
+
+.review-tab
+    .review-summary
+        .review-summary__head
+            p.review-summary__rating-text Рейтинг товара:
+            p.review-summary__rating 3.65
+            p.review-summary__review-text 9 отзывов
+            .product-rating._lg
+                .product-rating__stars
+                    - var i = 1
+                    while i++ <= 5
+                        i.icon-star(class = i <= 3 ? 'color-primary' : '')
+        .review-bars
+            span.review-bars__star 5 звезд
+            span.review-bars__bar
+                span.review-bars__bar__inner(style="width:11.11%")
+            span.review-bars__count 1
+            span.review-bars__star 4 звезды
+            span.review-bars__bar
+                span.review-bars__bar__inner(style="width:33.33%")
+            span.review-bars__count 3
+            span.review-bars__star 3 звезды
+            span.review-bars__bar
+                span.review-bars__bar__inner(style="width:44.44%")
+            span.review-bars__count 4
+            span.review-bars__star 2 звезды
+            span.review-bars__bar
+                span.review-bars__bar__inner(style="width:0%")
+            span.review-bars__count 0
+            span.review-bars__star 1 звезда
+            span.review-bars__bar
+                span.review-bars__bar__inner(style="width:11.11%")
+            span.review-bars__count 1
+        a(href="javascript:;" data-fancybox data-src="#review_add").btn._block
+            i.icon-review
+            | Оставить отзыв
+
+    .review-tab__list
+        .review-list
+            +review(
+                stars=1
+                date="30.10.2020"
+                title="Николай П."
+                text="Данный аккумулятор проявил себя очень плохо (возможно косяк конечно мой, но впечатление плохое). Спустя полгода использования начал быстро разряжаться и плохо держать заряд."
+            )
+            +review(
+                stars=4
+                date="12.10.2020"
+                title="Диана О."
+                text="Давно искали фирму, где можно приобрести аккумулятор. Выбор в магазине велик и мы не знали, какой именно выбрать. Приобрели, оплатили по безналу, доставили быстро. Покупкой довольны, будем обращаться ещё!"
+            )
+            +review(
+                stars=3
+                date="09.08.2020"
+                title="Татьяна П."
+                text="Не нашли в своем городе в наличии определенный аккумулятор, пришлось искать онлайн и по совету друзей нашли этот сайт. Так как не могли выбрать из двух видов аккумуляторов, обратились за помощью к специалисту."
+            )
+        button.btn._more
+            i.icon-dots
+            | Показать ещё 6 отзывов

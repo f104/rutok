@@ -1,0 +1,80 @@
+.doc {
+    $root: &;
+
+    background-color: $color-gray;
+    border-radius: $border-radius;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include hover-desktop {
+        #{$root}__icon {
+            color: $color-secondary;
+        }
+
+        #{$root}__footer {
+            transform: translateY(-26px);
+        }
+
+        .more {
+            opacity: 1;
+            transition-delay: $transition-duration;
+            ;
+        }
+    }
+
+    &__icon {
+        font-size: 56px;
+        color: $color-secondary;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 72px;
+            margin-bottom: 46px;
+            color: rgba($color-secondary, .12);
+            @include transition(color);
+        }
+
+        &:before {
+            margin: 0;
+        }
+    }
+
+    &__footer {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        @include transition(transform);
+    }
+
+    &__h {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 23px;
+        margin-bottom: auto;
+    }
+
+    &__attr {
+        margin-top: 12px;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba($color-text, .6);
+    }
+
+    .more {
+        margin-top: 12px;
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            opacity: 0;
+            @include transition(opacity);
+        }
+    }
+
+    &-list {
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        // gap: 30px;
+    }
+}

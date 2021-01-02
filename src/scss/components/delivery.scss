@@ -1,0 +1,19 @@
+.delivery {
+    $root: &;
+
+    &-tabs {
+        margin-top: 32px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 36px;
+        }
+
+        .r-adds-list {
+            max-height: 455px;
+
+            @include media-breakpoint-up(md) {
+                max-height: 467px;
+            }
+        }
+    }
+}

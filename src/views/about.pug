@@ -1,0 +1,97 @@
+extends _includes/layout
+include _includes/mixins/aservice-item
+include _includes/mixins/about-accent
+
+block config
+    - var pagetitle = 'О нас'
+    - var bodyClass = ''
+
+block content
+    .container
+        +bk(['Главная', 'О нас'])
+        
+    .block.container.overflow-hidden
+        .apromo
+            .apromo__inner
+                .apromo__content
+                    h1.apromo__h <strong>Компания RUTOK</strong> – 
+                        br
+                        | эксперт по аккумуляторам
+                    p.apromo__lead «RUTOK» — экспертный поставщик и сервис аккумуляторных батарей, официальный представитель ведущих мировых производителей.
+                picture.apromo__picture
+                    source(type="image/webp" media="(max-width:767px)" data-srcset="assets/img/about/promo-sm.webp" srcset="assets/img/dot.webp")
+                    source(type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/about/promo-md.webp" srcset="assets/img/dot.webp")
+                    source(type="image/webp" data-srcset="assets/img/about/promo-lg.webp" srcset="assets/img/dot.webp")
+                    source(type="image/png" media="(max-width:767px)" data-srcset="assets/img/about/promo-sm.png" srcset="assets/img/dot.png")
+                    source(type="image/png" media="(max-width:1199px)" data-srcset="assets/img/about/promo-md.png" srcset="assets/img/dot.png")
+                    source(type="image/png" data-srcset="assets/img/about/promo-lg.png" srcset="assets/img/dot.png")
+                    img.lazyload(data-src="assets/img/about/promo-lg.png" src="assets/img/dot.png" alt="Компания RUTOK – эксперт по аккумуляторам")
+            include _includes/blocks/feats
+    
+    .block._bg
+        .container
+            h3.block-h О компании
+            .about
+                .about__content
+                    .rte
+                        p «RUTOK» <strong>основан в 2010 году</strong>. За несколько лет через наши руки прошли тысячи аккумуляторных батарей различных производителей. Мы нарабатывали базу данных практических показателей работы, начали проводить собственные тестирования электрохимии и выбирать партнеров-производителей для долговременного сотрудничества.
+                        p Компания <strong>«RUTOK»</strong> экспертный поставщик аккумуляторных батарей для любых целей и задач:
+                    ul.r-list
+                        li.r-list__item Для складской техники
+                            span.r-list__item__muted штабелеры, поломоечные машины, погрузчики
+                        li.r-list__item Для морских судов
+                            span.r-list__item__muted гидроциклы, катера, яхты
+                        li.r-list__item Для электротранспорта
+                            span.r-list__item__muted гольфкары, электроскутеры
+                .about-accent-list
+                    +about-accent(
+                        num=10
+                        decl="лет"
+                        text="успешной работы на рынке аккумуляторных батарей"
+                    )
+                    +about-accent(
+                        num=1460
+                        decl="батарей"
+                        text="в нашем ассортименте, под заказ и на складе"
+                    )
+                    +about-accent(
+                        num=690
+                        decl="отзывов"
+                        text="клиенты оставили о нашей работе"
+                    )
+    
+    .block.container.overflow-hidden
+        h3.block-h Сервис и услуги
+        .rte
+            p Оказываем полный спектр услуг — проводим аудит техники заказчика, подбираем оптимальные акб, поставляем аккумуляторы, выполняем их обслуживание.
+            p Снижаем эксплуатационные расходы. Получаете тяговые акб напрямую с заводов-производителей и не оплачиваете работу цепочки посредников. Правильный подбор и сервис аккумуляторов увеличивают срок службы и сводят к нулю вероятность отказов.
+        .aservice-list.swiper-container.js-slider-aservice
+            .swiper-wrapper
+                +aservice-item(
+                    title="Аудит состояния АКБ"
+                    text="Помогаем установить причины ускоренного выхода батарей из строя, разработать меры по их устранению."
+                )
+                +aservice-item(
+                    title="Ремонтные работы"
+                    text="Выезд специалиста на объект происходит в течение 3-х часов после получения заявки об аварийной остановке. Ввод в работу от 1 часа до 3-х дней."
+                )
+                +aservice-item(
+                    title="Восстановление АКБ"
+                    text="Электроды сульфатированы, предоставляется после проведения диагностики состояния аккумулятора."
+                )
+                +aservice-item(
+                    title="Аудит состояния АКБ"
+                    text="Помогаем установить причины ускоренного выхода батарей из строя, разработать меры по их устранению."
+                )
+                +aservice-item(
+                    title="Аудит состояния АКБ"
+                    text="Помогаем установить причины ускоренного выхода батарей из строя, разработать меры по их устранению."
+                )
+                +aservice-item(
+                    title="Ремонтные работы"
+                    text="Выезд специалиста на объект происходит в течение 3-х часов после получения заявки об аварийной остановке. Ввод в работу от 1 часа до 3-х дней."
+                )
+            .swiper-pagination
+    
+    .block._mb-none-down-md
+        include _includes/blocks/form-help

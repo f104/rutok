@@ -1,0 +1,101 @@
+.article-item {
+    $root: &;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__h {
+        display: block;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 22px;
+        display: box;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+        }
+
+        @include hover-opacity;
+    }
+
+    &__info {
+        margin-top: 12px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        align-items: center;
+
+        .tag {
+            margin-right: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__date {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        color: rgba($color-text, .4);
+        white-space: nowrap;
+    }
+
+    &__text {
+        font-size: 13px;
+        line-height: 20px;
+        /* or 154% */
+        color: rgba($color-text, .5);
+        margin-top: 16px;
+        margin-bottom: 12px;
+        display: box;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .more {
+        margin-top: auto;
+    }
+
+    &__img {
+        &-wrapper {
+            display: block;
+            margin-bottom: 18px;
+            background: $color-gray;
+            border-radius: $border-radius;
+            padding: 12px;
+            height: 234px;
+
+            @include media-breakpoint-up(md) {
+                height: 210px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                height: 246px;
+            }
+
+            @include hover-opacity;
+        }
+
+        display: block;
+        height: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

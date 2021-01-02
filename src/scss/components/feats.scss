@@ -1,0 +1,56 @@
+// преимущества с иконками
+.feats {
+
+    &.swiper-container-initialized {
+        @include media-breakpoint-down(sm) {
+            margin-left: - map-get($container-paddings, sm);
+            margin-right: - map-get($container-paddings, sm);
+            padding-left: map-get($container-paddings, sm);
+            padding-right: map-get($container-paddings, sm);
+            overflow: visible;
+        }
+    }
+
+    &__inner {
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 24px 114px;
+            justify-content: start;
+        }
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(4, auto);
+            gap: 30px;
+        }
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        width: 220px;
+
+        @include media-breakpoint-up(md) {
+            width: 270px;
+        }
+
+        .r-icon {
+            flex-shrink: 0;
+            margin-right: 12px;
+        }
+
+        &__content {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+
+            &__muted {
+                display: block;
+                margin-top: 2px;
+                font-size: 12px;
+                line-height: 15px;
+                color: rgba($color-text, .6);
+            }
+        }
+    }
+}

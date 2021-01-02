@@ -1,0 +1,32 @@
+#review_add.popup
+    form.popup-form
+        h3.popup-form__h Новый отзыв
+        p.popup-form__lead Если вы купили этот товар и у вас сформировался отзыв, оставьте его
+        .popup-form__grid
+            .stars.js-stars
+                span.stars__label Ваша оценка
+                span.stars__inner
+                    label
+                        input(type="radio" name="stars" value="1")
+                        i.icon-star
+                    label
+                        input(type="radio" name="stars" value="2")
+                        i.icon-star
+                    label
+                        input(type="radio" name="stars" value="3" checked)
+                        i.icon-star
+                    label
+                        input(type="radio" name="stars" value="4")
+                        i.icon-star
+                    label._checked
+                        input(type="radio" name="stars" value="5")
+                        i.icon-star
+            .input._addon.js-label
+                input
+                label Имя
+                span.input__addon
+                    i.icon-user
+            .input.js-label
+                textarea
+                label Отзыв
+            button.btn._block Оставить отзыв

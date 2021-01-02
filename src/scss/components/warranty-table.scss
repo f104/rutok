@@ -1,0 +1,150 @@
+// список гарантийных центров
+.warranty-table {
+    $root: &;
+
+    margin-top: 24px;
+    @include media-breakpoint-up(lg) {
+        margin-top: 32px;
+    }
+
+    &__filter {
+        margin-bottom: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        @include media-breakpoint-only(md) {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+
+            >* {
+                &:nth-child(3) {
+                    grid-column-end: span 2;
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+    }
+
+    &__inner {
+        display: block;
+        background: $color-gray;
+        border-radius: $border-radius;
+        padding: 8px 24px;
+        @include media-breakpoint-up(lg) {
+            padding: 16px 32px;
+            display: table;
+            width: 100%;
+        }
+    }
+
+    &__item {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(#000000, .2);
+        letter-spacing: -0.01em;
+
+        &:last-child {
+            border-bottom-width: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 0 24px;
+            grid-template-areas: "t p" "a tw";
+        }
+        @include media-breakpoint-up(lg) {
+            display: table-row;
+            &:last-child {
+                > * {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        grid-area: t;
+
+        /* identical to box height, or 129% */
+        @include media-breakpoint-up(md) {
+            line-height: 24px;
+        }
+
+    }
+
+    &__title,
+    &__phone,
+    &__address,
+    &__time {
+        @include media-breakpoint-up(lg) {
+            display: table-cell;
+            padding: 16px 20px 16px 0;
+            border-bottom: 1px solid rgba(#000000, .2);
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    &__address,
+    &__time {
+        display: block;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        /* identical to box height, or 138% */
+        color: rgba($color-text, .6);
+
+        @include media-breakpoint-up(md) {
+            line-height: 20px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    &__address {
+        grid-area: a;
+    }
+
+    &__time {
+        grid-area: tw;
+
+        @include media-breakpoint-up(md) {
+            text-align: right;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 15%;
+        }
+    }
+
+    &__phone {
+        grid-area: p;
+        display: inline-block;
+        margin-top: 12px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        white-space: nowrap;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            line-height: 24px;
+            text-align: right;
+        }
+        @include media-breakpoint-up(lg) {
+            text-align: initial;
+        }
+
+        @include hover-opacity;
+    }
+}

@@ -1,0 +1,16 @@
+mixin article-item()
+    .article-item
+        a(href="#").article-item__img-wrapper
+            picture.article-item__img
+                source(type="image/webp" media="(min-width:510px)" data-srcset="assets/img/articles/"+attributes.img+"-md.webp" srcset="assets/img/dot.webp")
+                source(type="image/webp" data-srcset="assets/img/articles/"+attributes.img+"-sm.webp" srcset="assets/img/dot.webp")
+                source(type="image/jpeg" media="(min-width:510px)" data-srcset="assets/img/articles/"+attributes.img+"-md.jpg" srcset="assets/img/dot.jpg")
+                source(type="image/jpeg" data-srcset="assets/img/articles/"+attributes.img+"-sm.jpg" srcset="assets/img/dot.jpg")
+                img.lazyload(data-src="assets/img/articles/"+attributes.img+"-md.jpg" src="assets/img/dot.jpg" alt=attributes.title)
+        a(href="#").article-item__h=attributes.title
+        .article-item__info
+            a(href="#" title="Все статьи с тегом «"+attributes.tag+"»").tag=attributes.tag
+            span.article-item__date=attributes.date
+        p.article-item__text=attributes.text
+        a(href="#").more
+            span.more__inner Читать далее

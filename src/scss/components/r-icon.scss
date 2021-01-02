@@ -1,0 +1,24 @@
+// фирменная иконка
+.r-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    background: url(img/icon.png);
+
+    &._gray {
+        background: url(img/icon-gray.png);
+    }
+
+    >* {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        font-size: 24px;
+        color: $color-white;
+
+        &::before {
+            margin: 0;
+            vertical-align: bottom;
+        }
+    }
+}

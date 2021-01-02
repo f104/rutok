@@ -1,0 +1,47 @@
+header
+    .header-top
+        .header-top__cnt
+            .header-top__inner
+                a(href="tel:+74956779524").header-top__phone +7 (495) 677-95-24
+                span.header-top__city.js-header__city-toggler Москва
+                span.header-top__menu-toggler.js-header__menu-toggler Меню
+                span.header-top__adds г. Mocквa, улица Дopoжнaя, д. 60Б
+                a.header-top__email(href="mailto:info@rutok.ru") info@rutok.ru
+            nav.header-top__menu.js-header__menu
+                ul.header-top__menu__ul
+                    li.header-top__menu__li
+                        a.header-top__menu__a(href="#") O кoмпaнии
+                    li.header-top__menu__li
+                        a.header-top__menu__a(href="#") Cкидки
+                    li.header-top__menu__li
+                        a.header-top__menu__a._active(href="#") Доставка и оплата
+                    li.header-top__menu__li
+                        a.header-top__menu__a(href="#") Гарантия
+                    li.header-top__menu__li
+                        a.header-top__menu__a(href="#") Koнтaкты
+            
+    .header
+        .header__inner
+            a(href="index.html" title="На главную").header__logo
+                img.header__logo__img(src="assets/img/logo.svg" alt="RUTOK")
+            .header__right
+                .header__contacts
+                    span.header__city
+                        span.header__city__muted Ваш город: 
+                        span.header__city__toggler.js-header__city-toggler Москва
+                    a(href="tel:+74956779524").header__phone +7 (495) 677-95-24
+                .header__icons
+                    a(href="#").header__icon
+                        if isAuth
+                            img.avatar(src="assets/img/avatar.jpg" alt="username")
+                        else
+                            i.icon-header-user
+                    a(href="#").header__icon
+                        i.icon-header-cart
+                        span.header__icon__counter 3
+            .header__search
+                form
+                    .search-input
+                        input(placeholder="Поиск по товарам")
+
+

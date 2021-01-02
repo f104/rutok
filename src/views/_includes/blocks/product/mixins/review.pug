@@ -1,0 +1,11 @@
+mixin review()
+    .review
+        .review__head
+            .product-rating
+                .product-rating__stars
+                    - var i = 1
+                    while i++ <= 5
+                        i.icon-star(class = i <= attributes.stars + 1 ? 'color-primary' : '')
+            span.review__date=attributes.date
+        p.review__title=attributes.title
+        p.review__text=attributes.text

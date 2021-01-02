@@ -1,0 +1,118 @@
+.article {
+    $root: &;
+
+    margin-top: -12px;
+
+    &__lead-picture {
+
+        display: block;
+        border-radius: $border-radius;
+        overflow: hidden;
+        margin-top: 18px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 24px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: rgba($color-text, .5);
+
+        .tag {
+            margin-right: 16px;
+        }
+    }
+
+    &__row {
+        margin-top: 16px;
+        display: grid;
+        gap: 24px;
+        grid-template-areas: "a""c";
+
+        @include media-breakpoint-up(md) {
+            margin-top: 24px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 36px;
+            grid-template-columns: auto 370px;
+            grid-template-areas: "c a";
+            gap: 30px;
+        }
+
+    }
+
+    &__content {
+        grid-area: c;
+    }
+
+    &__aside {
+        grid-area: a;
+    }
+
+    .tags-list {
+        margin-top: 16px;
+    }
+
+    &-summary {
+        background: $color-gray;
+        border-radius: $border-radius;
+        padding: 24px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 28px;
+            position: sticky;
+            top: map-get($header-height, lg) + 1rem;
+            ;
+        }
+
+        &__h {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 18px;
+        }
+
+        &__list {
+            display: grid;
+            gap: 8px;
+
+            @include media-breakpoint-up(md) {
+                gap: 10px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                gap: 12px;
+            }
+
+        }
+    }
+
+    &-popup {
+        .tag {
+            margin-bottom: 5px;
+        }
+
+        &__h {
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 26px;
+            margin-right: 40px;
+        }
+
+        #{$root}__lead-picture {
+            margin-bottom: 24px;
+            margin-left: -16px;
+            margin-right: -16px;
+        }
+    }
+}

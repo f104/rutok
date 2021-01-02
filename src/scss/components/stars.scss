@@ -1,0 +1,55 @@
+// инпут рейтинга
+.stars {
+    $root: &;
+
+    height: 58px;
+    background: #F5F8FA;
+    border-radius: 12px;
+    padding-left: 16px;
+    padding-top: 28px;
+
+    &__inner {
+        font-size: 0;
+        &:not(:hover) {
+            label {
+                &._checked {
+                    ~label {
+                        color: $color-star;
+                    }
+                }
+            }
+        }
+
+        label {
+            display: inline-block;
+            padding: 0 2px;
+            color: $color-primary;
+            font-size: 16px;
+            @include transition(color);
+            cursor: pointer;
+
+            &:hover {
+                ~label {
+                    color: $color-star;
+                }
+            }
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    [class^=icon]:before {
+        margin: 0;
+    }
+
+    &__label {
+        position: absolute;
+        top: 12px;
+        left: 18px;
+        font-size: 11px;
+        line-height: 1;
+        color: rgba($color-text, .4);
+    }
+}

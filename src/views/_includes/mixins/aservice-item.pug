@@ -1,0 +1,9 @@
+//- Элемент списка услуг в "о нас"
+mixin aservice-item()
+    .aservice-item.swiper-slide
+        .r-icon._gray
+            i.icon-service
+        h5.aservice-item__h=attributes.title
+        p.aservice-item__text=attributes.text
+        a(href="#").more
+            span.more__inner Узнать подробнее

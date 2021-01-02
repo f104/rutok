@@ -1,0 +1,72 @@
+// Commons
+@import "variables";
+@import "custom-reset";
+
+// External
+@import "vendor/jquery.fancybox.css";
+@import "node_modules/swiper/swiper.scss";
+// @import "node_modules/swiper/components/pagination/pagination.scss";
+// @import "node_modules/swiper/components/navigation/navigation.scss";
+
+// Base
+@import "grid";
+@import "mixins";
+@import "base";
+// @import "generated/sprites";
+@import "generated/svgsprites";
+@import "fonts";
+
+// Base components
+@import "components/base/bk";
+@import "components/base/block";
+@import "components/base/btn";
+@import "components/base/content";
+@import "components/base/dev";
+@import "components/base/form";
+@import "components/base/footer";
+@import "components/base/header";
+@import "components/base/input";
+@import "components/base/menu-toggler";
+@import "components/base/rte";
+
+// Project components
+@import "components/about";
+@import "components/apromo";
+@import "components/aservice";
+@import "components/article";
+@import "components/article-item";
+@import "components/articles";
+@import "components/avatar";
+@import "components/cat";
+@import "components/cat-item";
+@import "components/city-select";
+@import "components/complect";
+@import "components/counter";
+@import "components/delivery";
+@import "components/doc";
+@import "components/feats";
+@import "components/form";
+@import "components/header-top";
+@import "components/index";
+@import "components/more";
+@import "components/notfound";
+@import "components/overview";
+@import "components/page-h";
+@import "components/pagination";
+@import "components/popup";
+@import "components/price";
+@import "components/product";
+@import "components/qa";
+@import "components/r-adds";
+@import "components/r-icon";
+@import "components/r-list";
+@import "components/review";
+@import "components/scrollbar";
+@import "components/service";
+@import "components/slide";
+@import "components/stars";
+@import "components/sliders";
+@import "components/tabs";
+@import "components/tags";
+@import "components/tooltip";
+@import "components/warranty-table";

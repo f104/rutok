@@ -1,0 +1,21 @@
+mixin service()
+    label.service
+        input(type="checkbox" checked=attributes.checked)
+        span.service__inner
+            span.service__content
+                span.service__cat=attributes.cat
+                span.service__title=attributes.title
+                span.service__list
+                    each item in attributes.list
+                        span.service__list__item=item
+                if attributes.more
+                    a(href="#").more
+                        span.more__inner Подробнее об услуге
+            span.service__amount
+                if attributes.priceOld
+                    span.price-old
+                        span.price-old__del=attributes.priceOld
+                        span.price-old__discount=attributes.discount
+                span.service__price=attributes.price
+                    | 
+                    span.price-muted ₽

@@ -1,0 +1,214 @@
+// rte content
+.rte {
+    font-size: 14px;
+    line-height: 26px;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 15px;
+        line-height: 28px;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+        margin-top: 24px;
+        margin-bottom: 12px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+            margin-top: 42px;
+            margin-bottom: 16px;
+        }
+    }
+
+    h4 {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        margin-top: 18px;
+        margin-bottom: 12px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 24px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    >*,
+    .js-cut>*,
+    .js-cut__inner>* {
+        margin-bottom: 1.3em;
+        break-inside: avoid;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul,
+    ol {
+        font-weight: 500;
+
+        li {
+            padding-left: 16px;
+            margin-bottom: .5em;
+
+            @include media-breakpoint-up(md) {
+                padding-left: 32px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 40px;
+            }
+
+            &:before {
+                position: absolute;
+                left: 0;
+
+                @include media-breakpoint-up(md) {
+                    left: 16px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    left: 24px;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    ul {
+        li {
+            &:before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                background-color: $color-primary;
+                top: 10px;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: myCounter;
+
+        li {
+            padding-left: 22px;
+
+            @include media-breakpoint-up(md) {
+                padding-left: 38px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 46px;
+            }
+
+            &:before {
+                counter-increment: myCounter;
+                content: counter(myCounter);
+                font-size: 15px;
+                letter-spacing: -0.02em;
+                color: rgba($color-text, .5);
+            }
+        }
+    }
+
+    blockquote {
+        display: block;
+        background: $color-gray;
+        border-radius: $border-radius;
+        padding: 20px 24px 20px 42px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 23px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(md) {
+            line-height: 26px;
+            padding-left: 88px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            line-height: 28px;
+            padding-right: 28px;
+            padding-left: 96px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            bottom: 24px;
+            width: 2px;
+            background: #B9BFC5;
+            opacity: 0.2;
+            border-radius: 2px;
+
+            @include media-breakpoint-up(md) {
+                left: 70px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                left: 78px;
+            }
+        }
+
+        &:after {
+            @include media-breakpoint-up(md) {
+                content: '\e806';
+                font-family: $font-family-fontello;
+                font-size: 16px;
+                position: absolute;
+                top: 24px;
+                left: 24px;
+                width: 30px;
+                height: 30px;
+                background: rgba(#E3EAEE, .6);
+                border-radius: 7px;
+                color: rgba($color-text, .5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    img {
+        border-radius: $border-radius;
+        max-width: 100%;
+    }
+
+    a {
+        font-weight: 500;
+        border-bottom: 1px solid #BFBFBF;
+        @include transition(border-color);
+
+        @include hover-desktop {
+            border-bottom-color: $color-text;
+        }
+    }
+}

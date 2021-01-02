@@ -1,0 +1,259 @@
+.input {
+    $root: &;
+
+    // font-size: 0;
+    // line-height: 0;
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        color: $color-text;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1;
+        padding: 28px 18px 10px 18px;
+        height: 58px;
+        background: $color-white;
+        border: 1px solid $input-border-color;
+        border-radius: 12px;
+        @include transition((border-color, background-color));
+
+        &:hover,
+        &:focus {
+            border-color: $input-border-color-hover;
+        }
+
+        // &:focus {
+        //     border-color: $input-border-color;
+        // }
+
+        &:disabled {
+            background-color: $color-gray;
+            pointer-events: none;
+        }
+
+        // &:required {
+        //     ~label:after {
+        //         content: '*';
+        //     }
+        // }
+
+    }
+
+    &._no-label {
+
+        input,
+        select,
+        textarea {
+            padding: 19px 18px;
+        }
+    }
+
+    input,
+    select {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    textarea {
+        display: block;
+        height: 125px;
+
+        +label {
+            font-size: 11px;
+            top: 1px;
+            transform: none;
+            left: 19px;
+            right: 19px;
+            background-color: $color-white;
+            padding-top: 12px;
+            padding-bottom: 4px;
+
+            &._label-empty {
+                font-size: 14px !important;
+                top: 8px !important;
+                transform: none !important;
+            }
+        }
+    }
+
+    &._error {
+
+        input,
+        textarea {
+            border-color: $color-primary;
+        }
+    }
+
+
+    label {
+        position: absolute;
+        top: 12px;
+        left: 18px;
+        font-size: 11px;
+        line-height: 1;
+        color: rgba($color-text, .4);
+        pointer-events: none;
+
+        @include transition(all);
+
+        &._label-empty {
+            font-size: 14px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+
+        }
+
+    }
+
+    // &.js-label {
+
+    //     // input:not(.js-label)+label,
+    //     input:focus+label,
+    //     input:valid+label,
+    //     input:disabled+label,
+    //     input[type=email]+label,
+    //     select:focus~label,
+    //     select:valid+label {
+    //         font-size: 11px;
+    //         top: 12px;
+    //         transform: none;
+    //     }
+
+    //     input:focus+._label-empty,
+    //     select:focus+._label-empty {
+    //         font-size: 11px !important;
+    //         top: 12px !important;
+    //         transform: translateY(-50%) !important;
+    //     }
+    // }
+
+    &._addon {
+
+        input,
+        select {
+            padding-right: 55px;
+        }
+    }
+
+    &__addon {
+        pointer-events: none;
+        background-color: #EAEFF3;
+        width: 30px;
+        height: 30px;
+        border-radius: 7px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: rgba($color-text, .6);
+        @include transition(background-color);
+
+        #{$root}._opened & {
+            background-color: #E3EAEE;
+        }
+    }
+
+}
+
+.select {
+    $root: &;
+
+    input,
+    select {
+        cursor: pointer;
+        background-color: $color-gray;
+    }
+
+    &._empty input,
+    &._empty select {
+        background-color: $color-white;
+        font-size: 0;
+    }
+
+    &._empty label {
+        font-size: 14px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    &__inner {
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        transform: translateY(100%);
+        background: $color-white;
+        border: 1px solid $input-border-color;
+        box-shadow: 0px 17px 109px rgba(0, 0, 0, 0.03), 0px 10.7533px 45.5376px rgba(0, 0, 0, 0.0215656), 0px 8.47426px 24.3466px rgba(0, 0, 0, 0.0178832), 0px 6.9797px 13.6485px rgba(0, 0, 0, 0.015), 0px 5.68438px 7.24861px rgba(0, 0, 0, 0.0121168), 0px 4.10263px 3.01631px rgba(0, 0, 0, 0.00843437);
+        border-radius: 12px;
+        padding: 6px;
+    }
+
+    &__item {
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 12px 18px;
+        border-radius: $border-radius;
+        color: rgba($color-text, .5);
+        @include transition(background-color);
+
+        @include hover-desktop {
+            background: rgba(#E2E9ED, .6);
+        }
+
+        &._selected {
+            color: $color-text;
+        }
+    }
+
+}
+
+.search-input {
+
+    &:before {
+        font-family: $font-family-fontello;
+        content: '\e828';
+        font-size: 12px;
+        color: $color-text;
+        position: absolute;
+        top: 50%;
+        left: 19px;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    input {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: $color-white;
+        border: 1px solid $input-border-color;
+        border-radius: 12px;
+        @include transition(border-color);
+        padding: 12px 12px 12px 45px;
+
+        @include media-breakpoint-up(md) {
+            padding: 13px 13px 13px 45px;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: 14px 14px 14px 45px;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $input-border-color-hover;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.fancybox-bg {
+    background-color: $color-text;
+}
+
+.fancybox-is-open .fancybox-bg {
+    opacity: .65;
+}
+
+.popup {
+    $root: &;
+    background: $color-white;
+    border: 1px solid #EBEFF2;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 330px;
+
+    @include media-breakpoint-up(md) {
+        max-width: 370px;
+    }
+
+    &._article {
+        max-width: 970px;
+    }
+
+    &.fancybox-content {
+        overflow: visible;
+    }
+
+    &-form {
+        margin-top: 40px;
+
+        &__h {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+        }
+
+        &__lead {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            color: rgba($color-text, .5);
+        }
+
+        &__grid {
+            margin-top: 28px;
+            display: grid;
+            gap: 16px;
+        }
+    }
+}
+
+.fancybox-slide--html {
+    [data-fancybox-close] {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        font-size: 32px;
+        line-height: 1;
+        color: #8297AC;
+        @include transition(color);
+
+        [class^=icon] {
+            &:before {
+                margin: 0;
+            }
+        }
+
+        @include hover-desktop {
+            color: darken(#8297AC, 20%);
+        }
+    }
+}

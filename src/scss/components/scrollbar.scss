@@ -1,0 +1,30 @@
+.scrollbar {
+    $root: &;
+
+    &-track {
+        background: transparent;
+        &-y {
+            width: 4px;
+        }
+    }
+
+    &-thumb {
+        width: 4px;
+        background: #DDE5EB;
+        border-radius: 6px;
+    }
+
+    &-disabled {
+        #{$root}-track {
+            display: none !important;
+        }
+        .scroll-content {
+            padding-right: 0;
+            transform: none !important;
+        }
+    }
+}
+
+.scroll-content {
+    padding-right: 10px;
+}

@@ -1,0 +1,85 @@
+.overview {
+    $root: &;
+
+    background-color: $color-text;
+    border-radius: $border-radius;
+    overflow: hidden;
+    padding-bottom: 72.72727272727273%;
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 67.79661016949153%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 64.86486486486486%;
+    }
+
+    @include hover-desktop() {
+        #{$root}__picture {
+            opacity: .4;
+        }
+    }
+
+    &__picture {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .5;
+        @include transition(opacity);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__inner {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        color: $color-white;
+        padding-left: 72px - 24px;
+        z-index: 2;
+
+        @include media-breakpoint-up(md) {
+            bottom: 32px;
+        }
+
+        &:before {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            font-family: $font-family-fontello;
+            font-size: 36px;
+            font-weight: normal;
+            line-height: 1;
+            content: '\e81f';
+
+            #{$root}._video & {
+                content: '\e81e';
+            }
+        }
+    }
+
+    &-list {
+        display: grid;
+        gap: 12px;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

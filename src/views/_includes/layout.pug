@@ -1,0 +1,53 @@
+block config
+
+doctype html
+html(lang=__.lang, class="no-js")
+    head
+        block head
+            include head
+            link(rel="preconnect" href="https://fonts.gstatic.com")
+    body.body(class=bodyClass)
+        include mixins/svgsprite
+        include mixins/bk
+        include mixins/cat-item
+        include mixins/article-item
+        include mixins/articles-slider
+        include mixins/products-slider
+        
+        block header
+            include blocks/header
+        
+        .content(class=contentClass)
+            block content
+        
+        block footer
+            include blocks/footer
+        
+        .hidden
+            // include popups here
+            
+        ul.city-select.js-header__city
+            li.city-select__item._selected
+                a(href="#") Москва
+            li.city-select__item
+                a(href="#") Санкт-Петербург
+            li.city-select__item
+                a(href="#") Нижний Новгород
+            li.city-select__item
+                a(href="#") Петропавловск-Камчатский
+        
+        block styles
+            link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet")
+            link(rel='stylesheet', href='assets/css/common.css?v=' + PACKAGE.version)
+        block scripts-config
+            script.
+                /* изменяемые настройки скриптов, указаны значения по умолчанию */
+                var appConfig = {
+                    /*
+                    scrollToOffset: 150, // оффсет при скролле до элемента
+                    scrollToSpeed: 500, // скорость скролла 
+                    mainSliderDelay: 5000, // время показа одного слайда в главном сдайдере
+                    */
+                }
+        block scripts
+            include scripts

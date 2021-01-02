@@ -1,0 +1,26 @@
+mixin overview()
+    if attributes.video
+        a.overview._video(
+            href="https://www.youtube.com/watch?v=od5nla42Jvc"
+            data-fancybox
+        )
+            .overview__inner=attributes.text
+            picture.overview__picture
+                source(type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/overviews/" + attributes.img + "-sm.webp" srcset="assets/img/dot.webp")
+                source(type="image/webp" data-srcset="assets/img/overviews/" + attributes.img + ".webp" srcset="assets/img/dot.webp")
+                source(type="image/jpeg" media="(max-width:1199px)" data-srcset="assets/img/overviews/" + attributes.img + "-sm.jpg" srcset="assets/img/dot.jpg")
+                source(type="image/jpeg" data-srcset="assets/img/overviews/" + attributes.img + ".jpg" srcset="assets/img/dot.jpg")
+                img.lazyload(data-src="assets/img/overviews/" + attributes.img + ".jpg" src="assets/img/dot.jpg" alt=attributes.text)
+    else
+        a.overview(
+            href="javascript:;"
+            data-src="article-popup.html"
+            data-fancybox data-type="ajax"
+        )
+            .overview__inner=attributes.text
+            picture.overview__picture
+                source(type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/overviews/" + attributes.img + "-sm.webp" srcset="assets/img/dot.webp")
+                source(type="image/webp" data-srcset="assets/img/overviews/" + attributes.img + ".webp" srcset="assets/img/dot.webp")
+                source(type="image/jpeg" media="(max-width:1199px)" data-srcset="assets/img/overviews/" + attributes.img + "-sm.jpg" srcset="assets/img/dot.jpg")
+                source(type="image/jpeg" data-srcset="assets/img/overviews/" + attributes.img + ".jpg" srcset="assets/img/dot.jpg")
+                img.lazyload(data-src="assets/img/overviews/" + attributes.img + ".jpg" src="assets/img/dot.jpg" alt=attributes.text)

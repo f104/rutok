@@ -1,0 +1,170 @@
+.complect {
+    $root: &;
+
+    display: grid;
+    gap: 20px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 420px) auto;
+        gap: 30px;
+    }
+
+    &__summary {
+        background-color: $color-gray;
+        border-radius: $border-radius;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 104px auto;
+        grid-template-areas: "h h""b p";
+        gap: 16px;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr;
+            grid-template-areas: "h""p""b";
+            gap: 18px;
+            grid-template-rows: max-content;
+        }
+        @include media-breakpoint-up(lg) {
+            gap: 12px;
+        }
+
+        &__h {
+            grid-area: h;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        &__price {
+            grid-area: p;
+            align-self: center;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 27px;
+            white-space: nowrap;
+
+            @include media-breakpoint-up(md) {
+                align-self: start;
+                font-size: 26px;
+                line-height: 32px;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 28px;
+                line-height: 34px;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: baseline;
+            }
+
+            &__old {
+                display: block;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 17px;
+                color: rgba($color-text, .45);
+
+                @include media-breakpoint-up(md) {
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-bottom: 6px;
+                }
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 0;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        &__btn {
+            grid-area: b;
+
+            .icon-plus {
+                font-size: 10px;
+                opacity: .8;
+                margin-right: 0;
+            }
+            .icon-cart {
+                font-size: 16px;
+                @include media-breakpoint-down(md) {
+                    margin-right: 0;
+                }
+            }
+
+            span {
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-top: auto;
+                width: 100%;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+    }
+
+    .cat-item {
+        &:before {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            bottom: -36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            box-sizing: content-box;
+            border-radius: 50%;
+            background: $color-secondary;
+            border: 8px solid $color-white;
+            @include media-breakpoint-up(md) {
+                bottom: auto;
+                top: 90px;
+                left: auto;
+                right: -15px;
+                transform: translateX(50%);
+            }
+            @include media-breakpoint-up(lg) {
+                top: 62px;
+            }
+        }
+        &:after {
+            z-index: 2;
+            content: '\e82b';
+            font-family: $font-family-fontello;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: $color-white;
+            @include media-breakpoint-up(md) {
+                bottom: auto;
+                top: 107px;
+                left: auto;
+                right: -15px;
+                transform: translateX(50%);
+            }
+            @include media-breakpoint-up(lg) {
+                top: 79px;
+            }
+        }
+        &:first-child {
+            &:after {
+                content: '\e813';
+            }
+        }
+    }
+}

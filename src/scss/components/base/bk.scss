@@ -1,0 +1,50 @@
+/* breadcrumbs */
+.bk {
+    $root: &;
+    font-size: 0;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    margin-top: 32px;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 46px;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 10px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba($color-text, .6);
+
+        &:after {
+            content: '›';
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 10px;
+            color: rgba($color-text, .2);
+        }
+
+        &:last-child {
+            margin-right: 0;
+            color: $color-text;
+
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &__link {
+        color: inherit;
+        @include transition(color);
+
+        @include hover-desktop {
+            color: $color-text;
+        }
+    }
+}

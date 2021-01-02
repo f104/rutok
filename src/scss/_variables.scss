@@ -1,0 +1,84 @@
+/* Main Colors */
+$color-base : #141414;
+$color-white : #fff;
+// $color-gray : #F6F8FA;
+$color-gray : #e6e6e6;
+$color-gray-dark : #EBEFF2;
+$color-primary : #FF0A16;
+$color-primary-hover : #FFE7E8;
+$color-secondary : #414549;
+$input-border-color: #E7EEF3;
+$input-border-color-hover: #D1D7DD;
+$color-discount: #8397AC;
+$color-star: #CDD5DC;
+
+$color-badges: (hit: #FD732D, new: #00B050, bestprice: #00A3FF, available: rgba(#414549, .2));
+
+$color-bg : $color-white;
+$color-text : $color-base;
+$color-error : $color-primary;
+$color-popup-background: $color-white;
+
+$color-overlay : $color-base;
+$opacity-overlay: .4;
+
+$link-color : $color-text;
+$link-hover-color : $color-primary;
+$link-hover-opacity : .8;
+
+$transition-duration: .2s;
+$transition-timing-function: ease-in-out;
+
+$header-z-index: 1000;
+$header-height: (sm: 2rem,
+    md: 3rem,
+    lg: 4rem,
+    xl: 5rem,
+);
+// $header-height-fixed: ;
+
+$border-radius: 6px;
+
+/* Fonts */
+$font-family : 'Montserrat',
+sans-serif;
+$font-family-alt : $font-family;
+$font-family-fontello: "fontello";
+$font-size : 1rem;
+$font-weight : normal;
+$letter-spacing : normal;
+$line-height : 1.2;
+
+/* Screen sizes */
+$grid-breakpoints: (sm: 360px,
+    md: 768px,
+    lg: 1200px,
+    xl: 1920px);
+$container-max-widths: (sm: 100%,
+    md: 100%,
+    lg: 1170px,
+    xl: 1170px);
+$container-paddings: (sm: 15px,
+    md: 15px,
+    lg: 0,
+    xl: 0);
+
+/* block margins */
+$block-margins: (sm: 46px,
+    md: 64px,
+    lg: 64px,
+    xl: 64px,
+);
+$block-margins-sm: (sm: .5rem,
+    md: 1rem,
+    lg: 1.5rem,
+    xl: 2rem,
+);
+
+/* Grid */
+$enable-grid-classes: true;
+$grid-columns: 12;
+$column-gaps: (sm: 12px,
+    md: 16px,
+    lg: 30px,
+    xl: 30px);

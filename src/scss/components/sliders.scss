@@ -1,0 +1,262 @@
+$color-bullet: #D4DFE7;
+
+.swiper-pagination {
+    $root: &;
+
+    margin-top: 24px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 18px;
+
+    // @include media-breakpoint-up(md) {
+    //     left: map-get($container-paddings, md);
+    //     right: map-get($container-paddings, md);
+    // }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 32px;
+        // left: 0;
+        // right: 0;
+    }
+
+    .swiper-container:not(.swiper-container-initialized) & {
+        display: none;
+    }
+}
+
+
+.swiper-pagination-bullet {
+    $root: &;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $color-bullet;
+    @include transition(background-color);
+
+    &-active {
+        background-color: $color-primary;
+    }
+
+    &__inner {
+        display: block;
+        width: 0;
+        height: 100%;
+        background-color: $color-primary;
+        border-radius: $border-radius;
+    }
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.slider {
+    $root: &;
+
+    overflow: visible;
+
+    @include media-breakpoint-up(lg) {
+        overflow: hidden;
+    }
+
+    &._md {
+        @include media-breakpoint-up(lg) {
+            .swiper-wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px 30px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none;
+            }
+        }
+    }
+
+    &._overflow-hidden {
+        overflow: hidden;
+        margin-left: - map-get($container-paddings, sm);
+        margin-right: - map-get($container-paddings, sm);
+        padding-left: map-get($container-paddings, sm);
+        padding-right: map-get($container-paddings, sm);
+
+        @include media-breakpoint-up(md) {
+            margin-left: - map-get($container-paddings, md);
+            margin-right: - map-get($container-paddings, md);
+            padding-left: map-get($container-paddings, md);
+            padding-right: map-get($container-paddings, md);
+        }
+
+        @include media-breakpoint-only(md) {
+            .swiper-button-next {
+                right: map-get($container-paddings, md);
+            }
+
+            .swiper-button-prev {
+                right: map-get($container-paddings, md) + 32px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .swiper-slide {
+        display: flex;
+        @include transition(opacity);
+
+        @include media-breakpoint-down(sm) {
+            width: 226px;
+
+            &:not(.swiper-slide-active) {
+                opacity: .6;
+            }
+        }
+
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 26px;
+        height: 26px;
+        background-color: $color-gray;
+        color: $color-text;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include transition((background-color, color));
+
+        // @include media-breakpoint-down(md) {
+        //     right: map-get($container-paddings, md);
+        // }
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+
+        &:after {
+            font-family: $font-family-fontello;
+            content: '\e805';
+        }
+
+        &.swiper-button-disabled {
+            color: rgba($color-text, .5);
+            pointer-events: none;
+        }
+
+        &:not(.swiper-button-disabled) {
+            @include hover-desktop {
+                background-color: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+
+    .swiper-button-prev {
+        right: 32px;
+
+        // @include media-breakpoint-down(md) {
+        //     right: calc(#{map-get($container-paddings, md)} + 32px);
+        // }
+
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &._main {
+        margin-top: 16px;
+
+        .swiper-slide {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .swiper-pagination {
+            margin-top: 16px;
+            gap: 5px;
+            grid-auto-columns: 1fr;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 12px;
+                display: grid;
+                gap: 10px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                gap: 16px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: auto;
+            height: 3px;
+            border-radius: $border-radius;
+            // background-color: #E3EAEE;
+            @include transition(background-color);
+            cursor: pointer;
+            overflow: hidden;
+
+            @include hover-desktop {
+                background-color: #C8D2D8;
+            }
+        }
+
+        &._animated {
+            .swiper-pagination-bullet {
+                background-color: $color-bullet;
+            }
+        }
+    }
+
+    &__picture {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        &-wrapper {
+            padding-bottom: 39.31623931623932%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        display: block;
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba($color-text, .6);
+
+        &__accent {
+            display: block;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 27px;
+            color: $color-text;
+            margin-bottom: 6px;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}

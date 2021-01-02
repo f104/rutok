@@ -1,0 +1,48 @@
+include mixins/overview
+h3.block-h Обзоры
+.tabs.js-tabs
+    .tabs__slider.swiper-container.js-tabs__slider
+        .swiper-wrapper
+            .tabs__item.swiper-slide._active.js-tabs__trigger(data-href="#overview_tab_1") Видео-обзоры
+            .tabs__item.swiper-slide.js-tabs__trigger(data-href="#overview_tab_2") Полезные статьи
+    .input._addon.select._no-label.tabs__select.js-select.js-tabs__select
+        select
+            option(value="#overview_tab_1" selected) Видео-обзоры
+            option(value="#overview_tab_2") Полезные статьи
+        span.input__addon
+            i.icon-input-arrow
+    .js-tabs__wrapper
+        #overview_tab_1.js-tabs__target
+            .overview-list
+                +overview(
+                    video=true
+                    text="Выбор зарядного устройство для тягового аккумулятора"
+                    img=1
+                )
+                +overview(
+                    video=true
+                    text="Как можно снизить затраты на приобретение тяговых батарей"
+                    img=3
+                )
+                +overview(
+                    video=true
+                    text="Причины выхода из строя свинцово-кислотных батарей"
+                    img=4
+                )
+        #overview_tab_2.js-tabs__target
+            .overview-list
+                +overview(
+                    video=false
+                    text="Принципиальные отличия свинцово-кислотных батарей"
+                    img=2
+                )
+                +overview(
+                    video=false
+                    text="Сульфатация свинцовокислотной аккумуляторной батареи"
+                    img=5
+                )
+                +overview(
+                    video=false
+                    text="Как можно снизить затраты на приобретение тяговых батарей"
+                    img=3
+                )

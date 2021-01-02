@@ -1,0 +1,206 @@
+extends _includes/layout
+include _includes/mixins/r-adds
+
+block config
+    - var pagetitle = 'Доставка и оплата'
+    - var bodyClass = ''
+
+block content
+    .container
+        +bk(['Главная', 'Доставка и оплата'])
+
+        .block
+            h2.page-h Доставка
+            .rte
+                p Вы всегда можете получить товар самостоятельно. Отгрузка производится с нескольких складов Москвы и Московской области, поэтому адрес самовывоза уточните у менеджера.
+                p Доставка по Москве и Московской области осуществляется курьерскими службами:
+            ul.r-list
+                li.r-list__item «Major Express»
+                    span.r-list__item__muted Доставка осуществляется до двери
+                li.r-list__item Транспортная компания «ПЭК»
+                    span.r-list__item__muted Доставка осуществляется до адреса или до терминала транспортной компании
+                li.r-list__item «EASY WAY»
+                    span.r-list__item__muted Доставка осуществляется до двери, терминала или пункта самовывоза
+
+            .tabs.delivery-tabs.js-tabs
+                .tabs__slider.swiper-container.js-tabs__slider
+                    .swiper-wrapper
+                        .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_1") Самовывоз
+                        .tabs__item.swiper-slide._active.js-tabs__trigger(data-href="#tab_2") Доставка курьером
+                .input._addon.select.tabs__select.js-label.js-select.js-tabs__select
+                    select
+                        option(value="#tab_1") Самовывоз
+                        option(value="#tab_2" selected) Доставка курьером
+                    label Категория
+                    span.input__addon
+                        i.icon-input-arrow
+                .js-tabs__wrapper
+                    #tab_1.js-tabs__target
+                        .r-adds-list.js-scrollbar(data-scrollbar)
+                            .js-scrollbar__inner
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=true
+                                    title="г. Москва, Солнечный бульвар, д. 42"
+                                    text="с 8:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Партнерский пункт выдачи"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, ул. Инженерная, д. 20"
+                                    text="с 9:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Распределительный склад"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, ул. Железнодорожная д. 11"
+                                    text="с 9:00 до 19:00, воскресенье выходной"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Почта России"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, проспект Яковлева, д. 56"
+                                    text="с 8:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "с 8:00 до 20:00, без выходных"},
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, Солнечный бульвар, д. 42"
+                                    text="с 8:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Партнерский пункт выдачи"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, ул. Инженерная, д. 20"
+                                    text="с 9:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Распределительный склад"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, ул. Железнодорожная д. 11"
+                                    text="с 9:00 до 19:00, воскресенье выходной"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Почта России"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-1"
+                                    checked=false
+                                    title="г. Москва, проспект Яковлева, д. 56"
+                                    text="с 8:00 до 20:00, без выходных"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "с 8:00 до 20:00, без выходных"},
+                                    ]
+                                )
+                    #tab_2.js-tabs__target
+                        .r-adds-list.js-scrollbar(data-scrollbar)
+                            .js-scrollbar__inner
+                                +r-adds(
+                                    name="tab-2"
+                                    checked=true
+                                    title="«Major Express»"
+                                    price="от 856"
+                                    text="Курьерская служба доставки"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                        {icon: "icon-clock", text: "Срок доставки 3–4 дня"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-2"
+                                    checked=false
+                                    title="«СДЕК»"
+                                    price="от 592"
+                                    text="Курьерская служба доставки"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                        {icon: "icon-clock", text: "Срок доставки 5–6 дней"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-2"
+                                    checked=false
+                                    title="«Boxberry»"
+                                    price="от 490"
+                                    text="Курьерская служба доставки"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                        {icon: "icon-clock", text: "Срок доставки 3–10 дней"}
+                                    ]
+                                )
+                                +r-adds(
+                                    name="tab-2"
+                                    checked=false
+                                    title="«ПЭК»"
+                                    price="от 230"
+                                    text="Курьерская служба доставки"
+                                    list=[
+                                        {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                        {icon: "icon-clock", text: "Срок доставки 6–9 дней"}
+                                    ]
+                                )
+
+        .block
+            h2.page-h Способы оплаты
+            .slide-list
+                .slide.js-slide
+                    .slide__header
+                        .slide__title
+                            .r-icon
+                                i.icon-payment-cash
+                            .slide__title__content
+                                span.slide__title__content__muted Способ №1
+                                | Наличный расчет при получении
+                        span.slide__toggler.js-slide__toggler
+                    .slide__content.js-slide__content
+                        .slide__content__inner.rte 
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae velit eu nibh auctor fringilla id sed velit. Aenean id suscipit eros. Nam scelerisque, elit eget viverra commodo, turpis magna ultrices nulla, ut vulputate ex sem cursus mauris. Fusce varius egestas arcu, vel rhoncus eros auctor vel. Vivamus placerat augue at leo tempus finibus. Nunc hendrerit hendrerit ex eget pharetra. Pellentesque rutrum fermentum tellus, quis sagittis est accumsan non. Integer posuere eros vel leo fermentum porta. Morbi arcu libero, suscipit ac mi suscipit, porta venenatis velit. Etiam vel libero nulla. Aenean porta dui et lorem consequat gravida. Cras placerat mi urna, sed aliquam eros mattis in.
+                .slide._active.js-slide
+                    .slide__header
+                        .slide__title
+                            .r-icon
+                                i.icon-payment-card
+                            .slide__title__content
+                                span.slide__title__content__muted Способ №2
+                                | Онлайн-оплата банковскими картами
+                        span.slide__toggler.js-slide__toggler
+                    .slide__content.js-slide__content
+                        .slide__content__inner.rte 
+                            p Оплата банковской картой, через Интернет, возможна через системы электронных платежей.
+                                br
+                                | Номер карты <strong>(PAN)</strong> должен иметь не менее 15 и не более 19 символов.
+                                br
+                                | Мы принимаем платежи с сайта по следующим банковским картам:
+                            p 
+                                img(src="assets/img/payments.svg" alt="Онлайн-оплата банковскими картами")
+                .slide.js-slide
+                    .slide__header
+                        .slide__title
+                            .r-icon
+                                i.icon-payment-bank
+                            .slide__title__content
+                                span.slide__title__content__muted Способ №3
+                                | Банковский перевод
+                        span.slide__toggler.js-slide__toggler
+                    .slide__content.js-slide__content
+                        .slide__content__inner.rte 
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae velit eu nibh auctor fringilla id sed velit. Aenean id suscipit eros. Nam scelerisque, elit eget viverra commodo, turpis magna ultrices nulla, ut vulputate ex sem cursus mauris. Fusce varius egestas arcu, vel rhoncus eros auctor vel. Vivamus placerat augue at leo tempus finibus. Nunc hendrerit hendrerit ex eget pharetra. Pellentesque rutrum fermentum tellus, quis sagittis est accumsan non. Integer posuere eros vel leo fermentum porta. Morbi arcu libero, suscipit ac mi suscipit, porta venenatis velit. Etiam vel libero nulla. Aenean porta dui et lorem consequat gravida. Cras placerat mi urna, sed aliquam eros mattis in.
+

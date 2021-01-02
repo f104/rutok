@@ -1,0 +1,28 @@
+include mixins/doc
+
+//- .doc-list
+.slider._overflow-hidden.swiper-container.js-slider
+    h3.block-h Документация
+    .swiper-wrapper
+        .swiper-slide
+            +doc(
+                title="Инструкция по эксплуатации и обслуживанию «Nexsys»"
+                attr="0.97 мб, .pdf"
+            )
+        .swiper-slide
+            +doc(
+                title="Технические данные по элементам «XFC Nexsys»"
+                attr="1.24 мб, .xdoc"
+            )
+        .swiper-slide
+            +doc(
+                title="Декларация о соответствии «NexSys»"
+                attr="23.0 мб, .jpg"
+            )
+        .swiper-slide
+            +doc(
+                title="Техническое описание и характеристики аккумулятора «Nexsys»"
+                attr="5.86 мб, .pdf"
+            )
+    .swiper-button-prev
+    .swiper-button-next

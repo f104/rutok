@@ -1,0 +1,201 @@
+.header-top {
+    $root: &;
+    $height: 39px;
+
+    background-color: #F0F0F0;
+
+    &__cnt {
+        @extend .container;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__inner {
+        height: $height;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+
+    &__phone {
+        font-size: 13px;
+
+        @include media-breakpoint-up(lg) {
+            display: none !important;
+        }
+    }
+
+    &__city {
+        margin-left: 28px;
+        margin-right: auto;
+
+        @include media-breakpoint-up(md) {
+            margin-left: 36px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            display: none !important;
+        }
+
+        &:before {
+            display: inline-block;
+            font-family: $font-family-fontello;
+            content: '\e827';
+            font-weight: normal;
+            font-size: 15px;
+            color: rgba($color-text, .4);
+            margin-right: 2px;
+        }
+
+        &:after {
+            display: inline-block;
+            font-family: $font-family-fontello;
+            content: '\e805';
+            font-weight: normal;
+            font-size: 15px;
+            color: $color-primary;
+            transform: rotate(90deg);
+            vertical-align: middle;
+            @include transition(transform);
+        }
+        &._active {
+            &:after {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &__adds {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba($color-text, .4);
+        margin-right: 24px;
+
+        @include media-breakpoint-down(md) {
+            display: none !important;
+        }
+    }
+
+    &__email {
+
+        @include media-breakpoint-down(md) {
+            display: none !important;
+        }
+    }
+
+    &__menu {
+        margin-left: - map-get($container-paddings, sm);
+        margin-right: - map-get($container-paddings, sm);
+        background-color: rgba(#F8F8F8, .8);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        overflow: hidden;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            background-color: transparent;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        &__ul {
+            @include media-breakpoint-down(sm) {
+                border-top: 1px solid rgba(#DDE1E4, .3);
+                border-bottom: 1px solid rgba(#DDE1E4, .3);
+                padding-left: map-get($container-paddings, sm);
+                padding-right: map-get($container-paddings, sm);
+                padding-top: 6px;
+                padding-bottom: 6px;
+                display: grid;
+                gap: 4px;
+            }
+        }
+
+        &__li {
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+
+                &:after {
+                    content: '   •   ';
+                }
+
+                &:last-child {
+                    &:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        &__a {
+            @include media-breakpoint-down(sm) {
+                display: block;
+                border-radius: $border-radius;
+                padding: 10px 15px;
+                color: rgba($color-text, .5);
+
+                &._active {
+                    color: $color-text;
+                    background: #F0F0F0;
+                }
+            }
+        }
+
+        &-toggler {
+            &:before {
+                display: inline-block;
+                font-family: $font-family-fontello;
+                content: '\e823';
+                font-weight: normal;
+                font-size: 15px;
+                margin-right: 10px;
+                color: rgba($color-text, .4);
+                vertical-align: middle;
+                @include transition(transform);
+            }
+
+            .body.menu-open & {
+                &:before {
+                    transform: rotate(90deg);
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+            padding: 2px 0;
+            border-bottom: 1px solid transparent;
+            @include transition(border-color);
+        }
+
+        @include hover-desktop {
+            border-bottom-color: #B7B7B7;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Товар'
+    - var bodyClass = ''
+
+block content
+    .block.container
+        +bk(['Главная', 'Каталог', 'Тяговые АКБ', 'NexSys Bloc 12NXS137'])
+        
+        include _includes/blocks/product/product
+    .block.container
+        .tabs.product-tabs.js-tabs
+            .tabs__slider.swiper-container.js-tabs__slider
+                .swiper-wrapper
+                    .tabs__item.swiper-slide._active.js-tabs__trigger(data-href="#tab_1") Описание товара
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_2") Характеристики
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_3") Аксессуары
+                        span.tabs__item__counter 5
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_4") Услуги
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_5") Обзоры
+                        span.tabs__item__counter 12
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_6") Отзывы
+                        span.tabs__item__counter 9
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_7") Вопрос-ответ
+                        span.tabs__item__counter 10
+                    .tabs__item.swiper-slide.js-tabs__trigger(data-href="#tab_8") Документация
+            .input._addon.select._no-label.tabs__select.js-select.js-tabs__select
+                select
+                    option(value="#tab_1" selected) Описание товара
+                    option(value="#tab_2") Характеристики
+                    option(value="#tab_3") Аксессуары (5)
+                    option(value="#tab_4") Услуги
+                    option(value="#tab_5") Обзоры (12)
+                    option(value="#tab_6") Отзывы
+                    option(value="#tab_7") Вопрос-ответ (10)
+                    option(value="#tab_8") Документация
+                span.input__addon
+                    i.icon-input-arrow
+            .js-tabs__wrapper
+                #tab_1.js-tabs__target
+                    include _includes/blocks/product/info
+                #tab_2.js-tabs__target
+                    include _includes/blocks/product/tth
+                #tab_3.js-tabs__target
+                    .overflow-hidden.md-full
+                        +products-slider('Аксессуары')
+                #tab_4.js-tabs__target
+                    include _includes/blocks/product/services
+                #tab_5.js-tabs__target
+                    include _includes/blocks/product/overviews
+                #tab_6.js-tabs__target
+                    include _includes/blocks/product/reviews
+                #tab_7.js-tabs__target
+                    include _includes/blocks/product/qa
+                #tab_8.js-tabs__target
+                    include _includes/blocks/product/docs
+    
+    .block.container
+        include _includes/blocks/product/complect
+    .block
+        include _includes/blocks/form-help
+
+    .block.container.overflow-hidden
+        +products-slider('Похожие товары')
+        
+    .hidden
+        include _includes/popups/review
+        include _includes/popups/question
+    

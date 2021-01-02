@@ -1,0 +1,8 @@
+mixin bk(items)
+    ul.bk
+        each item, index in items
+            if index == items.length - 1
+                li.bk__item=item
+            else
+                li.bk__item
+                    a(href="#").bk__link=item

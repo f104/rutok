@@ -1,0 +1,23 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = '404'
+    - var bodyClass = ''
+    - var contentClass = 'flex-col'
+
+block content
+    .container.flex-col
+        +bk(['Главная', '404'])
+    
+        section.notfound
+            .notfound__inner
+                .notfound__img
+                    img(src="assets/img/404.svg" alt="Запрашиваемая страница не найдена")
+                .notfound__content
+                    h1.notfound__h Запрашиваемая страница не найдена
+                    .notfound__rte 
+                        p Возможно она была удалена или никогда не существовала. 
+                        p Попробуйте воспользоваться поиском или перейдите в каталог.
+                    a(href="#").btn._block
+                        i.icon-cart._muted
+                        | Перейти в каталог
