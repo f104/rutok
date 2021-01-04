@@ -1,0 +1,60 @@
+a,
+.link {
+    cursor: pointer;
+    color: $link-color;
+    text-decoration: none;
+    @include transition(color);
+
+    @include hover-desktop {
+        color: $link-color;
+    }
+}
+
+.link {
+    $root: &;
+
+    // ссылка с подчеркиванмием
+    &-border {
+        color: inherit;
+        padding: 1px 0;
+        border-bottom: 1px solid $link-border-color;
+        @include transition((color, border-color));
+
+        @include hover-desktop {
+            border-color: $link-border-color-hover;
+        }
+    }
+
+    // ссылка с иконкой (неактивной)
+    &-icon {
+
+        display: inline-flex;
+        align-items: center;
+
+        [class^=icon] {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            background-color: #E7EDF0;
+            color: #9B9EA1;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: normal;
+            margin-right: 12px;
+        }
+
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.02em;
+        color: $color-text;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}

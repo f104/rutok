@@ -1,0 +1,65 @@
+.cart-empty {
+    $root: &;
+
+    margin-top: 32px;
+    margin-bottom: 46px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 56px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 146px;
+        margin-bottom: 164px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: grid;
+        align-items: center;
+        gap: 16px;
+        grid-template-columns: min-content auto;
+    }
+
+    &__h {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+            line-height: 27px;
+            margin-top: 24px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+
+    &__lead {
+        font-size: 14px;
+        line-height: 26px;
+        color: rgba($color-text, .6);
+        grid-column-end: span 2;
+
+        @include media-breakpoint-up(md) {
+            font-size: 15px;
+            line-height: 26px;
+            margin-top: 16px;
+        }
+    }
+
+    .btn {
+        grid-column-end: span 2;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 32px;
+            min-width: 246px;
+        }
+    }
+}

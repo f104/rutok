@@ -1,0 +1,118 @@
+.cart {
+    $root: &;
+
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 770px auto;
+    }
+
+    &._complete {
+        margin-top: 32px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 55px;
+        }
+    }
+
+    &__block {
+        margin-top: 46px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 32px;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 36px;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__aside {
+        margin-top: 32px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 56px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+
+            .cart-summary {
+                position: sticky;
+                top: 20px;
+            }
+        }
+    }
+
+    &-list {
+        .cart-item {
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid $color-gray-dark;
+
+            @include media-breakpoint-up(md) {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom-width: 0;
+            }
+        }
+    }
+
+    &-service-list {
+        .cart-service {
+            margin-bottom: 20px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 13px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__h {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__contacts {
+        display: grid;
+        gap: 12px;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+    }
+    &__other {
+        display: grid;
+        gap: 16px;
+        @include media-breakpoint-up(md) {
+            gap: 18px;
+        }
+    }
+    &__payments {
+        display: grid;
+        gap: 24px;
+    }
+
+    .delivery-tabs {
+        margin-top: 0;
+    }
+}

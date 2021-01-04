@@ -1,0 +1,46 @@
+mixin cart-item()
+    .cart-item
+        .cart-item__left
+            a(href="#").cart-item__img-wrapper
+                picture.cart-item__img
+                    source(type="image/webp" data-srcset="assets/img/products/"+attributes.img+".webp" srcset="assets/img/dot.webp")
+                    source(type="image/png" data-srcset="assets/img/products/"+attributes.img+".png" srcset="assets/img/dot.png")
+                    img.lazyload(data-src="assets/img/products/"+attributes.img+".png" src="assets/img/dot.png" alt=attributes.title)
+            .cart-item__left__content
+                .cart-item__cat=attributes.category
+                a(href="#").cart-item__h=attributes.title
+                if attributes.tags
+                    .cart-item__tth
+                        span.cart-item__tth__item
+                            i.icon-battery
+                            =attributes.tags[0]
+                        span.cart-item__tth__item
+                            i.icon-battery-charge
+                            =attributes.tags[1]
+                        span.cart-item__tth__item
+                            i.icon-warranty
+                            =attributes.tags[2]
+        .cart-item__right
+            form.counter._sm.js-counter
+                button(type="button").counter__btn._minus.js-counter__minus -
+                input(type="number" min="1" max="10" value=attributes.count).counter__input
+                button(type="button").counter__btn._plus.js-counter__plus +
+            .cart-item__price=attributes.price
+                | 
+                span.price-muted ₽
+            form
+                button.cart-item__remove(title="Удалить")
+                    i.icon-trash
+        //-.cart-item__content__footer
+            if attributes.oldprice
+                .price-old
+                    span.price-old__del=attributes.oldprice
+                        |
+                        | ₽
+                    span.price-old__discount=attributes.discount
+            .price=attributes.price
+                | 
+                span.price__muted ₽
+            if (!attributes.complect)
+                form
+                    button.btn._cart(title="Добавить в корзину") Добавить в корзину

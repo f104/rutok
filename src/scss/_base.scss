@@ -47,6 +47,17 @@
         }
     }
 }
+.visible {
+
+    @each $key in (md, lg, xl) {
+        &-#{$key} {
+            display: none !important;
+            @include media-breakpoint-up($key) {
+                display: initial !important;
+            }
+        }
+    }
+}
 
 .flex-col {
     flex-grow: 1;
@@ -78,18 +89,6 @@
 
 .color-secondary {
     color: $color-secondary !important;
-}
-
-a,
-.link {
-    cursor: pointer;
-    color: $link-color;
-    text-decoration: none;
-    @include transition(color);
-
-    @include hover-desktop {
-        color: $link-color;
-    }
 }
 
 strong {

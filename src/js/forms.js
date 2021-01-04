@@ -10,6 +10,7 @@ let forms = {
             forms.initCounter();
             forms.initInputLabel();
             forms.initMask();
+            forms.initPromocode();
             forms.initSelects();
             forms.initStars();
             forms.handleSelects();
@@ -63,6 +64,14 @@ let forms = {
             if (!$(this).val()) {
                 $(this).siblings('label').addClass(className);
             }
+        });
+    },
+
+    initPromocode() {
+        app.document.on('click', '.js-promocode .js-promocode__toggler', function () {
+            $(this).parents('.js-promocode')
+                .addClass('_opened')
+                .find('input').trigger('focus');
         });
     },
 

@@ -1,15 +1,19 @@
 mixin r-adds()
-    label.r-adds
+    label.r-adds(data-geo=attributes.geo)
         input(type="radio" name=attributes.name checked=attributes.checked)
         span.r-adds__inner
-            span.r-adds__header=attributes.title
-                if attributes.price
-                    span.r-adds__price=attributes.price
-                        | 
-                        span.price-muted ₽
-            span.r-adds__text=attributes.text
-            span.r-adds__list
-                each item in attributes.list
-                    span.r-adds__list__item
-                        i(class=item.icon)
-                        =item.text
+            span.r-adds__content
+                span.r-adds__header=attributes.title
+                    if attributes.price
+                        span.r-adds__price=attributes.price
+                            | 
+                            span.price-muted ₽
+                span.r-adds__text=attributes.text
+                if attributes.list
+                    span.r-adds__list
+                        each item in attributes.list
+                            span.r-adds__list__item
+                                i(class=item.icon)
+                                =item.text
+            if attributes.img
+                img.r-adds__img.lazyload(data-src=attributes.img src="assets/img/dot.svg" alt=attributes.title)

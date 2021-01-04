@@ -1,10 +1,22 @@
 extends _includes/layout
 
 block config
-    - var pagetitle = 'Главная'
+    - var pagetitle = 'Пустая корзина'
     - var bodyClass = ''
 
 block content
+    .block.container
+        +bk(['Главная', 'Корзина'])
+        h1.page-h Корзина
+        
+        .cart-empty
+            .r-icon
+                i.icon-cart
+            h3.cart-empty__h В вашей корзине ещё нет товаров
+            p.cart-empty__lead Для добавления найдите нужный вам товар в каталоге или при помощи поиска
+            a(href="#").btn
+                i.icon-cart._muted
+                | Перейти в каталог
 
     .block.container.overflow-hidden            
         +products-slider('Возможно вас заинтересует')

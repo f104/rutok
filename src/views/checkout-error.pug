@@ -1,0 +1,37 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Спасибо, Ваш заказ принят!'
+    - var bodyClass = ''
+
+block content
+    .block.container
+        +bk(['Главная', 'Корзина', 'Оформление заказа'])
+        //-h1.page-h Оформление заказа
+        
+        .cart._complete
+            .cart__content
+                .order-info
+                    .order-info__h
+                        .r-icon
+                            i.icon-error
+                        | Произошла ошибка 
+                        | оплаты заказа
+                    .order-info__rte.rte
+                        p Во время оплаты заказа RT 204-789 от 17.11.2020, 16:46 произошла ошибка. Оплата не произошла, попробуйте оплатить заказ снова или обратитесь в службу поддержки для решения вашей проблемы.
+                    .order-info__summary
+                        | Номер вашего заказа: 
+                        strong RT 204–789
+                        br
+                        | Сумма заказа: 
+                        strong 682 020 
+                            span.price-muted ₽
+                    .order-info__office Чтобы видеть в каком статусе находится Ваш заказ, перейдите в 
+                        a(href="#").link-border Активные заказы
+                        | .
+                    a(href="#").btn
+                        i.icon-repeat._muted
+                        | Попробовать заново
+            
+            .cart__aside
+                include _includes/blocks/order-questions

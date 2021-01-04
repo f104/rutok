@@ -15,9 +15,15 @@
         line-height: 16px;
     }
 
+    @include transition(color);
+
+    @include hover-desktop {
+        color: $link-color;
+    }
+
     &__inner {
         display: inline;
-        border-bottom: 1px solid #BFBFBF;
+        border-bottom: 1px solid $link-border-color;
 
         &:after {
             font-family: $font-family-fontello;

@@ -7,6 +7,7 @@ import tippy from 'tippy.js';
 import page from 'page';
 import forms from 'forms';
 import header from 'header';
+import maps from 'maps';
 
 let app = {
 
@@ -24,6 +25,7 @@ let app = {
     scrollToOffset: 50, // оффсет при скролле до элемента
     scrollToSpeed: 500, // скорость скролла
     mainSliderDelay: 5000, // время показа одного слайда в главном сдайдере
+    yandexKey: 'c0d4f878-c19c-42b1-a753-debb74e99023', // ключ api яндекс-карт
 
     init: function () {
         // read config
@@ -46,14 +48,8 @@ let app = {
         window.jQuery = $;
         window.app = app;
 
-        // Init forms
-        this.forms = forms;
-        this.forms.init.call(this);
-
-        this.header = header;
-        this.header.init.call(this);
-
         app.document.ready(() => {
+            this.initCartService();
             this.initCut();
             this.initPopups();
             this.initSlide();
@@ -65,6 +61,16 @@ let app = {
 
             tippy('[data-tippy-content]');
         });
+
+        // Init forms
+        this.forms = forms;
+        this.forms.init.call(this);
+
+        this.header = header;
+        this.header.init.call(this);
+
+        this.maps = maps;
+        this.maps.init.call(this);
 
         // app.window.on('load', () => {
         // });
@@ -86,6 +92,26 @@ let app = {
     //         }
     //     });
     // },
+
+    initCartService() {
+        this.document.on('click', '.js-cart-service__toggler', function () {
+            if (app.media <= app.breakpoints.sm) {
+                $(this).parents('.js-cart-service').find('.js-cart-service__content').slideToggle();
+            }
+            return false;
+        });
+        $('.js-cart-service__toggler').each(function () {
+            console.log($(this));
+            const $template = $(this).parents('.js-cart-service').find('.js-cart-service__content');
+            if ($template.length) {
+                tippy($(this)[0], {
+                    content: $template.html(),
+                    allowHTML: true,
+                    theme: 'hidden-sm',
+                });
+            }
+        })
+    },
 
     initCut() {
         let textOpenDefault = 'Читать полностью', textCloseDefault = 'Скрыть';
@@ -496,7 +522,7 @@ let app = {
             openTab(location.hash);
         }
 
-        app.document.on('click', '.js-tabs__link', function() {
+        app.document.on('click', '.js-tabs__link', function () {
             openTab($(this).attr('href'));
         });
     },

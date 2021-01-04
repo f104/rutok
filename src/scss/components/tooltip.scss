@@ -1,3 +1,8 @@
+.tippy-box[data-theme="hidden-sm"] {
+    @include media-breakpoint-down(sm) {
+        display: none !important;
+    }
+}
 .tippy-content {
     background-color: $color-text;
     border-radius: $border-radius;

@@ -8,14 +8,16 @@ html(lang=__.lang, class="no-js")
             link(rel="preconnect" href="https://fonts.gstatic.com")
     body.body(class=bodyClass)
         include mixins/svgsprite
-        include mixins/bk
-        include mixins/cat-item
+        
         include mixins/article-item
         include mixins/articles-slider
+        include mixins/bk
+        include mixins/cat-item
         include mixins/products-slider
         
         block header
             include blocks/header
+            include blocks/r-menu
         
         .content(class=contentClass)
             block content

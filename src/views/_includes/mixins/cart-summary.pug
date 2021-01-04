@@ -1,0 +1,41 @@
+mixin cart-summary(checkout)
+    .cart-summary
+        .cart-summary__head
+            dl.cart-summary__dl
+                dt.cart-summary__dt Товары
+                    span.cart-summary__dt__muted 3
+                dd.cart-summary__dd 632 090 
+                    span.price-muted ₽
+                dt.cart-summary__dt Услуги
+                    span.cart-summary__dt__muted 1
+                dd.cart-summary__dd 2 500 
+                    span.price-muted ₽
+                if checkout
+                    dt.cart-summary__dt Доставка
+                    dd.cart-summary__dd 0 
+                        span.price-muted ₽
+            // add/remove class _filled on response
+            .cart-summary__promo.js-promocode(class=checkout ? '_filled' : '')
+                span.more.js-promocode__toggler
+                    span.more__inner Ввести промокод
+                .input._addon.js-label
+                    input
+                    label Введите промокод
+                    button.input__addon
+                        i.icon-input-submit
+                .cart-summary__promo__inner Промокод
+                    .cart-summary__promo__price –2000 
+                        span.price-muted ₽
+                        button.cart-summary__promo__reset(title="Удалить")
+                            i.icon-input-reset
+        .cart-summary__foot
+            .cart-summary__amount Итоговая сумма
+                span.cart-summary__amount__price 634 590 
+                    span.price-muted ₽
+            if checkout
+                button(href="#").btn._block 
+                    i.icon-checkout
+                    | Оформить заказ
+                include ../blocks/form-agree
+            else
+                a(href="#").btn._block Перейти к оформлению

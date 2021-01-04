@@ -1,0 +1,78 @@
+extends _includes/layout
+include _includes/mixins/cart-item
+include _includes/mixins/cart-service
+include _includes/mixins/cart-summary
+
+block config
+    - var pagetitle = 'Корзина'
+    - var bodyClass = ''
+
+block content
+    .block.container
+        +bk(['Главная', 'Корзина'])
+        h1.page-h Корзина
+        
+        .cart
+            .cart__content
+                .cart__block
+                    h3.cart__h Товары
+                    .cart-list
+                        +cart-item(
+                            category="Стартерный аккумулятор"
+                            title="Delta EPS 1215"
+                            tags=["15 Ач", "12 В", "2 года"]
+                            price="28 860"
+                            count=3
+                            img="cart1"
+                        )
+                        +cart-item(
+                            category="Герметизированный аккумулятор"
+                            title="PowerSafe OPzV 5 OPzV 250"
+                            tags=["256 Ач", "12 В", "3 года"]
+                            price="29 320"
+                            count=1
+                            img="cart2"
+                        )
+                        +cart-item(
+                            category="Разъемы для АКБ"
+                            title="Anderson Power Products SB 175А"
+                            price="680"
+                            count=1
+                            img="cart3"
+                        )
+                
+                .cart__block
+                    h3.cart__h Дополнительные услуги
+                    .cart-service-list
+                        +cart-service(
+                            checked=true
+                            title="Помощь в вводе в эксплуатацию аккумуляторных батарей "
+                            oldprice="3 800 ₽"
+                            discount="–1 300"
+                            price="2 500"
+                        )
+                        +cart-service(
+                            title="Сервисное сопровождение аккумуляторных батарей "
+                            price="37 000"
+                        )
+                        +cart-service(
+                            title="Восстановление тяговых аккумуляторых батарей "
+                            price="62 000"
+                        )
+                        +cart-service(
+                            title="Помощь в вводе в эксплуатацию аккумуляторных батарей "
+                            oldprice="3 800 ₽"
+                            discount="–1 300"
+                            price="102 000"
+                        )
+                        +cart-service(
+                            title="Сервисное сопровождение аккумуляторных батарей "
+                            price="48 280"
+                        )
+                        +cart-service(
+                            title="Восстановление тяговых аккумуляторых батарей "
+                            price="5 690"
+                        )
+            .cart__aside
+                +cart-summary()
+        

@@ -1,0 +1,18 @@
+mixin cart-service()
+    label.cart-service.js-cart-service
+        input(type="checkbox" checked=attributes.checked)
+        span.cart-service__inner
+            span.cart-service__h=attributes.title
+                i.icon-info.js-cart-service__toggler
+            if attributes.oldprice
+                span.price-old
+                    span.price-old__del=attributes.oldprice
+                    span.price-old__discount=attributes.discount
+            span.cart-service__price=attributes.price
+                | 
+                span.price-muted ₽
+        span.cart-service__info.js-cart-service__content
+            span.cart-service__info__inner
+                span.cart-service__info__item Выезд инженера на объект ввода
+                span.cart-service__info__item Заряд / разряд аккумуляторной батареи
+                span.cart-service__info__item Контроль режимов заряда и разряда аккумуляторов

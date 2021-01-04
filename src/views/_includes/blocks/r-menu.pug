@@ -1,0 +1,143 @@
+button.btn._secondary.r-menu-btn.js-header__r-menu-toggler
+    i.icon-r-menu
+    | Каталог товаров
+.r-menu.js-header__r-menu
+    .r-menu__inner
+        .r-menu__h Каталог товаров
+        button.r-menu__close.js-header__r-menu-toggler
+            i.icon-close
+        ul.r-menu__list
+            li.r-menu__list__item
+                a(href="#").r-menu__list__item__link._sub.js-header__r-menu__trigger-fade
+                    span.visible-md
+                        i.icon-battery-vertical
+                        | Каталог АКБ
+                    span.hidden-md Аккумуляторы
+                ul.r-menu__cat-list.js-header__r-menu__target
+                    li.r-menu__cat-list__item
+                        span.r-menu__cat-list__item__h.js-header__r-menu__trigger-slide По бренду
+                        .r-menu__sub-list-wrapper.js-header__r-menu__target
+                            ul.r-menu__sub-list
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Enersys
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Тяговые АКБ:
+                                            each item in ['Hawker® Perfect Plus™ATEX','Hawker® Evolution','IRONCLAD®','NexSys™','Hawker® Perfect Plus','Hawker Water Less']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Стационарные АКБ:
+                                            each item in ['PoweSafeVFT','DataSafe XE','GAZ lomain™','PowerSafe OPzS','PowerSafe OPzS','PowerSafe OPzS','PowerSafe OP','PowerSafe SBS EON','Cyclon','Genesis EP']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide FAAm
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Тяговые АКБ:
+                                            each item in ['FAAM TTM','FAAM TOP']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Искра
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Тяговые АКБ:
+                                            each item in ['ELHIM-ISKRA PZSH','ELHIM-ISKRA PZSL','ELHIM-ISKRA PZS']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Delta
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Стационарные АКБ:
+                                            each item in ['DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM','DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Doosan
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Тяговые АКБ:
+                                            each item in ['Doosan LEDH','Doosan B 18 T','Doosan LEDS','Doosan LEDH','Doosan DEDD','Doosan LEKH','Doosan B 21 T','Doosan LEDS','Doosan B 26 T','Doosan LEDH']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                            .r-menu__scrollbar
+                                .r-menu__scrollbar__h Все бренды
+                                .r-menu__scrollbar__inner(data-scrollbar)
+                                    ul.r-menu__scrollbar__list
+                                        each item in ['ENERSYS','BALKANCAR','CHAOBAO','COLUMBUS','DOOSAN-DAEWOO','DULEVO','FACTORY CAT','FIORENTINI','GHIBLI & WIRBEL','KARCHER','KENT EUROCLEAN','MINUTEMAN','PORTOTECNICA','PULLMAN','TORNADO','JUNGHEINRICH','TCM','TOYOTA','KENT EUROCLEAN','MINUTEMAN','PORTOTECNICA','PULLMAN','TORNADO','JUNGHEINRICH','TCM','TOYOTA']
+                                            li.r-menu__scrollbar__list__item
+                                                a(href="#").r-menu__scrollbar__list__link=item
+                    li.r-menu__cat-list__item
+                        span.r-menu__cat-list__item__h.js-header__r-menu__trigger-slide По типу
+                        .r-menu__sub-list-wrapper.js-header__r-menu__target
+                            ul.r-menu__sub-list
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Тяговые АКБ
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Enersys:
+                                            each item in ['Hawker® Perfect Plus™ATEX','Hawker® Evolution','IRONCLAD®','NexSys™','Hawker® Perfect Plus','Hawker Water Less']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h FAAm:
+                                            each item in ['FAAM TTM','FAAM TOP']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Искра:
+                                            each item in ['ELHIM-ISKRA PZSH','ELHIM-ISKRA PZSL','ELHIM-ISKRA PZS']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                                li.r-menu__sub-list__item
+                                    a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Стационарные АКБ:
+                                    .r-menu__items-wrapper.js-header__r-menu__target
+                                        ul.r-menu__items
+                                            li.r-menu__items__item._h Delta:
+                                            each item in ['DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM','DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM']
+                                                li.r-menu__items__item
+                                                    a(href="#")=item
+                    li.r-menu__cat-list__item
+                        span.r-menu__cat-list__item__h По назначению
+            li.r-menu__list__item
+                a(href="#").r-menu__list__item__link._sub.js-header__r-menu__trigger-fade Зарядные устройства
+                .r-menu__sub-list-wrapper.js-header__r-menu__target
+                    ul.r-menu__sub-list
+                        li.r-menu__sub-list__item
+                            a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Enersys
+                            .r-menu__items-wrapper.js-header__r-menu__target
+                                ul.r-menu__items
+                                    each item in ['Hawker® Perfect Plus™ATEX','Hawker® Evolution','IRONCLAD®','NexSys™','Hawker® Perfect Plus','Hawker Water Less']
+                                        li.r-menu__items__item
+                                            a(href="#")=item
+                        li.r-menu__sub-list__item
+                            a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide FAAm
+                            .r-menu__items-wrapper.js-header__r-menu__target
+                                ul.r-menu__items
+                                    each item in ['FAAM TTM','FAAM TOP']
+                                        li.r-menu__items__item
+                                            a(href="#")=item
+                        li.r-menu__sub-list__item
+                            a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Искра
+                            .r-menu__items-wrapper.js-header__r-menu__target
+                                ul.r-menu__items
+                                    each item in ['ELHIM-ISKRA PZSH','ELHIM-ISKRA PZSL','ELHIM-ISKRA PZS']
+                                        li.r-menu__items__item
+                                            a(href="#")=item
+                        li.r-menu__sub-list__item
+                            a(href="#").r-menu__sub-list__item__link.js-header__r-menu__trigger-slide Delta
+                            .r-menu__items-wrapper.js-header__r-menu__target
+                                ul.r-menu__items
+                                    each item in ['DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM','DELTA HR-W','DataSafe NPX','Delta DT','Delta HRL','Delta C','Delta CT','Delta DTM']
+                                        li.r-menu__items__item
+                                            a(href="#")=item
+            li.r-menu__list__item
+                a(href="#").r-menu__list__item__link._sub Аксессуары
+            li.r-menu__list__item
+                a(href="#").r-menu__list__item__link 
+                    span.r-menu__list__item__link__inner
+                        i.icon-percent.visible-md
+                        | Скидки и акции

@@ -5,8 +5,11 @@ block config
     - var bodyClass = 'dev'
 
 block content
-    // одинаковый rte
+    // одинаковый rte и черный цвет
     // документацию на мобиле как слайдер унифицированный с остальными слайдерами
+    // одинаковый поисковый инпут везде
+    // Убрал "Открыть весь список" в адресах, т.к. там скроллбар и при клике на карту пришлось бы отслеживать скрыт или не скрыт адрес
+    // Одинаковое расположение кнопки на всех экранах на страницах оформленного заказа
     .container
         ul.dev-menu
             li.dev-menu__item
@@ -21,6 +24,16 @@ block content
                 a(href="delivery.html") Доставка и оплата
             li.dev-menu__item
                 a(href="warranty.html") Гарантия
+            li.dev-menu__item
+                a(href="contacts.html") Контакты
+            li.dev-menu__item
+                a(href="cart.html") Корзина
+            li.dev-menu__item
+                a(href="checkout.html") Оформление заказа
+            li.dev-menu__item
+                a(href="checkout-success.html") Заказ оформлен
+            li.dev-menu__item
+                a(href="checkout-error.html") Ошибка оплаты заказа
             li.dev-menu__item
                 a(href="cart-empty.html") Пустая корзина
             li.dev-menu__item
@@ -108,7 +121,7 @@ block content
                         input(type="email" value="user@host.com")
                         label .input.js-label._addon
                         span.input__addon
-                            i.icon-input-mail
+                            i.icon-email
                 .col-sm-12.col-md-4.col-lg-3
                     .input._addon.select.js-label.js-select
                         select

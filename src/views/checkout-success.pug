@@ -1,0 +1,38 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Спасибо, Ваш заказ принят!'
+    - var bodyClass = ''
+
+block content
+    .block.container
+        +bk(['Главная', 'Корзина', 'Оформление заказа'])
+        //-h1.page-h Оформление заказа
+        
+        .cart._complete
+            .cart__content
+                .order-info
+                    .order-info__h
+                        .r-icon._success
+                            i.icon-checkout
+                        | Спасибо, 
+                        | Ваш заказ принят!
+                    .order-info__rte.rte
+                        p Ваш заказ принят и поступит в производство в ближайшее время. В случае необходимости с вами свяжется оператор для уточнения деталей.
+                        p Вся информация о заказе отправлена на ваш электронный адрес.
+                    .order-info__summary
+                        | Номер вашего заказа: 
+                        strong RT 204–789
+                        br
+                        | Сумма заказа: 
+                        strong 682 020 
+                            span.price-muted ₽
+                    .order-info__office Чтобы видеть в каком статусе находится Ваш заказ, перейдите в 
+                        a(href="#").link-border Активные заказы
+                        | .
+                    a(href="#").btn
+                        i.icon-cart._muted
+                        | Продолжить покупки
+            
+            .cart__aside
+                include _includes/blocks/order-questions

@@ -1,8 +1,8 @@
 /* Main Colors */
 $color-base : #141414;
 $color-white : #fff;
-// $color-gray : #F6F8FA;
-$color-gray : #e6e6e6;
+$color-gray : #F6F8FA;
+// $color-gray : #e6e6e6;
 $color-gray-dark : #EBEFF2;
 $color-primary : #FF0A16;
 $color-primary-hover : #FFE7E8;
@@ -25,6 +25,8 @@ $opacity-overlay: .4;
 $link-color : $color-text;
 $link-hover-color : $color-primary;
 $link-hover-opacity : .8;
+$link-border-color: #BFBFBF;
+$link-border-color-hover: rgba($color-text, .8);
 
 $transition-duration: .2s;
 $transition-timing-function: ease-in-out;

@@ -1,0 +1,108 @@
+.order {
+    $root: &;
+
+    &-questions {
+        background-color: $color-gray;
+        border-radius: $border-radius;
+        padding: 24px;
+        font-size: 14px;
+        line-height: 22px;
+        color: rgba($color-text, .6);
+
+        @include media-breakpoint-up(lg) {
+            padding: 28px;
+        }
+
+        &__contacts {
+            margin-top: 16px;
+            display: grid;
+            justify-content: start;
+            gap: 10px;
+
+            @include media-breakpoint-only(md) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+    &-info {
+        &__h {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+
+            @include media-breakpoint-down(sm) {
+                display: flex;
+                align-items: center;
+                white-space: pre-line;
+            }
+
+            @include media-breakpoint-up(md) {
+                font-size: 22px;
+                line-height: 27px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            .r-icon {
+                margin-right: 15px;
+
+                @include media-breakpoint-up(md) {
+                    margin-right: 0;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        &__rte {
+            opacity: .6;
+            margin-top: 16px;
+        }
+
+        &__summary {
+            margin-top: 18px;
+            background-color: $color-gray;
+            border-radius: $border-radius;
+            padding: 24px;
+            font-size: 13px;
+            line-height: 18px;
+            color: rgba($color-text, .6);
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                margin-top: 24px;
+                font-size: 14px;
+            }
+
+            strong {
+                font-weight: 600;
+                font-size: 16px;
+                color: $color-text;
+            }
+        }
+
+        &__office {
+            margin-top: 24px;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: -0.01em;
+            max-width: 314px;
+            color: rgba($color-text, .6);
+
+            @include media-breakpoint-up(md) {
+                margin-top: 16px;
+            }
+        }
+
+        .btn {
+            margin-top: 32px;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+}

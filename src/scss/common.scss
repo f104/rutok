@@ -30,6 +30,8 @@
 @import "components/base/rte";
 
 // Project components
+@import "components/link";
+
 @import "components/about";
 @import "components/apromo";
 @import "components/aservice";
@@ -37,8 +39,14 @@
 @import "components/article-item";
 @import "components/articles";
 @import "components/avatar";
+@import "components/cart";
+@import "components/cart-service";
+@import "components/cart-summary";
+@import "components/cart-empty";
+@import "components/cart-item";
 @import "components/cat";
 @import "components/cat-item";
+@import "components/checkbox";
 @import "components/city-select";
 @import "components/complect";
 @import "components/counter";
@@ -48,8 +56,10 @@
 @import "components/form";
 @import "components/header-top";
 @import "components/index";
+@import "components/map";
 @import "components/more";
 @import "components/notfound";
+@import "components/order";
 @import "components/overview";
 @import "components/page-h";
 @import "components/pagination";
@@ -60,6 +70,7 @@
 @import "components/r-adds";
 @import "components/r-icon";
 @import "components/r-list";
+@import "components/r-menu";
 @import "components/review";
 @import "components/scrollbar";
 @import "components/service";

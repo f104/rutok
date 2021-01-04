@@ -1,0 +1,139 @@
+.cart-summary {
+    $root: &;
+
+    &__head {
+        background-color: $color-gray;
+        border-radius: $border-radius;
+        padding: 28px;
+    }
+
+    &__foot {
+        margin-top: 24px;
+        padding: 0 28px;
+
+        .btn {
+            margin-top: 24px;
+        }
+    }
+
+    &__dl {
+        overflow: hidden;
+    }
+
+    &__dt {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        clear: both;
+        float: left;
+        padding-right: 16px;
+
+        &__muted {
+            color: rgba($color-text, .5);
+            display: inline-block;
+            margin-left: 1ex;
+        }
+    }
+
+    &__dd {
+        float: right;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__amount {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+
+        &__price {
+            margin-left: 16px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    &__promo {
+        margin-top: 16px;
+
+        .input {
+            display: none;
+        }
+
+        &._opened {
+            .input {
+                display: block;
+            }
+
+            .more {
+                display: none;
+            }
+        }
+
+        &._filled {
+            margin-top: 10px;
+
+            .input,
+            .more {
+                display: none;
+            }
+        }
+
+        &__inner {
+            display: none;
+
+            #{$root}__promo._filled & {
+                display: flex;
+                justify-content: space-between;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        &__price {
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 20px;
+        }
+
+        &__reset {
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(#E3EAEE, .8);
+            border-radius: 7px;
+            font-size: 7.5px;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            @include transition(background-color);
+
+            @include hover-desktop {
+                background-color: #E3EAEE;
+            }
+        }
+    }
+
+    .form-agree {
+        margin-top: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 28px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            margin-top: 32px;
+        }
+    }
+}

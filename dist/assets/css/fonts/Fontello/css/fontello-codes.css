@@ -22,11 +22,13 @@
 .icon-cart:before { content: '\e814'; } /* '' */
 .icon-payment-card:before { content: '\e815'; } /* '' */
 .icon-payment-bank:before { content: '\e816'; } /* '' */
+.icon-trash:before { content: '\e817'; } /* '' */
 .icon-clock:before { content: '\e818'; } /* '' */
 .icon-delivery-place:before { content: '\e819'; } /* '' */
 .icon-help:before { content: '\e81a'; } /* '' */
 .icon-counter-minus:before { content: '\e81b'; } /* '' */
 .icon-counter-plus:before { content: '\e81c'; } /* '' */
+.icon-info:before { content: '\e81d'; } /* '' */
 .icon-video:before { content: '\e81e'; } /* '' */
 .icon-article:before { content: '\e81f'; } /* '' */
 .icon-close:before { content: '\e820'; } /* '' */
@@ -42,3 +44,11 @@
 .icon-header-cart:before { content: '\e82a'; } /* '' */
 .icon-equal:before { content: '\e82b'; } /* '' */
 .icon-doc:before { content: '\e82c'; } /* '' */
+.icon-input-submit:before { content: '\e82d'; } /* '' */
+.icon-input-reset:before { content: '\e82e'; } /* '' */
+.icon-mobile:before { content: '\e82f'; } /* '' */
+.icon-error:before { content: '\e830'; } /* '' */
+.icon-repeat:before { content: '\e831'; } /* '' */
+.icon-battery-vertical:before { content: '\e832'; } /* '' */
+.icon-percent:before { content: '\e833'; } /* '' */
+.icon-r-menu:before { content: '\e834'; } /* '' */

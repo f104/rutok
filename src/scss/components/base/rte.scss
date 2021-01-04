@@ -204,11 +204,6 @@
 
     a {
         font-weight: 500;
-        border-bottom: 1px solid #BFBFBF;
-        @include transition(border-color);
-
-        @include hover-desktop {
-            border-bottom-color: $color-text;
-        }
+        @extend .link-border;
     }
 }

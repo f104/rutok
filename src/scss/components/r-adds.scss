@@ -7,6 +7,11 @@
         display: block;
         padding-left: 36px;
 
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: flex-start;
+        }
+
         &:before {
             position: absolute;
             top: 0;
@@ -18,11 +23,13 @@
             border-radius: 50%;
             @include transition(border-color);
         }
+
         @include hover-desktop {
             &:before {
                 border-color: $input-border-color-hover;
             }
         }
+
         &:after {
             position: absolute;
             top: 6px;
@@ -37,7 +44,8 @@
 
     input {
         display: none;
-        &:checked + #{$root}__inner:after {
+
+        &:checked+#{$root}__inner:after {
             background-color: $color-primary;
         }
     }
@@ -72,31 +80,59 @@
         font-size: 12px;
         line-height: 14px;
         color: rgba($color-text, .8);
+
         &__item {
             padding-left: 20px;
         }
+
         [class^=icon] {
             position: absolute;
             left: 0;
             top: 0;
             font-size: 14px;
             color: rgba($color-text, .2);
+
             &:before {
                 margin: 0;
             }
         }
     }
 
+    &__content {
+        flex-grow: 1;
+        margin-right: auto;
+    }
+
+    &__img {
+        display: block;
+        margin-top: 12px;
+        max-width: 100%;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-left: 1em;
+            flex-shrink: 0;
+        }
+    }
+
     &-list {
+        max-height: 455px;
+
+        @include media-breakpoint-up(md) {
+            max-height: 467px;
+        }
+
         #{$root} {
             border-bottom: 1px solid $color-gray-dark;
             padding-bottom: 16px;
             margin-bottom: 16px;
+
             @include media-breakpoint-up(md) {
                 padding-bottom: 18px;
                 margin-bottom: 18px;
 
             }
+
             &:last-child {
                 border-bottom-width: 0;
                 padding-bottom: 0;

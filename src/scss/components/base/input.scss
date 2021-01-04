@@ -157,6 +157,14 @@
         #{$root}._opened & {
             background-color: #E3EAEE;
         }
+
+    }
+    button.input__addon {
+        pointer-events: all;
+        @include transition(background-color);
+        @include hover-desktop {
+            background-color: #E3EAEE;
+        }
     }
 
 }

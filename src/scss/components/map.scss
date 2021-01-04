@@ -1,0 +1,45 @@
+.map {
+    $root: &;
+
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 354px auto;
+        grid-template-rows: max-content auto;
+        gap: 24px 30px;
+    }
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 370px auto;
+    }
+
+    &__input {
+        margin-bottom: 12px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__map {
+        background-color: $color-gray;
+        border-radius: $border-radius;
+        height: 320px;
+        margin-bottom: 24px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+            grid-row-end: span 2;
+            height: auto;
+            min-height: 424px;
+        }
+    }
+}
+
+.placemark {
+    width: 28px;
+    height: 32px;
+    // color: #B5C3CC;
+    color: #237bc9;
+    transform: translate(-50%, -100%);
+    &._active {
+        color: $color-primary;
+    }
+}

@@ -1,0 +1,38 @@
+.map.js-map
+    .map__input
+        .search-input
+            input(placeholder="Адрес или объект")
+    .map__map.js-map__cnt
+    .map__list
+        .r-adds-list.js-scrollbar(data-scrollbar)
+            .js-scrollbar__inner
+                +r-adds(
+                    name="tab-2"
+                    checked=true
+                    title="г. Санкт-Петербург, Солнечный бульвар, д. 42"
+                    text="с 8:00 до 20:00, без выходных"
+                    list=[
+                        {icon: "icon-delivery-place", text: "Партнерский пункт выдачи"}
+                    ]
+                    geo="60.090912, 30.143297"
+                )
+                +r-adds(
+                    name="tab-2"
+                    checked=false
+                    title="г. Санкт-Петербург, ул. Инженерная, д. 20"
+                    text="с 9:00 до 20:00, без выходных"
+                    list=[
+                        {icon: "icon-delivery-place", text: "Распределительный склад"}
+                    ]
+                    geo="59.968302, 30.426149"
+                )
+                +r-adds(
+                    name="tab-2"
+                    checked=false
+                    title="г. Санкт-Петербург, ул. Железнодорожная д. 11"
+                    text="с 9:00 до 19:00, воскресенье выходной"
+                    list=[
+                        {icon: "icon-delivery-place", text: "Почта России"}
+                    ]
+                    geo="59.893195, 30.283078"
+                )

@@ -1,0 +1,72 @@
+extends _includes/layout
+include _includes/mixins/cart-summary
+include _includes/mixins/r-adds
+
+block config
+    - var pagetitle = 'Оформление заказа'
+    - var bodyClass = ''
+
+block content
+    .block.container
+        +bk(['Главная', 'Корзина', 'Оформление заказа'])
+        h1.page-h Оформление заказа
+        
+        .cart
+            .cart__content
+                .cart__block
+                    h3.cart__h Контактная информация
+                    .cart__contacts
+                        .input
+                            input(placeholder="Ваше имя" required value="Станислав")
+                            label Имя
+                        .input
+                            input(placeholder="Ваша фамилия" required value="Николаев")
+                            label Фамилия
+                        .input
+                            input(type="tel" placeholder="Контактный телефон" required value="+7 (927) 679–33–00")
+                            label Телефон
+                        .input
+                            input(placeholder="Адрес электронной почты" required)
+                            label E-mail
+                
+                .cart__block
+                    h3.cart__h Способ получения
+                    include _includes/blocks/delivery-tabs
+            
+                .cart__block
+                    h3.cart__h Способ оплаты
+                    .cart__payments
+                        +r-adds(
+                            name="payment"
+                            checked=true
+                            title="Онлайн-оплата платежной картой"
+                            text="Visa, MasterCard, Visa Electron, Maestro"
+                            img="assets/img/payments.svg"
+                        )
+                        +r-adds(
+                            name="payment"
+                            title="Оплата банковским переводом"
+                            text="Cчет, который можно будет оплатить в любом ближайшем банке."
+                        )
+                        +r-adds(
+                            name="payment"
+                            title="Оплата при получении"
+                            text="Наличными или банковской картой"
+                        )
+            
+                .cart__block
+                    h3.cart__h Прочее
+                    .cart__other
+                        .input
+                            textarea(placeholder="На что стоит обратить внимание?")
+                            label Комментарий к заказу
+                        label.checkbox
+                            input(type="checkbox" checked)
+                            span.checkbox__inner Мне требуется консультация менеджера
+                        label.checkbox
+                            input(type="checkbox")
+                            span.checkbox__inner Я согласен получать новости об акциях и новинках интернет магазина
+            
+            .cart__aside
+                +cart-summary(true)
+        
