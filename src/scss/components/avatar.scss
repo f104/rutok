@@ -5,4 +5,9 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+
+    &._md {
+        width: 56px;
+        height: 56px;
+    }
 }

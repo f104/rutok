@@ -1,0 +1,56 @@
+extends _includes/layout
+include _includes/blocks/office/mixins/office-aside
+include _includes/blocks/office/mixins/office-order
+
+block config
+    - var pagetitle = 'Мои заказы'
+    - var bodyClass = ''
+    - var isAuth = true
+
+block content
+    .block.container
+        +bk(['Главная', 'Мои заказы'])
+        h1.page-h Мои заказы
+    
+        .office    
+            .office__content
+                .tabs.js-tabs.js-tabs-filter
+                    .tabs__slider.swiper-container.js-tabs__slider
+                        .swiper-wrapper
+                            .tabs__item.swiper-slide._active.js-tabs-filter__trigger(data-filter="-1") Все заказы
+                            .tabs__item.swiper-slide.js-tabs-filter__trigger(data-filter="1") Активные
+                            .tabs__item.swiper-slide.js-tabs-filter__trigger(data-filter="2") Завершено
+                    .input._addon.select.tabs__select.js-label.js-select.js-tabs__select
+                        select
+                            option(value="-1" selected) Все заказы
+                            option(value="1") Активные
+                            option(value="2") Завершено
+                        label Категория
+                        span.input__addon
+                            i.icon-input-arrow
+                    .js-tabs-filter__wrapper
+                        +office-order(
+                            num="RT 249–607"
+                            date="24.10.2020"
+                            cost="634 860"
+                            status=1
+                            total="3 товара и 1 услуга"
+                        )
+                        +office-order(
+                            num="RT 204–789"
+                            date="04.09.2020"
+                            cost="68 020"
+                            status=2
+                            total="1 товар"
+                        )
+                        +office-order(
+                            num="RT 198–058"
+                            date="22.08.2020"
+                            cost="1 568 897"
+                            status=2
+                            total="6 товаров и 2 услуги"
+                        )
+                
+            
+            .office__aside
+                +office-aside('orders')

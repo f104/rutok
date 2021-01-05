@@ -5,6 +5,7 @@
         display: flex;
         align-items: center;
     }
+
     @include media-breakpoint-up(lg) {
         padding-right: 16px;
     }
@@ -13,18 +14,25 @@
         display: flex;
         align-items: center;
 
-        @include media-breakpoint-only(md) {
+        @include media-breakpoint-up(md) {
             width: 53%;
         }
+
         @include media-breakpoint-up(md) {
             margin-right: 30px;
         }
 
-        &__content {
-            @include media-breakpoint-up(lg) {
-                width: 270px;
+        #{$root}._office & {
+            @include media-breakpoint-up(md) {
+                width: 58%;
             }
         }
+
+        // &__content {
+        //     @include media-breakpoint-up(lg) {
+        //         width: 270px;
+        //     }
+        // }
     }
 
     &__right {
@@ -64,13 +72,14 @@
         line-height: 20px;
         display: box;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
 
         @include hover-opacity;
 
         @include media-breakpoint-up(md) {
+            -webkit-line-clamp: 2;
             margin-top: 6px;
         }
     }
@@ -122,9 +131,33 @@
             text-align: right;
             margin-right: 48px;
             margin-left: auto;
+
+            &:last-child {
+                margin-right: 16px;
+            }
         }
+
         @include media-breakpoint-up(lg) {
             margin-right: 32px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__count {
+        width: 100px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: rgba($color-text, .5);
+
+        @include media-breakpoint-up(md) {
+            font-size: 15px;
+            line-height: 18px;
+            text-align: right;
+            color: $color-text;
         }
     }
 
@@ -154,7 +187,9 @@
 
     &__img {
         &-wrapper {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 12px;
             background: $color-gray;
             border-radius: $border-radius;
@@ -169,6 +204,12 @@
             }
 
             @include hover-opacity;
+
+            .svgsprite {
+                width: 58px;
+                height: 58px;
+                color: #ACB0B5;
+            }
 
         }
 

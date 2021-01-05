@@ -1,0 +1,29 @@
+mixin office-aside(active)
+    .office-aside
+        .office-aside__head
+            img.avatar._md(src="assets/img/avatar.jpg" alt="username")
+            span.office-aside__head__content
+                span.office-aside__head__h Артём Николаев
+                span.office-aside__head__text artem@rutok.ru
+        ul.office-aside__stat
+            li.office-aside__stat__item 14
+                span.office-aside__stat__muted все заказы
+            li.office-aside__stat__item 2
+                span.office-aside__stat__muted активные
+            li.office-aside__stat__item 11
+                span.office-aside__stat__muted завершено
+        ul.office-aside__menu
+            li.office-aside__menu__item(class=active == 'profile' ? '_active' : '')
+                a(href="profile.html").office-aside__menu__link
+                    i.icon-user
+                    | Мой профиль
+                a(href="profile-edit.html" title="Редактировать профиль").office-aside__menu__link-tune
+                    i.icon-tune._bg
+            li.office-aside__menu__item(class=active == 'orders' ? '_active' : '')
+                a(href="orders.html").office-aside__menu__link
+                    i.icon-orders
+                    | Мои заказы
+            li.office-aside__menu__item
+                a(href="orders.html").office-aside__menu__link
+                    i.icon-logout
+                    | Выйти

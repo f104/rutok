@@ -58,6 +58,7 @@ let app = {
             this.initScrollbar();
             this.initScrollTo();
             this.initTabs();
+            this.initTabsFilter();
 
             tippy('[data-tippy-content]');
         });
@@ -525,6 +526,50 @@ let app = {
         app.document.on('click', '.js-tabs__link', function () {
             openTab($(this).attr('href'));
         });
+    },
+
+    initTabsFilter() {
+        $('.js-tabs-filter').each(function () {
+            let $wrapper = $(this);
+            let $targetWrapper = $wrapper.find('> .js-tabs-filter__wrapper');
+            let $triggers = $wrapper.find('> .js-tabs__slider .js-tabs-filter__trigger[data-filter]');
+            let $select = $wrapper.find('> .js-tabs__select');
+            if (!$triggers.length) {
+                return;
+            }
+            if (!$triggers.filter('._active').length) {
+                $triggers.first().addClass('_active');
+            }
+            let filter = $triggers.filter('._active').data('filter');
+            if (filter != -1) {
+                $triggers.filter(':not(._active)').each(function () {
+                    $targetWrapper.find(`.js-tabs-filter__target[data-filter=${$(this).data('filter')}]`).hide();
+                });
+            }
+            $select.find('select').on('change', function () {
+                $triggers.filter(`[data-filter="${$(this).val()}"]`).trigger('click');
+            });
+            $triggers.on('click', function () {
+                if ($(this).hasClass('_active')) {
+                    return;
+                }
+                $targetWrapper.find('.js-slide._active').removeClass('_active');
+                $targetWrapper.find('.js-slide__content').hide();
+                let filter = $(this).data('filter');
+                if (filter != -1) {
+                    $targetWrapper.find(`.js-tabs-filter__target[data-filter=${filter}]`).show();
+                    $targetWrapper.find(`.js-tabs-filter__target[data-filter!=${filter}]`).hide();
+                } else {
+                    $targetWrapper.find(`.js-tabs-filter__target[data-filter]`).show();
+                }
+                $triggers.removeClass('_active');
+                $(this).addClass('_active');
+                $select.find('select').val(filter);
+                $select.find('input').val($select.find('option:selected').text());
+            });
+
+        });
+
     },
 
     formatPrice(price) {

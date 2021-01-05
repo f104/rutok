@@ -1,0 +1,67 @@
+include ../../../mixins/cart-item
+
+mixin office-order()
+    .office-order.js-slide.js-tabs-filter__target(data-filter=attributes.status)
+        .office-order__head
+            span.office-order__head__num
+                i.icon-orders._bg._md
+                span.office-order__head__num__content=attributes.num
+                    span.office-order__head__num__muted=attributes.date
+            span.office-order__head__price=attributes.cost
+                | 
+                span.price-muted ₽
+            span.office-order__head__foot
+                span.office-order__head__status 
+                    if attributes.status == 1
+                        i.icon-clock._bg
+                        | Готов к выдаче
+                    else 
+                        i.icon-checkbox._bg
+                        | Завершен
+                span.office-order__head__toggler-wrapper
+                    span.office-order__head__toggler.link-border.js-slide__toggler=attributes.total
+        .js-slide__content
+            .cart-list
+                +cart-item(
+                    category="Стартерный аккумулятор"
+                    title="Delta EPS 1215"
+                    tags=["15 Ач", "12 В", "2 года"]
+                    price="28 860"
+                    count=3
+                    img="cart1"
+                    office=true
+                )
+                +cart-item(
+                    category="Герметизированный аккумулятор"
+                    title="PowerSafe OPzV 5 OPzV 250"
+                    tags=["256 Ач", "12 В", "3 года"]
+                    price="29 320"
+                    count=1
+                    img="cart2"
+                    office=true
+                )
+                +cart-item(
+                    category="Разъемы для АКБ"
+                    title="Anderson Power Products SB 175А"
+                    price="680"
+                    count=1
+                    img="cart3"
+                    office=true
+                )
+                +cart-item(
+                    category="Дополнительные услуги"
+                    title="Помощь в вводе в эксплуатацию аккумуляторных баттарей"
+                    price="2 500"
+                    count=0
+                    office=true
+                )
+            dl.office-order__foot
+                dt.office-order__foot__dt Контактное лицо
+                dt.office-order__foot__dd Артем Николаев
+                dt.office-order__foot__dt Телефон
+                dt.office-order__foot__dd +7 (908) 680-45-06
+                dt.office-order__foot__dt Оплата
+                dt.office-order__foot__dd При получении
+                dt.office-order__foot__dt Статус
+                dt.office-order__foot__dd Готов к выдаче (самовывоз)
+                    span.office-order__foot__muted г. Москва, ул. Дорожная, д.60Б

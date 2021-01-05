@@ -1,0 +1,237 @@
+.office {
+    $root: &;
+
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        grid-template-columns: 770px auto;
+        gap: 30px;
+    }
+
+    .office-aside {
+        position: sticky;
+        top: 20px;
+    }
+
+    &-order {
+        $root: &;
+        margin-bottom: 12px;
+        &__head {
+            background-color: $color-gray;
+            border-radius: $border-radius;
+            padding: 16px;
+            display: grid;
+            align-items: center;
+            justify-content: space-between;
+            grid-template-columns: auto auto;
+            grid-template-areas: "n p""f f";
+
+            @include media-breakpoint-up(md) {
+                grid-template-columns: 27% 53% 20%;
+                grid-template-areas: "n f p";
+                padding: 18px 16px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                grid-template-columns: 34% 46% 20%;
+                padding: 18px 16px;
+            }
+
+            &__foot {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                grid-area: f;
+
+                @include media-breakpoint-down(sm) {
+                    border-top: 1px solid #E2E5E6;
+                    margin-top: 16px;
+                    padding-top: 12px;
+                }
+
+                @include media-breakpoint-up(md) {
+                    flex-direction: row-reverse;
+                    > * {
+                        flex-basis: 50%;
+                    }
+                }
+            }
+
+            &__num {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 18px;
+                grid-area: n;
+                margin-right: 1em;
+                white-space: nowrap;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    margin-right: 28px;
+                }
+
+                &__content {
+                    @include media-breakpoint-up(lg) {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-grow: 1;
+                    }
+                }
+
+                &__muted {
+                    display: block;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: rgba($color-text, .5);
+                    margin-left: auto;
+
+                    @include media-breakpoint-up(md) {
+                        line-height: 16px;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        font-size: 14px;
+                    }
+                }
+
+                [class^=icon] {
+                    margin-right: 10px;
+                    color: #858687;
+                }
+            }
+
+            &__price {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: right;
+                grid-area: p;
+                margin-left: 1em;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 17px;
+                }
+            }
+
+            &__status {
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+
+                @include media-breakpoint-up(md) {
+                    margin-left: 1em;
+                }
+
+                [class^=icon] {
+                    margin-right: 8px;
+                    color: #858687;
+                }
+            }
+
+            &__toggler {
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+                color: rgba($color-text, .8);
+                margin-right: 14px;
+                cursor: pointer;
+
+                @include media-breakpoint-up(lg) {
+                    // top: 1px;
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 1px;
+                    content: '\e805';
+                    font-family: $font-family-fontello;
+                    font-size: 14px;
+                    color: #8D8F92;
+                    transform: rotate(90deg);
+                    @include transition((color, transform));
+                }
+
+                #{$root}._active & {
+                    &:after {
+                        transform: rotate(-90deg);
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        .cart-list {
+            margin-top: 16px;
+        }
+
+        &__foot {
+            margin-top: 16px;
+            background-color: $color-gray;
+            border-radius: $border-radius;
+            padding: 24px 24px 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 24px;
+                padding: 18px 24px;
+            }
+
+            &__dt {
+                display: block;
+                font-size: 13px;
+                line-height: 18px;
+                letter-spacing: -0.01em;
+                color: rgba($color-text, .6);
+
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    clear: left;
+                    float: left;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+
+            &__dd {
+                display: block;
+                border-bottom: 1px solid rgba($color-text, .08);
+                padding-bottom: 12px;
+                margin-bottom: 12px;
+                margin-top: 2px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: -0.01em;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    padding-left: 50%;
+                    margin: 0;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+
+                &:last-child {
+                    margin: 0;
+                    border-bottom-width: 0;
+                }
+            }
+
+            &__muted {
+                display: block;
+                color: rgba($color-text, .6);
+            }
+        }
+    }
+}

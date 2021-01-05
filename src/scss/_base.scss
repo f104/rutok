@@ -47,11 +47,13 @@
         }
     }
 }
+
 .visible {
 
     @each $key in (md, lg, xl) {
         &-#{$key} {
             display: none !important;
+
             @include media-breakpoint-up($key) {
                 display: initial !important;
             }
@@ -147,4 +149,24 @@ strong {
 
 .fancybox-navigation {
     position: static;
+}
+
+[class^=icon] {
+    &._bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(#E3EAEE, .8);
+        color: inherit;
+        font-size: 14px;
+        border-radius: 7px;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+    &._md {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
 }

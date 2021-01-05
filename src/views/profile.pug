@@ -1,4 +1,5 @@
 extends _includes/layout
+include _includes/blocks/office/mixins/office-aside
 
 block config
     - var pagetitle = 'Профиль'
@@ -6,4 +7,12 @@ block config
     - var isAuth = true
 
 block content
+    .block.container
+        +bk(['Главная', 'Мой профиль'])
+        h1.page-h Мой профиль
     
+    .block.container
+        .office    
+            .office__content
+            .office__aside
+                +office-aside('profile')

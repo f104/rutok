@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Профиль :: RUTOK</title>
+    <title>Мои заказы :: RUTOK</title>
     <!--
     link(rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png")
     link(rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png")
@@ -20,8 +20,8 @@
     <meta name="description" content="Description">
     <meta property="og:url" content="https://">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Профиль">
-    <meta property="twitter:title" content="Профиль">
+    <meta property="og:title" content="Мои заказы">
+    <meta property="twitter:title" content="Мои заказы">
     <meta property="og:description" content="description">
     <meta property="twitter:description" content="description">
     <meta property="og:image" content="assets/share.png">
@@ -307,13 +307,286 @@
       <div class="block container">
             <ul class="bk">
               <li class="bk__item"><a class="bk__link" href="#">Главная</a></li>
-              <li class="bk__item">Мой профиль</li>
+              <li class="bk__item">Мои заказы</li>
             </ul>
-        <h1 class="page-h">Мой профиль</h1>
-      </div>
-      <div class="block container">
+        <h1 class="page-h">Мои заказы</h1>
         <div class="office">   
-          <div class="office__content"></div>
+          <div class="office__content">
+            <div class="tabs js-tabs js-tabs-filter">
+              <div class="tabs__slider swiper-container js-tabs__slider">
+                <div class="swiper-wrapper">
+                  <div class="tabs__item swiper-slide _active js-tabs-filter__trigger" data-filter="-1">Все заказы</div>
+                  <div class="tabs__item swiper-slide js-tabs-filter__trigger" data-filter="1">Активные</div>
+                  <div class="tabs__item swiper-slide js-tabs-filter__trigger" data-filter="2">Завершено</div>
+                </div>
+              </div>
+              <div class="input _addon select tabs__select js-label js-select js-tabs__select">
+                <select>
+                  <option value="-1" selected>Все заказы</option>
+                  <option value="1">Активные</option>
+                  <option value="2">Завершено</option>
+                </select>
+                <label>Категория</label><span class="input__addon"><i class="icon-input-arrow"></i></span>
+              </div>
+              <div class="js-tabs-filter__wrapper">
+                <div class="office-order js-slide js-tabs-filter__target" data-filter="1">
+                  <div class="office-order__head"><span class="office-order__head__num"><i class="icon-orders _bg _md"></i><span class="office-order__head__num__content">RT 249–607<span class="office-order__head__num__muted">24.10.2020</span></span></span><span class="office-order__head__price">634 860 <span class="price-muted">₽</span></span><span class="office-order__head__foot"><span class="office-order__head__status"> <i class="icon-clock _bg"></i>Готов к выдаче</span><span class="office-order__head__toggler-wrapper"><span class="office-order__head__toggler link-border js-slide__toggler">3 товара и 1 услуга</span></span></span></div>
+                  <div class="js-slide__content">
+                    <div class="cart-list">
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart1.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart1.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart1.png" src="assets/img/dot.png" alt="Delta EPS 1215"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Стартерный аккумулятор</div><a class="cart-item__h" href="#">Delta EPS 1215</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>15 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>2 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">3 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">28 860 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart2.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart2.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart2.png" src="assets/img/dot.png" alt="PowerSafe OPzV 5 OPzV 250"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Герметизированный аккумулятор</div><a class="cart-item__h" href="#">PowerSafe OPzV 5 OPzV 250</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>256 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>3 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">29 320 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart3.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart3.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart3.png" src="assets/img/dot.png" alt="Anderson Power Products SB 175А"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Разъемы для АКБ</div><a class="cart-item__h" href="#">Anderson Power Products SB 175А</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">680 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                                <svg class="svgsprite _service">
+                                  <use xlink:href="assets/img/sprites/svgsprites.svg#service"></use>
+                                </svg></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Дополнительные услуги</div><a class="cart-item__h" href="#">Помощь в вводе в эксплуатацию аккумуляторных баттарей</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">–
+                          </div>
+                          <div class="cart-item__price">2 500 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <dl class="office-order__foot">
+                      <dt class="office-order__foot__dt">Контактное лицо</dt>
+                      <dt class="office-order__foot__dd">Артем Николаев</dt>
+                      <dt class="office-order__foot__dt">Телефон</dt>
+                      <dt class="office-order__foot__dd">+7 (908) 680-45-06</dt>
+                      <dt class="office-order__foot__dt">Оплата</dt>
+                      <dt class="office-order__foot__dd">При получении</dt>
+                      <dt class="office-order__foot__dt">Статус</dt>
+                      <dt class="office-order__foot__dd">Готов к выдаче (самовывоз)<span class="office-order__foot__muted">г. Москва, ул. Дорожная, д.60Б</span></dt>
+                    </dl>
+                  </div>
+                </div>
+                <div class="office-order js-slide js-tabs-filter__target" data-filter="2">
+                  <div class="office-order__head"><span class="office-order__head__num"><i class="icon-orders _bg _md"></i><span class="office-order__head__num__content">RT 204–789<span class="office-order__head__num__muted">04.09.2020</span></span></span><span class="office-order__head__price">68 020 <span class="price-muted">₽</span></span><span class="office-order__head__foot"><span class="office-order__head__status"> <i class="icon-checkbox _bg"></i>Завершен</span><span class="office-order__head__toggler-wrapper"><span class="office-order__head__toggler link-border js-slide__toggler">1 товар</span></span></span></div>
+                  <div class="js-slide__content">
+                    <div class="cart-list">
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart1.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart1.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart1.png" src="assets/img/dot.png" alt="Delta EPS 1215"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Стартерный аккумулятор</div><a class="cart-item__h" href="#">Delta EPS 1215</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>15 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>2 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">3 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">28 860 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart2.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart2.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart2.png" src="assets/img/dot.png" alt="PowerSafe OPzV 5 OPzV 250"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Герметизированный аккумулятор</div><a class="cart-item__h" href="#">PowerSafe OPzV 5 OPzV 250</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>256 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>3 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">29 320 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart3.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart3.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart3.png" src="assets/img/dot.png" alt="Anderson Power Products SB 175А"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Разъемы для АКБ</div><a class="cart-item__h" href="#">Anderson Power Products SB 175А</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">680 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                                <svg class="svgsprite _service">
+                                  <use xlink:href="assets/img/sprites/svgsprites.svg#service"></use>
+                                </svg></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Дополнительные услуги</div><a class="cart-item__h" href="#">Помощь в вводе в эксплуатацию аккумуляторных баттарей</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">–
+                          </div>
+                          <div class="cart-item__price">2 500 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <dl class="office-order__foot">
+                      <dt class="office-order__foot__dt">Контактное лицо</dt>
+                      <dt class="office-order__foot__dd">Артем Николаев</dt>
+                      <dt class="office-order__foot__dt">Телефон</dt>
+                      <dt class="office-order__foot__dd">+7 (908) 680-45-06</dt>
+                      <dt class="office-order__foot__dt">Оплата</dt>
+                      <dt class="office-order__foot__dd">При получении</dt>
+                      <dt class="office-order__foot__dt">Статус</dt>
+                      <dt class="office-order__foot__dd">Готов к выдаче (самовывоз)<span class="office-order__foot__muted">г. Москва, ул. Дорожная, д.60Б</span></dt>
+                    </dl>
+                  </div>
+                </div>
+                <div class="office-order js-slide js-tabs-filter__target" data-filter="2">
+                  <div class="office-order__head"><span class="office-order__head__num"><i class="icon-orders _bg _md"></i><span class="office-order__head__num__content">RT 198–058<span class="office-order__head__num__muted">22.08.2020</span></span></span><span class="office-order__head__price">1 568 897 <span class="price-muted">₽</span></span><span class="office-order__head__foot"><span class="office-order__head__status"> <i class="icon-checkbox _bg"></i>Завершен</span><span class="office-order__head__toggler-wrapper"><span class="office-order__head__toggler link-border js-slide__toggler">6 товаров и 2 услуги</span></span></span></div>
+                  <div class="js-slide__content">
+                    <div class="cart-list">
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart1.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart1.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart1.png" src="assets/img/dot.png" alt="Delta EPS 1215"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Стартерный аккумулятор</div><a class="cart-item__h" href="#">Delta EPS 1215</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>15 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>2 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">3 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">28 860 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart2.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart2.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart2.png" src="assets/img/dot.png" alt="PowerSafe OPzV 5 OPzV 250"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Герметизированный аккумулятор</div><a class="cart-item__h" href="#">PowerSafe OPzV 5 OPzV 250</a>
+                            <div class="cart-item__tth"><span class="cart-item__tth__item"><i class="icon-battery"></i>256 Ач</span><span class="cart-item__tth__item"><i class="icon-battery-charge"></i>12 В</span><span class="cart-item__tth__item"><i class="icon-warranty"></i>3 года</span></div>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">29 320 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                            <picture class="cart-item__img">
+                              <source type="image/webp" data-srcset="assets/img/products/cart3.webp" srcset="assets/img/dot.webp"/>
+                              <source type="image/png" data-srcset="assets/img/products/cart3.png" srcset="assets/img/dot.png"/><img class="lazyload" data-src="assets/img/products/cart3.png" src="assets/img/dot.png" alt="Anderson Power Products SB 175А"/>
+                            </picture></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Разъемы для АКБ</div><a class="cart-item__h" href="#">Anderson Power Products SB 175А</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">1 
+                            шт.
+                          </div>
+                          <div class="cart-item__price">680 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                      <div class="cart-item _office">
+                        <div class="cart-item__left"><a class="cart-item__img-wrapper" href="#">
+                                <svg class="svgsprite _service">
+                                  <use xlink:href="assets/img/sprites/svgsprites.svg#service"></use>
+                                </svg></a>
+                          <div class="cart-item__left__content">
+                            <div class="cart-item__cat">Дополнительные услуги</div><a class="cart-item__h" href="#">Помощь в вводе в эксплуатацию аккумуляторных баттарей</a>
+                          </div>
+                        </div>
+                        <div class="cart-item__right">
+                          <div class="cart-item__count">–
+                          </div>
+                          <div class="cart-item__price">2 500 <span class="price-muted">₽</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <dl class="office-order__foot">
+                      <dt class="office-order__foot__dt">Контактное лицо</dt>
+                      <dt class="office-order__foot__dd">Артем Николаев</dt>
+                      <dt class="office-order__foot__dt">Телефон</dt>
+                      <dt class="office-order__foot__dd">+7 (908) 680-45-06</dt>
+                      <dt class="office-order__foot__dt">Оплата</dt>
+                      <dt class="office-order__foot__dd">При получении</dt>
+                      <dt class="office-order__foot__dt">Статус</dt>
+                      <dt class="office-order__foot__dd">Готов к выдаче (самовывоз)<span class="office-order__foot__muted">г. Москва, ул. Дорожная, д.60Б</span></dt>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="office__aside">
             <div class="office-aside">
               <div class="office-aside__head"><img class="avatar _md" src="assets/img/avatar.jpg" alt="username"/><span class="office-aside__head__content"><span class="office-aside__head__h">Артём Николаев</span><span class="office-aside__head__text">artem@rutok.ru</span></span></div>
@@ -323,8 +596,8 @@
                 <li class="office-aside__stat__item">11<span class="office-aside__stat__muted">завершено</span></li>
               </ul>
               <ul class="office-aside__menu">
-                <li class="office-aside__menu__item _active"><a class="office-aside__menu__link" href="profile.html"><i class="icon-user"></i>Мой профиль</a><a class="office-aside__menu__link-tune" href="profile-edit.html" title="Редактировать профиль"><i class="icon-tune _bg"></i></a></li>
-                <li class="office-aside__menu__item"><a class="office-aside__menu__link" href="orders.html"><i class="icon-orders"></i>Мои заказы</a></li>
+                <li class="office-aside__menu__item"><a class="office-aside__menu__link" href="profile.html"><i class="icon-user"></i>Мой профиль</a><a class="office-aside__menu__link-tune" href="profile-edit.html" title="Редактировать профиль"><i class="icon-tune _bg"></i></a></li>
+                <li class="office-aside__menu__item _active"><a class="office-aside__menu__link" href="orders.html"><i class="icon-orders"></i>Мои заказы</a></li>
                 <li class="office-aside__menu__item"><a class="office-aside__menu__link" href="orders.html"><i class="icon-logout"></i>Выйти</a></li>
               </ul>
             </div>
