@@ -1,0 +1,114 @@
+.mobile-menu {
+    $root: &;
+
+    position: fixed;
+    bottom: map-get($container-paddings, sm);
+    left: map-get($container-paddings, sm);
+    right: map-get($container-paddings, sm);
+    z-index: $header-z-index;
+    background-color: $color-secondary;
+    border-radius: 12px;
+    padding: 6px;
+    display: flex;
+    transform: translateY(calc(100% + #{map-get($container-paddings, sm)}));
+
+    .body._init & {
+        @include transition(transform);
+    }
+
+    .body.mobile-menu-open & {
+        transform: translateY(0);
+        box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    &__link {
+        flex-basis: 25%;
+        border-radius: 6px;
+        padding: 6px;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        color: rgba($color-white, .6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include transition((background-color, color));
+
+        &._active {
+            background-color: rgba($color-white, .08);
+            color: $color-white;
+
+            [class^=icon] {
+                color: $color-primary;
+                box-shadow: 0px 1px 3px rgba(255, 10, 22, 0.16);
+            }
+        }
+
+        [class^=icon] {
+            @include transition(color);
+            font-size: 16px;
+            margin-bottom: 2px;
+            color: rgba($color-white, .8);
+        }
+
+        &__counter {
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            min-width: 15px;
+            text-align: center;
+            padding: 0 3px;
+            background-color: $color-primary;
+            color: $color-white;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 15px;
+            border-radius: 10px;
+        }
+
+    }
+
+    .office-aside__menu {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 6px;
+        border-radius: 12px;
+        transform: translateY(-100%);
+        background-color: $color-secondary;
+        display: none;
+
+        &._active {
+            display: block;
+        }
+
+        &__item {
+            color: rgba($color-white, .8);
+            font-size: 13px;
+            line-height: 38px;
+
+            &._active {
+                background-color: rgba($color-white, .08);
+                color: $color-white;
+            }
+        }
+
+        &__link {
+            flex-grow: 1;
+            &-tune {
+                [class^=icon] {
+                    background-color: rgba(#A7A7A7, .6);
+                }
+
+                color: rgba($color-white, .6);
+            }
+        }
+    }
+
+}

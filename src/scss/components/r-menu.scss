@@ -1,5 +1,5 @@
 // основное меню категорий в шапке
-$zIndex: 100;
+$zIndex: $header-z-index + 1;
 
 @mixin r-menu-cnt {
     z-index: $zIndex;

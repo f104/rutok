@@ -43,8 +43,15 @@ html(lang=__.lang, class="no-js")
                     a(href="#").popup-menu__link Петропавловск-Камчатский
         
         .popup-menu.js-header__popup-menu-target(data-target="user")
+            if isAuth
+                .popup-menu__user
+                    img.avatar(src="assets/img/avatar.jpg" alt="username")
+                    span.popup-menu__user__content
+                        span.popup-menu__user__content__h Константин Константинопольский
+                        span.popup-menu__user__content__muted konstantinopolskii@rutok.ru
             ul.popup-menu__list
                 if isAuth
+                    // _selected для активного пункта
                     li.popup-menu__item._selected
                         a(href="profile.html").popup-menu__link 
                             i.icon-user
@@ -68,6 +75,8 @@ html(lang=__.lang, class="no-js")
                         a(href="#" data-fancybox data-src="#register").popup-menu__link 
                             i.icon-user
                             | Регистрация
+        
+        include blocks/mobile-menu
         
         block styles
             link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet")

@@ -436,7 +436,7 @@
           </div>
           <div class="office__aside">
             <div class="office-aside">
-              <div class="office-aside__head"><img class="avatar _md" src="assets/img/avatar.jpg" alt="username"/><span class="office-aside__head__content"><span class="office-aside__head__h">Артём Николаев</span><span class="office-aside__head__text">artem@rutok.ru</span></span></div>
+              <div class="office-aside__head"><img class="avatar _md" src="assets/img/avatar.jpg" alt="username"/><span class="office-aside__head__content"><span class="office-aside__head__h">Константин Константинопольский</span><span class="office-aside__head__text">konstantinopolskii@rutok.ru</span></span></div>
               <ul class="office-aside__stat">
                 <li class="office-aside__stat__item">14<span class="office-aside__stat__muted">все заказы</span></li>
                 <li class="office-aside__stat__item">2<span class="office-aside__stat__muted">активные</span></li>
@@ -499,10 +499,22 @@
       </ul>
     </div>
     <div class="popup-menu js-header__popup-menu-target" data-target="user">
+      <div class="popup-menu__user"><img class="avatar" src="assets/img/avatar.jpg" alt="username"><span class="popup-menu__user__content"><span class="popup-menu__user__content__h">Константин Константинопольский</span><span class="popup-menu__user__content__muted">konstantinopolskii@rutok.ru</span></span></div>
       <ul class="popup-menu__list">
+        <!-- _selected для активного пункта-->
         <li class="popup-menu__item _selected"><a class="popup-menu__link" href="profile.html"> <i class="icon-user"></i>Мой профиль</a><a class="popup-menu__link-tune" href="profile-edit.html" title="Редактировать профиль"><i class="icon-tune _bg"></i></a></li>
         <li class="popup-menu__item"><a class="popup-menu__link" href="orders.html"> <i class="icon-orders"></i>Мои заказы</a></li>
         <li class="popup-menu__item"><a class="popup-menu__link" href="#"> <i class="icon-logout"></i>Выйти</a></li>
+      </ul>
+    </div>
+    <div class="mobile-menu"><a class="mobile-menu__link" href="index.html"><i class="icon-home"></i>Главная</a>
+      <button class="mobile-menu__link js-header__r-menu-toggler"><i class="icon-catalog"></i>Каталог</button><a class="mobile-menu__link" href="cart.html"><i class="icon-header-cart"><span class="mobile-menu__link__counter">3</span></i>Корзина</a>
+      <button class="mobile-menu__link js-header-mobile-menu-toggler"><i class="icon-header-user"></i>Профиль</button>
+      <ul class="office-aside__menu js-header-mobile-menu-target">
+        <!-- _active для активного пункта-->
+        <li class="office-aside__menu__item _active"><a class="office-aside__menu__link" href="profile.html"><i class="icon-user"></i>Мой профиль</a><a class="office-aside__menu__link-tune" href="profile-edit.html" title="Редактировать профиль"><i class="icon-tune _bg"></i></a></li>
+        <li class="office-aside__menu__item"><a class="office-aside__menu__link" href="orders.html"><i class="icon-orders"></i>Мои заказы</a></li>
+        <li class="office-aside__menu__item"><a class="office-aside__menu__link" href="orders.html"><i class="icon-logout"></i>Выйти</a></li>
       </ul>
     </div>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">

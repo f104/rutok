@@ -81,6 +81,8 @@ let app = {
             this.initSliders();
         });
 
+        app.body.addClass('_init');
+
     },
 
     /* связка переключателей и селекта тегов */
@@ -103,7 +105,6 @@ let app = {
             return false;
         });
         $('.js-cart-service__toggler').each(function () {
-            console.log($(this));
             const $template = $(this).parents('.js-cart-service').find('.js-cart-service__content');
             if ($template.length) {
                 tippy($(this)[0], {

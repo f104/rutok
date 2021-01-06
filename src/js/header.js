@@ -7,6 +7,7 @@ let header = {
 
         this.document.ready(() => {
             header.initMenu();
+            header.initMobileMenu();
             header.initRMenu();
             header.initPopupMenu();
         });
@@ -21,6 +22,33 @@ let header = {
         app.document.on(app.resizeEventName, () => {
             app.body.removeClass('menu-open');
             $('.js-header__menu').attr('style', '');
+        });
+    },
+
+    initMobileMenu() {
+        const breakpoint = 200, className = 'mobile-menu-open';
+        let scroll = app.window.scrollTop();
+        const $toggler = $('.js-header-mobile-menu-toggler');
+        const $target = $('.js-header-mobile-menu-target');
+        app.window.on('scroll', () => {
+            let curScroll = app.window.scrollTop();
+            if (curScroll > breakpoint && curScroll < scroll) {
+                app.body.addClass(className);
+            } else {
+                app.body.removeClass(className);
+            }
+            scroll = curScroll;
+            $toggler.removeClass('_active');
+            $target.removeClass('_active');
+        });
+        $toggler.on('click', () => {
+            $toggler.toggleClass('_active');
+            $target.toggleClass('_active');
+        });
+        app.document.on(app.resizeEventName, () => {
+            app.body.removeClass(className);
+            $toggler.removeClass('_active');
+            $target.removeClass('_active');
         });
     },
 
