@@ -61,3 +61,6 @@
 .icon-eye-opened:before { content: '\e83d'; } /* '' */
 .icon-eye-closed:before { content: '\e83e'; } /* '' */
 .icon-login:before { content: '\e83f'; } /* '' */
+.icon-copy:before { content: '\e840'; } /* '' */
+.icon-phone-solid:before { content: '\e841'; } /* '' */
+.icon-letter:before { content: '\e842'; } /* '' */

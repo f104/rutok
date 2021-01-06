@@ -65,5 +65,15 @@
             font-size: 24px;
             line-height: 29px;
         }
+
+        &._sm {
+            font-size: 16px;
+            line-height: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
     }
 }

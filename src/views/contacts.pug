@@ -8,8 +8,32 @@ block config
 block content
     .container
         +bk(['Главная', 'Контакты'])
+        h1.page-h Контакты
 
         .block
+            h3.block-h._sm Контактная информация:
+            .contacts-list
+                .contacts-list__item
+                    .r-icon
+                        i.icon-phone-solid
+                    span.contacts-list__item__content
+                        span.contacts-list__item__content__muted Контактный телефон:
+                        | +7 (495) 677-95-24
+                .contacts-list__item
+                    .r-icon
+                        i.icon-geo
+                    span.contacts-list__item__content
+                        span.contacts-list__item__content__muted Головной офис:
+                        | Москва, Большой бульвар 42, стр. 1
+                .contacts-list__item
+                    .r-icon
+                        i.icon-letter
+                    span.contacts-list__item__content
+                        span.contacts-list__item__content__muted Электронная почта:
+                        a(href="#") sale@energo-e.ru
+        
+        .block
+            h3.block-h._sm Офисы продаж:
             .tabs.js-tabs
                 .tabs__slider.swiper-container.js-tabs__slider
                     .swiper-wrapper
@@ -42,3 +66,62 @@ block content
                     #tab_5.js-tabs__target Самара
                     #tab_6.js-tabs__target Екатеринбург
                     #tab_7.js-tabs__target Краснодар
+    
+    .block._bg
+        .form-feedback.container
+            .form-feedback__left
+                h3.form-feedback__h Обратная связь
+                p.form-feedback__lead Оставьте свои контактные данные в форме и мы вам перезвоним.
+            form.form-feedback__right
+                .form-feedback__grid
+                    .input
+                        input(placeholder="Введите ваше имя")
+                        label Имя
+                    .input
+                        input(type="tel" placeholder="Введите ваше телефон")
+                        label Телефон
+                    .input.form-feedback__grid__col2
+                        input(type="email" placeholder="Введите ваш e-mail")
+                        label E-mail
+                    button.btn._block.form-feedback__grid__col2 Отправить заявку
+                include _includes/blocks/form-agree
+        
+    .block.container
+        h3.block-h Реквизиты:
+        dl.contacts-details
+            dt.contacts-details__dt Юридическое лицо
+            dd.contacts-details__dd
+                span.js-copy-content 121205, г. Москва, Большой Бульвар, д.42, стр.1, этаж 1, пом. 37
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt ИНН
+            dd.contacts-details__dd
+                span.js-copy-content 5404415313
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt КПП
+            dd.contacts-details__dd
+                span.js-copy-content 540401001
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt Код ОКПО
+            dd.contacts-details__dd
+                span.js-copy-content 66237382
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt ОГРН
+            dd.contacts-details__dd
+                span.js-copy-content 1105476021133
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt Расчетный счет
+            dd.contacts-details__dd
+                span.js-copy-content 40702810923240001441
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt Название банка
+            dd.contacts-details__dd
+                span.js-copy-content Филиал "НОВОСИБИРСКИЙ" АО "АЛЬФА-БАНК"
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt Кор.счет
+            dd.contacts-details__dd
+                span.js-copy-content 30101810600000000774
+                i.icon-copy.js-copy-trigger
+            dt.contacts-details__dt Генеральный директор
+            dd.contacts-details__dd
+                span.js-copy-content Логинов Александр Сергеевич
+                i.icon-copy.js-copy-trigger

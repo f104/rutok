@@ -114,7 +114,6 @@
 
         #{$root}-agree {
             margin-top: 24px;
-            max-width: 510px;
 
             @include media-breakpoint-up(md) {
                 margin-top: 18px;
@@ -129,10 +128,65 @@
         }
     }
 
+    &-feedback {
+        @include media-breakpoint-up(lg) {
+            display: grid;
+            gap: 80px;
+            grid-template-columns: auto 770px;
+        }
+        &__h {
+            @extend .block-h;
+            margin-bottom: 8px;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__lead {
+            font-size: 15px;
+            line-height: 24px;
+            /* or 160% */
+            color: rgba($color-text, .5);
+        }
+
+        &__right {
+            margin-top: 24px;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 32px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
+
+        &__grid {
+            display: grid;
+            gap: 12px;
+
+            @include media-breakpoint-up(md) {
+                gap: 16px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &__col2 {
+                @include media-breakpoint-up(md) {
+                    grid-column-end: span 2;
+                }
+            }
+        }
+
+        #{$root}-agree {
+            margin-top: 24px;
+        }
+    }
+
     &-agree {
         font-size: 12px;
         line-height: 18px;
         letter-spacing: -0.01em;
-        color: #414242;
+        max-width: 510px;
     }
 }

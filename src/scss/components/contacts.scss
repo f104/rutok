@@ -1,0 +1,120 @@
+.contacts {
+    $root: &;
+
+    &-details {
+        background-color: $color-gray;
+        border-radius: $border-radius;
+        padding: 24px;
+
+        @include media-breakpoint-up(md) {
+            padding: 32px;
+        }
+
+        &__dt {
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: -0.01em;
+            color: rgba($color-text, .6);
+
+            @include media-breakpoint-up(md) {
+                font-size: 14px;
+                line-height: 24px;
+                clear: left;
+                float: left;
+                width: 36%;
+                padding-right: 1em;
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 50%;
+            }
+        }
+
+        &__dd {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(#000, .08);
+
+            @include media-breakpoint-up(md) {
+                font-size: 14px;
+                line-height: 24px;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                padding-left: 36%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 50%;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom-width: 0;
+            }
+
+            [class^=icon] {
+                font-size: 16px;
+                color: rgba($color-text, .6);
+                cursor: pointer;
+                @include transition(color);
+
+                @include hover-desktop {
+                    color: $color-text;
+                }
+            }
+        }
+    }
+
+    &-list {
+        display: grid;
+        gap: 18px;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 80px;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+
+            @include media-breakpoint-up(md) {
+                align-items: flex-start;
+            }
+
+            &__content {
+                margin-left: 16px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 17px;
+                    line-height: 22px;
+                    padding-top: 10px;
+                }
+
+                &__muted {
+                    display: block;
+                    margin-bottom: 2px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: rgba($color-text, .6);
+
+                    @include media-breakpoint-up(md) {
+                        font-size: 14px;
+                        line-height: 17px;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

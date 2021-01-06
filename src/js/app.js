@@ -50,6 +50,7 @@ let app = {
 
         app.document.ready(() => {
             this.initCartService();
+            this.initClipboard();
             this.initCut();
             this.initPopups();
             this.initSlide();
@@ -114,6 +115,16 @@ let app = {
         })
     },
 
+    initClipboard() {
+        if (!navigator.clipboard) {
+            $('.js-copy-trigger').remove();
+        } else {
+            this.document.on('click', '.js-copy-trigger', function() {
+                navigator.clipboard.writeText($(this).siblings('.js-copy-content')?.text());
+                app.message.info('Скопировано');
+            });
+        }
+    },
     initCut() {
         let textOpenDefault = 'Читать полностью', textCloseDefault = 'Скрыть';
 
