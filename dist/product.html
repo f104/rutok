@@ -31,7 +31,7 @@
     <header>
       <div class="header-top">
         <div class="header-top__cnt">
-          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__city-toggler">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
+          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__popup-menu-toggler" data-target="city">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
           <nav class="header-top__menu js-header__menu">
             <ul class="header-top__menu__ul">
               <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">O кoмпaнии</a></li>
@@ -46,8 +46,8 @@
       <div class="header">
         <div class="header__inner"><a class="header__logo" href="index.html" title="На главную"><img class="header__logo__img" src="assets/img/logo.svg" alt="RUTOK"></a>
           <div class="header__right">
-            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__city-toggler">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
-            <div class="header__icons"><a class="header__icon" href="#"><i class="icon-header-user"></i></a><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
+            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__popup-menu-toggler" data-target="city">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
+            <div class="header__icons"><span class="header__icon js-header__popup-menu-toggler" data-target="user"><i class="icon-header-user"></i></span><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
           </div>
           <div class="header__search">
             <form>
@@ -818,21 +818,21 @@
                     </div>
                   </div>
                   <div class="js-tabs__target" id="overview_tab_2">
-                    <div class="overview-list"><a class="overview" href="javascript:;" data-src="article-popup.html" data-fancybox data-type="ajax">
+                    <div class="overview-list"><a class="overview" href="#" data-src="article-popup.html" data-fancybox data-type="ajax">
                                       <div class="overview__inner">Принципиальные отличия свинцово-кислотных батарей</div>
                                       <picture class="overview__picture">
                                         <source type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/overviews/2-sm.webp" srcset="assets/img/dot.webp">
                                         <source type="image/webp" data-srcset="assets/img/overviews/2.webp" srcset="assets/img/dot.webp">
                                         <source type="image/jpeg" media="(max-width:1199px)" data-srcset="assets/img/overviews/2-sm.jpg" srcset="assets/img/dot.jpg">
                                         <source type="image/jpeg" data-srcset="assets/img/overviews/2.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/overviews/2.jpg" src="assets/img/dot.jpg" alt="Принципиальные отличия свинцово-кислотных батарей">
-                                      </picture></a><a class="overview" href="javascript:;" data-src="article-popup.html" data-fancybox data-type="ajax">
+                                      </picture></a><a class="overview" href="#" data-src="article-popup.html" data-fancybox data-type="ajax">
                                       <div class="overview__inner">Сульфатация свинцовокислотной аккумуляторной батареи</div>
                                       <picture class="overview__picture">
                                         <source type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/overviews/5-sm.webp" srcset="assets/img/dot.webp">
                                         <source type="image/webp" data-srcset="assets/img/overviews/5.webp" srcset="assets/img/dot.webp">
                                         <source type="image/jpeg" media="(max-width:1199px)" data-srcset="assets/img/overviews/5-sm.jpg" srcset="assets/img/dot.jpg">
                                         <source type="image/jpeg" data-srcset="assets/img/overviews/5.jpg" srcset="assets/img/dot.jpg"><img class="lazyload" data-src="assets/img/overviews/5.jpg" src="assets/img/dot.jpg" alt="Сульфатация свинцовокислотной аккумуляторной батареи">
-                                      </picture></a><a class="overview" href="javascript:;" data-src="article-popup.html" data-fancybox data-type="ajax">
+                                      </picture></a><a class="overview" href="#" data-src="article-popup.html" data-fancybox data-type="ajax">
                                       <div class="overview__inner">Как можно снизить затраты на приобретение тяговых батарей</div>
                                       <picture class="overview__picture">
                                         <source type="image/webp" media="(max-width:1199px)" data-srcset="assets/img/overviews/3-sm.webp" srcset="assets/img/dot.webp">
@@ -858,7 +858,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="review-bars"><span class="review-bars__star">5 звезд</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:11.11%"></span></span><span class="review-bars__count">1</span><span class="review-bars__star">4 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:33.33%"></span></span><span class="review-bars__count">3</span><span class="review-bars__star">3 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:44.44%"></span></span><span class="review-bars__count">4</span><span class="review-bars__star">2 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:0%"></span></span><span class="review-bars__count">0</span><span class="review-bars__star">1 звезда</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:11.11%"></span></span><span class="review-bars__count">1</span></div><a class="btn _block" href="javascript:;" data-fancybox data-src="#review_add"><i class="icon-review"></i>Оставить отзыв</a>
+                  <div class="review-bars"><span class="review-bars__star">5 звезд</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:11.11%"></span></span><span class="review-bars__count">1</span><span class="review-bars__star">4 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:33.33%"></span></span><span class="review-bars__count">3</span><span class="review-bars__star">3 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:44.44%"></span></span><span class="review-bars__count">4</span><span class="review-bars__star">2 звезды</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:0%"></span></span><span class="review-bars__count">0</span><span class="review-bars__star">1 звезда</span><span class="review-bars__bar"><span class="review-bars__bar__inner" style="width:11.11%"></span></span><span class="review-bars__count">1</span></div><a class="btn _block" href="#" data-fancybox data-src="#review_add"><i class="icon-review"></i>Оставить отзыв</a>
                 </div>
                 <div class="review-tab__list">
                   <div class="review-list">
@@ -946,7 +946,7 @@
                 </div>
                 <div class="qa-tab__summary">
                   <h5 class="qa-tab__summary__h">Не нашли ответ на свой вопрос?</h5>
-                  <p class="qa-tab__summary__text">Задайте вопрос и получите развернутый ответ от наших специалистов.</p><a class="btn _block" href="javascript:;" data-fancybox data-src="#question"><i class="icon-review"></i>Задать вопрос</a>
+                  <p class="qa-tab__summary__text">Задайте вопрос и получите развернутый ответ от наших специалистов.</p><a class="btn _block" href="#" data-fancybox data-src="#question"><i class="icon-review"></i>Задать вопрос</a>
                 </div>
               </div>
             </div>
@@ -1403,14 +1403,80 @@
       </div>
     </footer>
     <div class="hidden">
-      <!-- include popups here-->
+      <div class="popup" id="login">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Войти в профиль</h3>
+          <p class="popup-form__lead">Пожалуйста войдите в профиль чтобы продолжить</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button><span class="input__help"><a class="link-border" href="#" data-fancybox data-src="#lost">Забыли пароль?</a></span>
+            </div>
+            <button class="btn _block">Войти</button>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="lost">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Восстановить доступ</h3>
+          <p class="popup-form__lead">Введите e-mail указанный при регистрации на который придет пароль</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <button class="btn _block">Отправить</button>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="register">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Создать аккаунт</h3>
+          <p class="popup-form__lead">Введите свои данные, чтобы быстро и удобно совершать покупки</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="tel" value="+7 (908) 989–26–48">
+              <label>Телефон</label><span class="input__addon"><i class="icon-phone"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Подтвердите пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button>
+            </div>
+            <button class="btn _block">Создать аккаунт</button>
+          </div>
+          <p class="form-agree">Нажимая на кнопку, вы даете свое согласие на обработку персональных данных и соглашаетесь <a class="link-border" href="#" target="_blank">c политикой конфиденциальности</a>.</p>
+        </form>
+      </div>
     </div>
-    <ul class="city-select js-header__city">
-      <li class="city-select__item _selected"><a href="#">Москва</a></li>
-      <li class="city-select__item"><a href="#">Санкт-Петербург</a></li>
-      <li class="city-select__item"><a href="#">Нижний Новгород</a></li>
-      <li class="city-select__item"><a href="#">Петропавловск-Камчатский</a></li>
-    </ul>
+    <div class="popup-menu js-header__popup-menu-target" data-target="city">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item _selected"><a class="popup-menu__link" href="#">Москва</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Санкт-Петербург</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Нижний Новгород</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Петропавловск-Камчатский</a></li>
+      </ul>
+    </div>
+    <div class="popup-menu js-header__popup-menu-target" data-target="user">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#" data-fancybox data-src="#login"> <i class="icon-login"></i>Войти</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#" data-fancybox data-src="#register"> <i class="icon-user"></i>Регистрация</a></li>
+      </ul>
+    </div>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/common.css?v=1.0.0">
     <script>

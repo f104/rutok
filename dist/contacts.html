@@ -31,7 +31,7 @@
     <header>
       <div class="header-top">
         <div class="header-top__cnt">
-          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__city-toggler">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
+          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__popup-menu-toggler" data-target="city">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
           <nav class="header-top__menu js-header__menu">
             <ul class="header-top__menu__ul">
               <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">O кoмпaнии</a></li>
@@ -46,8 +46,8 @@
       <div class="header">
         <div class="header__inner"><a class="header__logo" href="index.html" title="На главную"><img class="header__logo__img" src="assets/img/logo.svg" alt="RUTOK"></a>
           <div class="header__right">
-            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__city-toggler">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
-            <div class="header__icons"><a class="header__icon" href="#"><i class="icon-header-user"></i></a><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
+            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__popup-menu-toggler" data-target="city">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
+            <div class="header__icons"><span class="header__icon js-header__popup-menu-toggler" data-target="user"><i class="icon-header-user"></i></span><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
           </div>
           <div class="header__search">
             <form>
@@ -447,14 +447,80 @@
       </div>
     </footer>
     <div class="hidden">
-      <!-- include popups here-->
+      <div class="popup" id="login">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Войти в профиль</h3>
+          <p class="popup-form__lead">Пожалуйста войдите в профиль чтобы продолжить</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button><span class="input__help"><a class="link-border" href="#" data-fancybox data-src="#lost">Забыли пароль?</a></span>
+            </div>
+            <button class="btn _block">Войти</button>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="lost">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Восстановить доступ</h3>
+          <p class="popup-form__lead">Введите e-mail указанный при регистрации на который придет пароль</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <button class="btn _block">Отправить</button>
+          </div>
+        </form>
+      </div>
+      <div class="popup" id="register">
+        <form class="popup-form">
+          <h3 class="popup-form__h">Создать аккаунт</h3>
+          <p class="popup-form__lead">Введите свои данные, чтобы быстро и удобно совершать покупки</p>
+          <div class="popup-form__grid">
+            <div class="input _addon js-label">
+              <input type="email" value="login@rutok.ru">
+              <label>E-mail</label><span class="input__addon"><i class="icon-email"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="tel" value="+7 (908) 989–26–48">
+              <label>Телефон</label><span class="input__addon"><i class="icon-phone"></i></span>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button>
+            </div>
+            <div class="input _addon js-label">
+              <input type="password" value="qwerty">
+              <label>Подтвердите пароль</label>
+              <button class="input__addon js-form-password" type="button"><i class="icon-eye-closed"></i></button>
+            </div>
+            <button class="btn _block">Создать аккаунт</button>
+          </div>
+          <p class="form-agree">Нажимая на кнопку, вы даете свое согласие на обработку персональных данных и соглашаетесь <a class="link-border" href="#" target="_blank">c политикой конфиденциальности</a>.</p>
+        </form>
+      </div>
     </div>
-    <ul class="city-select js-header__city">
-      <li class="city-select__item _selected"><a href="#">Москва</a></li>
-      <li class="city-select__item"><a href="#">Санкт-Петербург</a></li>
-      <li class="city-select__item"><a href="#">Нижний Новгород</a></li>
-      <li class="city-select__item"><a href="#">Петропавловск-Камчатский</a></li>
-    </ul>
+    <div class="popup-menu js-header__popup-menu-target" data-target="city">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item _selected"><a class="popup-menu__link" href="#">Москва</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Санкт-Петербург</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Нижний Новгород</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Петропавловск-Камчатский</a></li>
+      </ul>
+    </div>
+    <div class="popup-menu js-header__popup-menu-target" data-target="user">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#" data-fancybox data-src="#login"> <i class="icon-login"></i>Войти</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#" data-fancybox data-src="#register"> <i class="icon-user"></i>Регистрация</a></li>
+      </ul>
+    </div>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/common.css?v=1.0.0">
     <script>

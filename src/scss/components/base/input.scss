@@ -145,8 +145,7 @@
         border-radius: 7px;
         position: absolute;
         right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,12 +158,24 @@
         }
 
     }
+
     button.input__addon {
         pointer-events: all;
         @include transition(background-color);
+
         @include hover-desktop {
             background-color: #E3EAEE;
         }
+    }
+
+    &__help {
+        display: block;
+        margin-top: 6px;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 13px;
+        color: rgba($color-text, .8);
+        text-align: right;
     }
 
 }

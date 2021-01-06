@@ -3,7 +3,7 @@ header
         .header-top__cnt
             .header-top__inner
                 a(href="tel:+74956779524").header-top__phone +7 (495) 677-95-24
-                span.header-top__city.js-header__city-toggler Москва
+                span.header-top__city.js-header__popup-menu-toggler(data-target="city") Москва
                 span.header-top__menu-toggler.js-header__menu-toggler Меню
                 span.header-top__adds г. Mocквa, улица Дopoжнaя, д. 60Б
                 a.header-top__email(href="mailto:info@rutok.ru") info@rutok.ru
@@ -28,10 +28,10 @@ header
                 .header__contacts
                     span.header__city
                         span.header__city__muted Ваш город: 
-                        span.header__city__toggler.js-header__city-toggler Москва
+                        span.header__city__toggler.js-header__popup-menu-toggler(data-target="city") Москва
                     a(href="tel:+74956779524").header__phone +7 (495) 677-95-24
                 .header__icons
-                    a(href="#").header__icon
+                    span.header__icon.js-header__popup-menu-toggler(data-target="user")
                         if isAuth
                             img.avatar(src="assets/img/avatar.jpg" alt="username")
                         else

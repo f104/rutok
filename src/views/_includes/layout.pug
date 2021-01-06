@@ -26,17 +26,48 @@ html(lang=__.lang, class="no-js")
             include blocks/footer
         
         .hidden
-            // include popups here
+            if !isAuth
+                include popups/login
+                include popups/lost
+                include popups/register
             
-        ul.city-select.js-header__city
-            li.city-select__item._selected
-                a(href="#") Москва
-            li.city-select__item
-                a(href="#") Санкт-Петербург
-            li.city-select__item
-                a(href="#") Нижний Новгород
-            li.city-select__item
-                a(href="#") Петропавловск-Камчатский
+        .popup-menu.js-header__popup-menu-target(data-target="city")
+            ul.popup-menu__list
+                li.popup-menu__item._selected
+                    a(href="#").popup-menu__link Москва
+                li.popup-menu__item
+                    a(href="#").popup-menu__link Санкт-Петербург
+                li.popup-menu__item
+                    a(href="#").popup-menu__link Нижний Новгород
+                li.popup-menu__item
+                    a(href="#").popup-menu__link Петропавловск-Камчатский
+        
+        .popup-menu.js-header__popup-menu-target(data-target="user")
+            ul.popup-menu__list
+                if isAuth
+                    li.popup-menu__item._selected
+                        a(href="profile.html").popup-menu__link 
+                            i.icon-user
+                            | Мой профиль
+                        a(href="profile-edit.html" title="Редактировать профиль").popup-menu__link-tune
+                            i.icon-tune._bg
+                    li.popup-menu__item
+                        a(href="orders.html").popup-menu__link 
+                            i.icon-orders
+                            | Мои заказы
+                    li.popup-menu__item
+                        a(href="#").popup-menu__link 
+                            i.icon-logout
+                            | Выйти
+                else
+                    li.popup-menu__item
+                        a(href="#" data-fancybox data-src="#login").popup-menu__link 
+                            i.icon-login
+                            | Войти
+                    li.popup-menu__item
+                        a(href="#" data-fancybox data-src="#register").popup-menu__link 
+                            i.icon-user
+                            | Регистрация
         
         block styles
             link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet")

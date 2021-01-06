@@ -1,0 +1,18 @@
+#login.popup
+    form.popup-form
+        h3.popup-form__h Войти в профиль
+        p.popup-form__lead Пожалуйста войдите в профиль чтобы продолжить
+        .popup-form__grid
+            .input._addon.js-label
+                input(type="email" value="login@rutok.ru")
+                label E-mail
+                span.input__addon
+                    i.icon-email
+            .input._addon.js-label
+                input(type="password" value="qwerty")
+                label Пароль
+                button.input__addon.js-form-password(type="button")
+                    i.icon-eye-closed
+                span.input__help
+                    a(href="#" data-fancybox data-src="#lost").link-border Забыли пароль?
+            button.btn._block Войти

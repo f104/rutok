@@ -31,7 +31,7 @@
     <header>
       <div class="header-top">
         <div class="header-top__cnt">
-          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__city-toggler">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
+          <div class="header-top__inner"><a class="header-top__phone" href="tel:+74956779524">+7 (495) 677-95-24</a><span class="header-top__city js-header__popup-menu-toggler" data-target="city">Москва</span><span class="header-top__menu-toggler js-header__menu-toggler">Меню</span><span class="header-top__adds">г. Mocквa, улица Дopoжнaя, д. 60Б</span><a class="header-top__email" href="mailto:info@rutok.ru">info@rutok.ru</a></div>
           <nav class="header-top__menu js-header__menu">
             <ul class="header-top__menu__ul">
               <li class="header-top__menu__li"><a class="header-top__menu__a" href="#">O кoмпaнии</a></li>
@@ -46,8 +46,8 @@
       <div class="header">
         <div class="header__inner"><a class="header__logo" href="index.html" title="На главную"><img class="header__logo__img" src="assets/img/logo.svg" alt="RUTOK"></a>
           <div class="header__right">
-            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__city-toggler">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
-            <div class="header__icons"><a class="header__icon" href="#"><img class="avatar" src="assets/img/avatar.jpg" alt="username"></a><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
+            <div class="header__contacts"><span class="header__city"><span class="header__city__muted">Ваш город: </span><span class="header__city__toggler js-header__popup-menu-toggler" data-target="city">Москва</span></span><a class="header__phone" href="tel:+74956779524">+7 (495) 677-95-24</a></div>
+            <div class="header__icons"><span class="header__icon js-header__popup-menu-toggler" data-target="user"><img class="avatar" src="assets/img/avatar.jpg" alt="username"></span><a class="header__icon" href="#"><i class="icon-header-cart"></i><span class="header__icon__counter">3</span></a></div>
           </div>
           <div class="header__search">
             <form>
@@ -643,14 +643,22 @@
       </div>
     </footer>
     <div class="hidden">
-      <!-- include popups here-->
     </div>
-    <ul class="city-select js-header__city">
-      <li class="city-select__item _selected"><a href="#">Москва</a></li>
-      <li class="city-select__item"><a href="#">Санкт-Петербург</a></li>
-      <li class="city-select__item"><a href="#">Нижний Новгород</a></li>
-      <li class="city-select__item"><a href="#">Петропавловск-Камчатский</a></li>
-    </ul>
+    <div class="popup-menu js-header__popup-menu-target" data-target="city">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item _selected"><a class="popup-menu__link" href="#">Москва</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Санкт-Петербург</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Нижний Новгород</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#">Петропавловск-Камчатский</a></li>
+      </ul>
+    </div>
+    <div class="popup-menu js-header__popup-menu-target" data-target="user">
+      <ul class="popup-menu__list">
+        <li class="popup-menu__item _selected"><a class="popup-menu__link" href="profile.html"> <i class="icon-user"></i>Мой профиль</a><a class="popup-menu__link-tune" href="profile-edit.html" title="Редактировать профиль"><i class="icon-tune _bg"></i></a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="orders.html"> <i class="icon-orders"></i>Мои заказы</a></li>
+        <li class="popup-menu__item"><a class="popup-menu__link" href="#"> <i class="icon-logout"></i>Выйти</a></li>
+      </ul>
+    </div>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/common.css?v=1.0.0">
     <script>

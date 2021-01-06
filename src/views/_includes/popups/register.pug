@@ -1,0 +1,27 @@
+#register.popup
+    form.popup-form
+        h3.popup-form__h Создать аккаунт
+        p.popup-form__lead Введите свои данные, чтобы быстро и удобно совершать покупки
+        .popup-form__grid
+            .input._addon.js-label
+                input(type="email" value="login@rutok.ru")
+                label E-mail
+                span.input__addon
+                    i.icon-email
+            .input._addon.js-label
+                input(type="tel" value="+7 (908) 989–26–48")
+                label Телефон
+                span.input__addon
+                    i.icon-phone
+            .input._addon.js-label
+                input(type="password" value="qwerty")
+                label Пароль
+                button.input__addon.js-form-password(type="button")
+                    i.icon-eye-closed
+            .input._addon.js-label
+                input(type="password" value="qwerty")
+                label Подтвердите пароль
+                button.input__addon.js-form-password(type="button")
+                    i.icon-eye-closed
+            button.btn._block Создать аккаунт
+        include ../blocks/form-agree

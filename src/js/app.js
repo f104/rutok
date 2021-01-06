@@ -168,6 +168,7 @@ let app = {
                             <i class="icon icon-close"></a>
                         </button>`,
             },
+            closeExisting: true,
             afterShow: function (instance, slide) {
                 // fill form
                 let $form = slide.$content.find('form');

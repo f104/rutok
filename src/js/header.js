@@ -8,7 +8,7 @@ let header = {
         this.document.ready(() => {
             header.initMenu();
             header.initRMenu();
-            header.initCity();
+            header.initPopupMenu();
         });
 
     },
@@ -74,28 +74,29 @@ let header = {
         });
     },
 
-    initCity() {
-        let $cnt = $('.js-header__city');
-        if (!$cnt.length) {
-            return;
-        }
-        app.document.on('click', '.js-header__city-toggler', function (e) {
+    initPopupMenu() {
+        app.document.on('click', '.js-header__popup-menu-toggler[data-target]', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            $(this).toggleClass('_active');
-            if ($(this).hasClass('_active')) {
-                let offset = $(this).offset();
-                $cnt.css({
-                    top: offset.top + $(this).outerHeight() + 5,
-                    left: offset.left + $(this).outerWidth(),
-                }).show();
-            } else {
-                $cnt.hide();
+            const $target = $(`.js-header__popup-menu-target[data-target="${$(this).data('target')}"]`);
+            if ($target.length) {
+                $(this).toggleClass('_active');
+                if ($(this).hasClass('_active')) {
+                    $('.js-header__popup-menu-target').hide();
+                    $(`.js-header__popup-menu-toggler:not([data-target="${$(this).data('target')}"])`).removeClass('_active');
+                    let offset = $(this).offset();
+                    $target.css({
+                        top: offset.top + $(this).outerHeight() + 5,
+                        left: offset.left + $(this).outerWidth(),
+                    }).show();
+                } else {
+                    $target.hide();
+                }
             }
         });
         app.document.on(`click ${app.resizeEventName}`, function () {
-            $cnt.hide();
-            $('.js-header__city-toggler').removeClass('_active');
+            $('.js-header__popup-menu-target').hide();
+            $('.js-header__popup-menu-toggler').removeClass('_active');
         });
     },
 
