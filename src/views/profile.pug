@@ -1,5 +1,6 @@
 extends _includes/layout
 include _includes/blocks/office/mixins/office-aside
+include _includes/blocks/office/mixins/office-adds
 
 block config
     - var pagetitle = 'Профиль'
@@ -11,8 +12,89 @@ block content
         +bk(['Главная', 'Мой профиль'])
         h1.page-h Мой профиль
     
-    .block.container
         .office    
             .office__content
+                .office__block
+                    h3.office__block__h Личные данные
+                    .office__avatar.js-upload
+                        .office__avatar__title Фотография профиля:
+                        .office__avatar__grid
+                            img.avatar._lg.js-upload__preview(src="assets/img/avatar.jpg" alt="username" data-default="assets/img/avatar.jpg")
+                            .office__avatar__forms
+                                form.office__avatar__upload(action="assets/ajax/upload-success.json" enctype="multipart/form-data")
+                                    input(type="hidden" name="user_id")
+                                    label.btn
+                                        input.js-upload__input(type="file" name="file" accept="image/png, image/jpeg")
+                                        i.icon-upload._muted
+                                        | Загрузить новое фото
+                                form.office__avatar__remove.js-upload__remove(action="assets/ajax/remove-success.json")
+                                    input(type="hidden" name="user_id")
+                                    button.btn(disabled) Удалить
+                            .office__avatar__text Максимальный объем загружаемого файла картинки до 5 мб.
+                    .office__info
+                        .office__info__item
+                            i.icon-user._bg._primary._30
+                            span.office__info__item__content
+                                span.office__info__item__content__muted Контактное лицо:
+                                | Константин Константинопольский
+                        .office__info__item
+                            i.icon-mobile._bg._primary._30
+                            span.office__info__item__content
+                                span.office__info__item__content__muted Телефон:
+                                | +7 (908) 680–45–06
+                        .office__info__item
+                            i.icon-email._bg._primary._30
+                            span.office__info__item__content
+                                span.office__info__item__content__muted E-mail:
+                                | artem@rutok.ru
+                    a(href="profile-edit.html").btn.office__btn
+                        i.icon-edit._muted
+                        | Редактировать данные
+                
+                .office__block
+                    h3.office__block__h Адреса доставки
+                    .office__adds
+                        +office-adds(
+                            id=1
+                            checked=true
+                            city="Москва"
+                            address="Солнечный бульвар, д. 42, корп. 4"
+                            name="ООО «Энергоэлемент»"
+                            inn="ИНН 474984556"
+                            is_default=true
+                        )
+                        +office-adds(
+                            id=2
+                            checked=false
+                            city="Москва"
+                            address="улица Дорожная, д. 60Б"
+                            name="ООО «СервисЭнерго»"
+                            inn="ИНН 5404415313"
+                            is_default=false
+                        )
+                    a(href="javascript:;" data-fancybox data-src="#adds").btn.office__btn
+                        i.icon-plus._muted
+                        | Добавить организацию
+                        
+                    .hidden
+                        include _includes/popups/office-adds
+                
+                .office__block
+                    h3.office__block__h Оповещения
+                    form
+                        .office__subscribes
+                            label.checkbox
+                                input(type="checkbox" checked)
+                                span.checkbox__inner Специальные предложения от «RUTOK»
+                            label.checkbox
+                                input(type="checkbox")
+                                span.checkbox__inner Персональные рекомендации и уведомления
+                            label.checkbox
+                                input(type="checkbox")
+                                span.checkbox__inner Напоминание о товарах в корзине
+                        button.btn.office__btn
+                            i.icon-checkbox._muted
+                            | Применить подписки
+                    
             .office__aside
                 +office-aside('profile')

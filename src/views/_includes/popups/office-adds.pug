@@ -1,0 +1,22 @@
+#adds.popup
+    form.popup-form
+        h3.popup-form__h Новый адрес доставки
+        .popup-form__grid
+            .input.js-label
+                input(name="city")
+                label Город
+            .input.js-label
+                input(name="address")
+                label Адрес
+            .input.js-label
+                input(name="name")
+                label Наименование организации
+            .input.js-label
+                input(name="inn")
+                label ИНН
+            label.checkbox
+                input(type="checkbox" name="is_default")
+                span.checkbox__inner Сделать адресом по умолчанию
+            button.btn._block 
+                i.icon-plus._muted
+                | Добавить адрес

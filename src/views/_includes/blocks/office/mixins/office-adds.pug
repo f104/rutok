@@ -1,0 +1,27 @@
+mixin office-adds()
+    .office-adds
+        label.office-adds__content
+            input(type="radio" name="office_adds" checked=attributes.checked)
+            .office-adds__content__inner=attributes.city
+                | , 
+                =attributes.address
+                ul.office-adds__info
+                    li.office-adds__info__item=attributes.name
+                    li.office-adds__info__item=attributes.inn
+        .office-adds__foot
+            .office-adds__actions
+                // в data-fancybox д.б. уникальное значение
+                // data-form заполняет форму в попапе
+                a(href="javascript:;" data-fancybox=attributes.id 
+                    data-src="#adds" 
+                    data-form=attributes
+                    title="Редактировать"
+                )
+                    i.icon-edit._bg._30
+                // обработку формы не делал, нужно обсуждать с разработчиком
+                form
+                    input(type="hidden" name="id" value=attributes.id)
+                    button(title="Удалить")
+                        i.icon-trash._bg._30
+            if attributes.isDefault
+                span.office-adds__is_default по умолчанию

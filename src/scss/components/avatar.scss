@@ -6,8 +6,16 @@
     height: 32px;
     border-radius: 50%;
 
-    &._md {
+    &._md,
+    &._lg {
         width: 56px;
         height: 56px;
+    }
+
+    &._lg {
+        @include media-breakpoint-up(md) {
+            width: 64px;
+            height: 64px;
+        }
     }
 }

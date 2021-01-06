@@ -167,7 +167,37 @@ let app = {
                 smallBtn: `<button data-fancybox-close title="{{CLOSE}}">
                             <i class="icon icon-close"></a>
                         </button>`,
-            }
+            },
+            afterShow: function (instance, slide) {
+                // fill form
+                let $form = slide.$content.find('form');
+                let formData = instance.$trigger.data('form');
+                if ($form.length && typeof formData === 'object') {
+                    // console.log(formData);
+                    for (const k in formData) {
+                        let $f = $form.find(`[name="${k}"]`);
+                        if ($f.length) {
+                            if ($f.is('[type=checkbox], [type=radio]')) {
+                                $f.prop('checked', formData[k]);
+                            } else {
+                                $f.val(formData[k]);
+                            }
+                            forms.checkInputLabel($f);
+                        }
+                    }
+                }
+            },
+            afterClose: function (instance, slide) {
+                // reset form
+                let $form = slide.$content.find('form');
+                let formData = instance.$trigger.data('form');
+                if ($form.length && typeof formData === 'object') {
+                    $form[0].reset();
+                    $form.find('.js-label input').each(function() {
+                        forms.checkInputLabel($(this));
+                    });
+                }
+            },
         });
     },
 
@@ -570,6 +600,18 @@ let app = {
 
         });
 
+    },
+
+    message: {
+        info(msg = 'Info', sticky = false) {
+            alert(msg);
+        },
+        error(msg = 'Error', sticky = false) {
+            alert(msg);
+        },
+        success(msg = 'Success', sticky = false) {
+            alert(msg);
+        }
     },
 
     formatPrice(price) {

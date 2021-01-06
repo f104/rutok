@@ -37,13 +37,15 @@ block content
             li.dev-menu__item
                 a(href="cart-empty.html") Пустая корзина
             li.dev-menu__item
+                a(href="profile.html") Профиль
+            li.dev-menu__item
+                a(href="profile-edit.html") Редактировать данные
+            li.dev-menu__item
                 a(href="orders.html") Мои заказы
             li.dev-menu__item
                 a(href="articles.html") Статьи
             li.dev-menu__item
                 a(href="article.html") Статья
-            li.dev-menu__item
-                a(href="profile.html") Профиль
             li.dev-menu__item
                 a(href="404.html") 404
             //li.dev-menu__item
@@ -146,6 +148,12 @@ block content
                         label Напряжение
                         span.input__addon
                             i.icon-input-arrow
+                .col-sm-12.col-md-4.col-lg-3
+                    .input._addon.js-label
+                        input(type="password")
+                        label input(type="password")
+                        button.input__addon.js-form-password(type="button")
+                            i.icon-eye-closed
             .row
                 .col-sm-12.col-md-4.col-lg-3
                     .counter.js-counter
@@ -166,6 +174,7 @@ block content
                         label Показывать по:
                         span.input__addon
                             i.icon-input-arrow
+                
                         
         .block
             pre .bk

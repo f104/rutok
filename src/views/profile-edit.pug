@@ -1,0 +1,57 @@
+extends _includes/layout
+include _includes/blocks/office/mixins/office-aside
+include _includes/blocks/office/mixins/office-adds
+
+block config
+    - var pagetitle = 'Редактировать данные'
+    - var bodyClass = ''
+    - var isAuth = true
+
+block content
+    .block.container
+        +bk(['Главная', 'Мой профиль', 'Редактировать данные'])
+        h1.page-h Редактировать данные
+    
+        .office    
+            .office__content
+                .office__block
+                    h3.office__block__h Личные данные
+                    form
+                        .office__form-grid
+                            .input.js-label
+                                input(value="Артем")
+                                label Имя
+                            .input.js-label
+                                input(value="Николаев")
+                                label Фамилия
+                            .input.js-label
+                                input(type="tel" value="+7 (908) 689–59–63")
+                                label Телефон
+                            .input.js-label
+                                input(type="email" value="artem@rutok.ru")
+                                label E-mail
+                        button.btn.office__btn
+                            i.icon-checkbox._muted
+                            | Сохранить изменения
+                        include _includes/blocks/form-agree
+                
+                .office__block
+                    h3.office__block__h Смена пароля
+                    form
+                        .office__form-grid
+                            .input._addon.js-label
+                                input(type="password" value="qwerty")
+                                label Старый пароль
+                                button.input__addon.js-form-password(type="button")
+                                    i.icon-eye-closed
+                            .input._addon.js-label
+                                input(type="password" value="qwertyqwerty")
+                                label Новый пароль
+                                button.input__addon.js-form-password(type="button")
+                                    i.icon-eye-closed
+                        button.btn.office__btn
+                            i.icon-key._muted
+                            | Изменить пароль
+                
+            .office__aside
+                +office-aside('profile')

@@ -310,10 +310,130 @@
               <li class="bk__item">Мой профиль</li>
             </ul>
         <h1 class="page-h">Мой профиль</h1>
-      </div>
-      <div class="block container">
         <div class="office">   
-          <div class="office__content"></div>
+          <div class="office__content">
+            <div class="office__block">
+              <h3 class="office__block__h">Личные данные</h3>
+              <div class="office__avatar js-upload">
+                <div class="office__avatar__title">Фотография профиля:</div>
+                <div class="office__avatar__grid"><img class="avatar _lg js-upload__preview" src="assets/img/avatar.jpg" alt="username" data-default="assets/img/avatar.jpg">
+                  <div class="office__avatar__forms">
+                    <form class="office__avatar__upload" action="assets/ajax/upload-success.json" enctype="multipart/form-data">
+                      <input type="hidden" name="user_id">
+                      <label class="btn">
+                        <input class="js-upload__input" type="file" name="file" accept="image/png, image/jpeg"><i class="icon-upload _muted"></i>Загрузить новое фото
+                      </label>
+                    </form>
+                    <form class="office__avatar__remove js-upload__remove" action="assets/ajax/remove-success.json">
+                      <input type="hidden" name="user_id">
+                      <button class="btn" disabled>Удалить</button>
+                    </form>
+                  </div>
+                  <div class="office__avatar__text">Максимальный объем загружаемого файла картинки до 5 мб.</div>
+                </div>
+              </div>
+              <div class="office__info">
+                <div class="office__info__item"><i class="icon-user _bg _primary _30"></i><span class="office__info__item__content"><span class="office__info__item__content__muted">Контактное лицо:</span>Константин Константинопольский</span></div>
+                <div class="office__info__item"><i class="icon-mobile _bg _primary _30"></i><span class="office__info__item__content"><span class="office__info__item__content__muted">Телефон:</span>+7 (908) 680–45–06</span></div>
+                <div class="office__info__item"><i class="icon-email _bg _primary _30"></i><span class="office__info__item__content"><span class="office__info__item__content__muted">E-mail:</span>artem@rutok.ru</span></div>
+              </div><a class="btn office__btn" href="profile-edit.html"><i class="icon-edit _muted"></i>Редактировать данные</a>
+            </div>
+            <div class="office__block">
+              <h3 class="office__block__h">Адреса доставки</h3>
+              <div class="office__adds">
+                <div class="office-adds">
+                  <label class="office-adds__content">
+                    <input type="radio" name="office_adds" checked="checked"/>
+                    <div class="office-adds__content__inner">Москва, Солнечный бульвар, д. 42, корп. 4
+                      <ul class="office-adds__info">
+                        <li class="office-adds__info__item">ООО «Энергоэлемент»</li>
+                        <li class="office-adds__info__item">ИНН 474984556</li>
+                      </ul>
+                    </div>
+                  </label>
+                  <div class="office-adds__foot">
+                    <div class="office-adds__actions">
+                      <!-- в data-fancybox д.б. уникальное значение-->
+                      <!-- data-form заполняет форму в попапе--><a href="javascript:;" data-fancybox="1" data-src="#adds" data-form="{&quot;id&quot;:1,&quot;checked&quot;:true,&quot;city&quot;:&quot;Москва&quot;,&quot;address&quot;:&quot;Солнечный бульвар, д. 42, корп. 4&quot;,&quot;name&quot;:&quot;ООО «Энергоэлемент»&quot;,&quot;inn&quot;:&quot;ИНН 474984556&quot;,&quot;is_default&quot;:true}" title="Редактировать"><i class="icon-edit _bg _30"></i></a>
+                      <!-- обработку формы не делал, нужно обсуждать с разработчиком-->
+                      <form>
+                        <input type="hidden" name="id" value="1"/>
+                        <button title="Удалить"><i class="icon-trash _bg _30"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="office-adds">
+                  <label class="office-adds__content">
+                    <input type="radio" name="office_adds"/>
+                    <div class="office-adds__content__inner">Москва, улица Дорожная, д. 60Б
+                      <ul class="office-adds__info">
+                        <li class="office-adds__info__item">ООО «СервисЭнерго»</li>
+                        <li class="office-adds__info__item">ИНН 5404415313</li>
+                      </ul>
+                    </div>
+                  </label>
+                  <div class="office-adds__foot">
+                    <div class="office-adds__actions">
+                      <!-- в data-fancybox д.б. уникальное значение-->
+                      <!-- data-form заполняет форму в попапе--><a href="javascript:;" data-fancybox="2" data-src="#adds" data-form="{&quot;id&quot;:2,&quot;checked&quot;:false,&quot;city&quot;:&quot;Москва&quot;,&quot;address&quot;:&quot;улица Дорожная, д. 60Б&quot;,&quot;name&quot;:&quot;ООО «СервисЭнерго»&quot;,&quot;inn&quot;:&quot;ИНН 5404415313&quot;,&quot;is_default&quot;:false}" title="Редактировать"><i class="icon-edit _bg _30"></i></a>
+                      <!-- обработку формы не делал, нужно обсуждать с разработчиком-->
+                      <form>
+                        <input type="hidden" name="id" value="2"/>
+                        <button title="Удалить"><i class="icon-trash _bg _30"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div><a class="btn office__btn" href="javascript:;" data-fancybox data-src="#adds"><i class="icon-plus _muted"></i>Добавить организацию</a>
+              <div class="hidden">
+                <div class="popup" id="adds">
+                  <form class="popup-form">
+                    <h3 class="popup-form__h">Новый адрес доставки</h3>
+                    <div class="popup-form__grid">
+                      <div class="input js-label">
+                        <input name="city">
+                        <label>Город</label>
+                      </div>
+                      <div class="input js-label">
+                        <input name="address">
+                        <label>Адрес</label>
+                      </div>
+                      <div class="input js-label">
+                        <input name="name">
+                        <label>Наименование организации</label>
+                      </div>
+                      <div class="input js-label">
+                        <input name="inn">
+                        <label>ИНН</label>
+                      </div>
+                      <label class="checkbox">
+                        <input type="checkbox" name="is_default"><span class="checkbox__inner">Сделать адресом по умолчанию</span>
+                      </label>
+                      <button class="btn _block"> <i class="icon-plus _muted"></i>Добавить адрес</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="office__block">
+              <h3 class="office__block__h">Оповещения</h3>
+              <form>
+                <div class="office__subscribes">
+                  <label class="checkbox">
+                    <input type="checkbox" checked><span class="checkbox__inner">Специальные предложения от «RUTOK»</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"><span class="checkbox__inner">Персональные рекомендации и уведомления</span>
+                  </label>
+                  <label class="checkbox">
+                    <input type="checkbox"><span class="checkbox__inner">Напоминание о товарах в корзине</span>
+                  </label>
+                </div>
+                <button class="btn office__btn"><i class="icon-checkbox _muted"></i>Применить подписки</button>
+              </form>
+            </div>
+          </div>
           <div class="office__aside">
             <div class="office-aside">
               <div class="office-aside__head"><img class="avatar _md" src="assets/img/avatar.jpg" alt="username"/><span class="office-aside__head__content"><span class="office-aside__head__h">Артём Николаев</span><span class="office-aside__head__text">artem@rutok.ru</span></span></div>

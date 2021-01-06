@@ -10,10 +10,12 @@ let forms = {
             forms.initCounter();
             forms.initInputLabel();
             forms.initMask();
+            forms.initPasswordToggler();
             forms.initPromocode();
             forms.initSelects();
             forms.initStars();
             forms.handleSelects();
+            forms.initUploadAvatar();
         });
 
         this.document.on(app.resizeEventName, () => {
@@ -65,6 +67,10 @@ let forms = {
                 $(this).siblings('label').addClass(className);
             }
         });
+    },
+
+    checkInputLabel($input) {
+        $input.siblings('label').toggleClass('_label-empty', !$input.val());
     },
 
     initPromocode() {
@@ -163,6 +169,73 @@ let forms = {
             showMaskOnHover: false,
             jitMasking: true,
         }).mask(selector);
+    },
+
+    initPasswordToggler() {
+        app.document.on('click', '.js-form-password', function () {
+            let $input = $(this).siblings('input'), $icon = $(this).find('i');
+            if ($input.length && $input.length) {
+                const isPass = $input.prop('type') === 'password';
+                $input.prop('type', isPass ? 'text' : 'password');
+                $icon.toggleClass('icon-eye-closed', !isPass);
+                $icon.toggleClass('icon-eye-opened', isPass);
+            }
+        });
+    },
+
+    initUploadAvatar() {
+        let $cnt = $('.js-upload');
+        if (!$cnt.length) {
+            return;
+        }
+
+        $cnt.find('.js-upload__input').on('change', function () {
+            sendForm($(this).parents('form'), $cnt);
+            return false;
+        });
+
+        $cnt.find('.js-upload__remove').on('submit', function () {
+            sendForm($(this), $cnt);
+            return false;
+        });
+
+        function sendForm($form, $cnt) {
+            let formdata = $form.attr('enctype') === 'multipart/form-data';
+            //        console.log(formdata);
+            $.ajax({
+                type: $form.attr('method') || 'get',
+                url: $form.attr('action'),
+                data: formdata ? new FormData($form[0]) : $form.serialize(),
+                contentType: formdata ? false : 'application/x-www-form-urlencoded; charset=UTF-8',
+                processData: !formdata,
+                beforeSend: function () {
+                    $cnt.addClass('_loading');
+                }
+            }).done(function (resp) {
+                if (resp.success) {
+                    let $prev = $cnt.find('.js-upload__preview');
+                    if ($prev.length) {
+                        if (resp.thumb) {
+                            // upload
+                            $prev.attr('src', resp.thumb);
+                            $cnt.find('.js-upload__input').val('');
+                            $cnt.find('.js-upload__remove button').attr('disabled', false);
+                        } else {
+                            $prev.attr('src', $prev.data('default'));
+                            $cnt.find('.js-upload__remove button').attr('disabled', true);
+                        }
+                    }
+                }
+                if (resp.msg) {
+                    app.message[resp.success === true ? 'success' : 'error'](resp.msg);
+                }
+            }).always(function () {
+                $cnt.removeClass('_loading');
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.log([jqXHR, textStatus, errorThrown]);
+                app.message.error(app.msgAjaxError);
+            });
+        }
     },
 
 };

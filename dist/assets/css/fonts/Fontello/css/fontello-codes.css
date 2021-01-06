@@ -55,3 +55,8 @@
 .icon-logout:before { content: '\e836'; } /* '' */
 .icon-orders:before { content: '\e837'; } /* '' */
 .icon-tune:before { content: '\e838'; } /* '' */
+.icon-upload:before { content: '\e839'; } /* '' */
+.icon-edit:before { content: '\e83a'; } /* '' */
+.icon-key:before { content: '\e83b'; } /* '' */
+.icon-eye-opened:before { content: '\e83d'; } /* '' */
+.icon-eye-closed:before { content: '\e83e'; } /* '' */
