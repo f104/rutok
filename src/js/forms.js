@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Inputmask from 'inputmask';
+import noUiSlider from 'nouislider';
 
 let forms = {
 
@@ -12,14 +13,18 @@ let forms = {
             forms.initMask();
             forms.initPasswordToggler();
             forms.initPromocode();
+            forms.initRange();
             forms.initSelects();
+            forms.initSorts();
             forms.initStars();
             forms.handleSelects();
+            forms.handleSorts();
             forms.initUploadAvatar();
         });
 
         this.document.on(app.resizeEventName, () => {
             forms.initSelects();
+            forms.initSorts();
         });
     },
 
@@ -81,6 +86,48 @@ let forms = {
         });
     },
 
+    initRange() {
+        document.querySelectorAll('.js-range').forEach((elem) => {
+            let slider = elem.querySelector('.js-range__target'),
+                inputs = elem.querySelectorAll('input'),
+                from = inputs[0],
+                to = inputs[1];
+            if (slider && from && to) {
+                let min = parseInt(from.value) || 0,
+                    max = parseInt(to.value) || 0;
+                noUiSlider.create(slider, {
+                    start: [
+                        min,
+                        max
+                    ],
+                    connect: true,
+                    range: {
+                        'min': min,
+                        'max': max
+                    }
+                });
+                let snapValues = [from, to];
+                slider.noUiSlider.on('update', (values, handle) => {
+                    snapValues[handle].value = app.formatPrice(Math.round(values[handle]));
+                });
+                from.addEventListener('change', function () {
+                    slider.noUiSlider.set([this.value, null]);
+                    console.log(1)
+                });
+                to.addEventListener('change', function () {
+                    slider.noUiSlider.set([null, this.value]);
+                });
+                let form = $(slider).parents('form')[0];
+                if (form) {
+                    form.addEventListener('reset', function () {
+                        slider.noUiSlider.set([min, max]);
+                    });
+                }
+            }
+        });
+
+    },
+
     initStars() {
         app.document.on('click', '.js-stars input', function () {
             $(this).parents('.js-stars').find('label').removeClass('_checked');
@@ -122,6 +169,8 @@ let forms = {
                 $parent.find('.js-select__inner').remove();
                 $parent.removeClass('_opened');
             } else {
+                $('.js-select__inner').remove();
+                $('.js-select, .js-sort').removeClass('_opened');
                 let $dropdown = $('<ul class="select__inner js-select__inner"></ul>');
                 $parent.find('select option').each(function () {
                     let selected = $(this).is(':selected') ? '_selected' : '';
@@ -132,7 +181,7 @@ let forms = {
             }
         });
         app.document.on('click', '.js-select__inner .select__item', function () {
-            let $parent = $(this).parents('.js-select'), value = $(this).data('value');
+            let $parent = $(this).parents('.js-select, .js-sort'), value = $(this).data('value');
             $parent.find('select').val(value).trigger('change');
             if ($parent.hasClass('js-label') && value) {
                 $parent.find('label').removeClass('_label-empty');
@@ -140,7 +189,42 @@ let forms = {
         });
         app.document.on('click', function () {
             $('.js-select__inner').remove();
-            $('.js-select').removeClass('_opened');
+            $('.js-select, .js-sort').removeClass('_opened');
+        });
+    },
+
+    initSorts() {
+        $('.js-sort:not(.js-sort_init) select').each(function () {
+            let val = $(this).val();
+            let $input = $(`<span class="sort__input">${$(this).find('option:selected').text()}</span>`);
+            let $parent = $(this).parents('.js-sort');
+            $input.appendTo($parent);
+            $(this).addClass('hidden');
+            $(this).on('change', () => {
+                $input.text($(this).find('option:selected').text());
+            });
+            $parent.addClass('js-sort_init');
+        });
+    },
+
+    handleSorts() {
+        app.document.on('click', '.js-sort', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if ($(this).hasClass('_opened')) {
+                $(this).find('.js-select__inner').remove();
+                $(this).removeClass('_opened');
+            } else {
+                $('.js-select__inner').remove();
+                $('.js-select, .js-sort').removeClass('_opened');
+                let $dropdown = $('<ul class="select__inner js-select__inner"></ul>');
+                $(this).find('select option').each(function () {
+                    let selected = $(this).is(':selected') ? '_selected' : '';
+                    $dropdown.append(`<li class="select__item ${selected}" data-value="${$(this).val()}">${$(this).text()}</li>`);
+                });
+                $dropdown.appendTo($(this));
+                $(this).addClass('_opened');
+            }
         });
     },
 

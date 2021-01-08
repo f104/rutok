@@ -35,7 +35,7 @@
             page-break-inside: avoid;
         }
     }
-    .row {
+    [class^=col] {
         margin-bottom: 1rem;
     }
 }

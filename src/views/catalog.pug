@@ -9,9 +9,28 @@ block content
         +bk(['Главная', 'Каталог', 'Аккумуляторы'])
         h1.page-h Аккумуляторы
         
-        .cat-header
+        .cat-header.js-cat-header
+            .sort.js-sort
+                label Сортировать:
+                select
+                    option(value="1" selected) По стоимости
+                    option(value="2") По популярности
+                span.sort__addon
+                    i.icon-input-arrow
+            button.filter-btn(data-fancybox data-src="#filter") Фильтры
+            .sort.js-sort
+                label Показывать по:
+                select
+                    option(value="1" selected) 24
+                    option(value="2") 36
+                    option(value="3") 48
+                span.sort__addon
+                    i.icon-input-arrow
             include _includes/blocks/pagination-sm
-            
+            a(href="#").cat-header__cart
+                i.icon-header-cart
+                span.cat-header__cart__counter 3
+        
         .cat-list
             +cat-item(
                 category="Тяговый аккумулятор"
@@ -100,3 +119,69 @@ block content
         
         .cat-footer
             include _includes/blocks/pagination
+
+    .hidden
+        #filter.popup._filter
+            form.filter
+                h4.filter__h Фильтры
+                .filter__grid.js-range
+                    .input.js-label
+                        input(value="3000")
+                        label Цена от
+                    .input.js-label
+                        input(value="300000")
+                        label Цена до
+                    .js-range__target.filter__grid__col2
+                .filter__grid
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Все
+                            option(value="1" selected) Тяговые аккумуляторы
+                            option(value="2") Литий-ионные аккумуляторы
+                            option(value="3") Стартерные аккумуляторы
+                            option(value="4") Гелевые аккумуляторы
+                            option(value="5") Стационарные аккумуляторы
+                        label Категория
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Любой
+                            option(value="1") Enersys
+                            option(value="2") Balkancar
+                            option(value="3") Chaobao
+                            option(value="4") Columbus
+                            option(value="5") Doosan-daewoo
+                        label Бренд
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Любое
+                            option(value="1") 12 В
+                            option(value="2") 220 В
+                            option(value="3") 100 500 В
+                        label Напряжение
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select
+                        select
+                            option(value="") Любая
+                            option(value="1" selected) 264 мАч
+                            option(value="2") 265 мАч
+                            option(value="3") 266 мАч
+                        label Емкость
+                        span.input__addon
+                            i.icon-input-arrow
+                    .input._addon.select.js-label.js-select.filter__grid__col2
+                        select
+                            option(value="") Любая
+                            option(value="1" selected) Германия
+                            option(value="2") Китай
+                            option(value="3") США
+                        label Страна производитель
+                        span.input__addon
+                            i.icon-input-arrow
+                    button(type="submit").btn._block.filter__grid__col2 Применить
+                button(type="reset").filter__reset
+                    span.filter__reset__inner Сбросить все

@@ -74,8 +74,9 @@ let app = {
         this.maps = maps;
         this.maps.init.call(this);
 
-        // app.window.on('load', () => {
-        // });
+        app.window.on('load', () => {
+            this.initCatHeader();
+        });
 
         this.document.on(app.resizeEventName, () => {
             this.initSliders();
@@ -96,6 +97,28 @@ let app = {
     //         }
     //     });
     // },
+
+    // фиксация хедера каталога
+    initCatHeader() {
+        let $cnt = $('.js-cat-header');
+        if (!$cnt.length) {
+            return;
+        }
+        let breakpoint = $cnt.offset().top + $cnt.outerHeight(),
+            breakpointOpened = breakpoint + 100;
+        this.window.on('scroll', () => {
+            if (this.media >= this.breakpoints.lg) {
+                let scroll = this.window.scrollTop();
+                this.body.toggleClass('filter-fixed', scroll > breakpoint);
+                this.body.toggleClass('filter-transition',  scroll > breakpoint + 50);
+                $cnt.toggleClass('_opened', scroll > breakpoint + 100)
+            }
+        });
+        this.document.on(app.resizeEventName, () => {
+            $cnt.removeClass('_fixed');
+            this.body.removeClass('filter-fixed filter-transition');
+        });
+    },
 
     initCartService() {
         this.document.on('click', '.js-cart-service__toggler', function () {
@@ -120,7 +143,7 @@ let app = {
         if (!navigator.clipboard) {
             $('.js-copy-trigger').remove();
         } else {
-            this.document.on('click', '.js-copy-trigger', function() {
+            this.document.on('click', '.js-copy-trigger', function () {
                 navigator.clipboard.writeText($(this).siblings('.js-copy-content')?.text());
                 app.message.info('Скопировано');
             });
@@ -206,7 +229,7 @@ let app = {
                 let formData = instance.$trigger.data('form');
                 if ($form.length && typeof formData === 'object') {
                     $form[0].reset();
-                    $form.find('.js-label input').each(function() {
+                    $form.find('.js-label input').each(function () {
                         forms.checkInputLabel($(this));
                     });
                 }

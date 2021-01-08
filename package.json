@@ -34,6 +34,7 @@
         "inputmask": "^5.0.3",
         "jquery": "3.x",
         "lazysizes": "5.x",
+        "nouislider": "^14.6.3",
         "smooth-scrollbar": "^8.5.3",
         "svg4everybody": "2.x",
         "swiper": "^6.0.2",

@@ -14,12 +14,14 @@
     padding: 24px;
     max-width: 330px;
 
-    @include media-breakpoint-up(md) {
-        max-width: 370px;
-    }
-
     &._article {
         max-width: 970px;
+    }
+
+    &._filter {
+        @include media-breakpoint-up(md) {
+            max-width: 570px;
+        }
     }
 
     &.fancybox-content {

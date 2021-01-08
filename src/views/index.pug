@@ -166,13 +166,12 @@ block content
                         input(type="number" min="1" max="10" value="3").counter__input
                         button(type="button").counter__btn._plus.js-counter__plus +
                 .col-sm-12.col-lg-6
-                    .input._sm._addon.select.js-label.js-select
+                    .sort.js-sort
+                        label Сортировать:
                         select
-                            option(value="1") 12
-                            option(value="2" selected) 24
-                            option(value="3") 36
-                        label Показывать по:
-                        span.input__addon
+                            option(value="1" selected) По стоимости
+                            option(value="2") По популярности
+                        span.sort__addon
                             i.icon-input-arrow
                 
                         

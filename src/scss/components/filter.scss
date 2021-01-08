@@ -1,0 +1,100 @@
+.filter {
+    $root: &;
+
+    &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $input-border-color;
+        border-radius: 12px;
+        cursor: pointer;
+        @include transition((border-color, color));
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 41px;
+        padding: 0 8px 0 16px;
+
+        &:after {
+            width: 25px;
+            height: 25px;
+            flex-shrink: 0;
+            content: '\e835';
+            font-family: $font-family-fontello;
+            font-weight: normal;
+            font-size: 13px;
+            margin-left: 10px;
+            background-color: rgba($color-primary, .1);
+            color: $color-primary;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $input-border-color-hover;
+        }
+    }
+
+    &__h {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 24px;
+        padding-right: 40px;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 32px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__col2 {
+            @include media-breakpoint-up(md) {
+                grid-column-end: span 2;
+            }
+        }
+    }
+
+    &__reset {
+        margin-left: -24px;
+        margin-right: -24px;
+        margin-bottom: -24px;
+        margin-top: 32px;
+        height: 50px;
+        width: calc(100% + 48px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-gray;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba($color-text, .8);
+        @include transition((color, background-color));
+        border-radius: 0 0 12px 12px;
+
+        &__inner {
+            padding: 1px 0;
+            border-bottom: 1px solid $link-border-color;
+            @include transition(border-color);
+        }
+
+        @include hover-desktop {
+            background-color: $color-gray-dark;
+            color: $color-text;
+            #{$root}__inner {
+                border-color: $link-border-color-hover;
+            }
+        }
+    }
+}
