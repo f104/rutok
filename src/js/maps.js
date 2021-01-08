@@ -16,6 +16,8 @@ let maps = {
             }
         });
 
+        // app.document.on(app.courierEventName, (e, coords) => console.log(coords));
+
     },
 
     initMap(cnt) {
@@ -146,8 +148,126 @@ let maps = {
         }
     },
 
+    initCourierMap(cnt) {
+        const mapCnt = cnt.querySelector('.js-map__cnt');
+        if (!mapCnt) {
+            return;
+        }
+        mapCnt.id = app.uniqID();
+        let inputs = {}, inputsName = ['city', 'street', 'building'];
+        inputsName.forEach(el => {
+            let input = document.querySelector(`[name="${el}"]`);
+            if (input) {
+                inputs[el] = input;
+            }
+        })
+        // console.log(inputs)
+        let center = [55.753215, 37.622504];
+        if (mapCnt.dataset.center) {
+            center = [];
+            mapCnt.dataset.center.split(',').forEach(el => center.push(parseFloat(el.trim())));
+        }
+        let zoom = 11;
+        if (mapCnt.dataset.zoom) {
+            zoom = parseInt(mapCnt.dataset.zoom.trim());
+        }
+        const map = new ymaps.Map(mapCnt.id, {
+            center: center,
+            zoom: zoom,
+            controls: []
+        }, {
+            suppressMapOpenBlock: true,
+            // autoFitToViewport: 'always',
+        });
+        // map.behaviors.disable('scrollZoom');
+        const tplPlacemark = ymaps.templateLayoutFactory.createClass(
+            `<div class="placemark _active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" width="28"><path d="M14 0c-2.054 0-4.107.441-6.01 1.324C4.146 3.11 1.324 6.522.36 10.596A13.47 13.47 0 002.876 22l1.086 1.387c.58.74 1.22 1.432 1.918 2.068l6.486 5.912a2.424 2.424 0 003.266 0l6.486-5.912a16.843 16.843 0 001.918-2.068L25.123 22a13.47 13.47 0 002.518-11.404c-.965-4.074-3.787-7.487-7.631-9.272A14.273 14.273 0 0014 0z" fill="currentColor"/><path d="M14.003 5.471a7.536 7.536 0 00-3.162.694l-.05.024a2.053 1.997 0 00-.002 0c-1.996.922-3.452 2.683-3.95 4.777a6.92 6.92 0 001.432 6.027 7.397 7.397 0 005.685 2.647h.09c2.212 0 4.301-.98 5.686-2.647a6.92 6.92 0 001.432-6.027c-.498-2.094-1.954-3.855-3.95-4.777a2.053 1.997 0 00-.002 0l-.05-.024a7.526 7.526 0 00-3.16-.694z" fill="#fff"/></svg>
+            </div>`
+        );
+        let pm = new ymaps.Placemark(center, {}, {
+            iconLayout: tplPlacemark,
+            iconImageSize: [34, 48],
+            iconShape: {
+                type: 'Rectangle',
+                // Прямоугольник описывается в виде двух точек - верхней левой и нижней правой.
+                coordinates: [
+                    [-14, -32], [14, 0]
+                ]
+            },
+            draggable: true
+        });
+        pm.events.add('dragend', () => {
+            this.getAddress(pm.geometry.getCoordinates(), inputs);
+        });
+        map.events.add('click', (e) => {
+            let coords = e.get('coords');
+            pm.geometry.setCoordinates(coords);
+            this.getAddress(coords, inputs);
+        });
+        for (let k in inputs) {
+            inputs[k].addEventListener('change', () => {
+                let query = [];
+                for (let i in inputs) {
+                    query.push(inputs[i].value);
+                }
+                ymaps.geocode(query.join(', '), {
+                    results: 1
+                }).then((res) => {
+                    let firstGeoObject = res.geoObjects.get(0);
+                    let coords = firstGeoObject.geometry.getCoordinates();
+                    pm.geometry.setCoordinates(coords);
+                    map.setCenter(coords);
+                    app.document.trigger(app.courierEventName, [coords]);
+                });
+            });
+        }
+
+        map.geoObjects.add(pm);
+        this.getAddress(center, inputs, false);
+
+    },
+
+    // Определяем адрес по координатам (обратное геокодирование)
+    getAddress(coords, inputs, triggerEvent = true) {
+        if (triggerEvent) {
+            app.document.trigger(app.courierEventName, [coords]);
+        }
+        // this.resetInputs(inputs);
+        ymaps.geocode(coords).then((res) => {
+            let firstGeoObject = res.geoObjects.get(0);
+            console.log(firstGeoObject.getAddressLine());
+            if (inputs.city) {
+                if (firstGeoObject.getLocalities() && firstGeoObject.getLocalities()) {
+                    inputs.city.value = firstGeoObject.getLocalities()[0];
+                } else {
+                    inputs.city.value = '';
+                }
+                app.forms.checkInputLabel($(inputs.city));
+            }
+            if (inputs.street) {
+                if (firstGeoObject.getThoroughfare() && firstGeoObject.getThoroughfare().length) {
+                    inputs.street.value = firstGeoObject.getThoroughfare();
+                } else {
+                    inputs.street.value = '';
+                }
+                app.forms.checkInputLabel($(inputs.street));
+            }
+            if (inputs.building) {
+                if (firstGeoObject.getPremiseNumber() && firstGeoObject.getPremiseNumber().length) {
+                    inputs.building.value = firstGeoObject.getPremiseNumber();
+                } else {
+                    inputs.building.value = '';
+                }
+                app.forms.checkInputLabel($(inputs.building));
+            }
+        });
+    },
+
     initMaps() {
-        maps.cnts.forEach(cnt => maps.initMap(cnt));
+        maps.cnts.forEach((cnt) => {
+            cnt.classList.contains('_courier') ? maps.initCourierMap(cnt) : maps.initMap(cnt);
+        });
     },
 
     loadYmaps() {

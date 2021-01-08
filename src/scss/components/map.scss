@@ -7,6 +7,7 @@
         grid-template-rows: max-content auto;
         gap: 24px 30px;
     }
+
     @include media-breakpoint-up(lg) {
         grid-template-columns: 370px auto;
     }
@@ -22,14 +23,61 @@
     &__map {
         background-color: $color-gray;
         border-radius: $border-radius;
+        overflow: hidden;
         height: 320px;
         margin-bottom: 24px;
+
         @include media-breakpoint-up(md) {
             margin-bottom: 0;
             grid-row-end: span 2;
             height: auto;
             min-height: 424px;
         }
+    }
+
+    &-courier {
+        display: grid;
+        gap: 24px;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: auto 770px;
+            .cart & {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &__form {
+            display: grid;
+            gap: 12px;
+
+            @include media-breakpoint-up(md) {
+                gap: 16px;
+            }
+        }
+
+        &__map {
+            margin-top: 24px;
+            background-color: $color-gray;
+            border-radius: $border-radius;
+            overflow: hidden;
+            height: 160px;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 16px;
+            }
+        }
+
+        .r-adds-list {
+            @include media-breakpoint-up(md) {
+                max-height: 455px;
+            }
+        }
+
     }
 }
 
@@ -39,6 +87,7 @@
     // color: #B5C3CC;
     color: #237bc9;
     transform: translate(-50%, -100%);
+
     &._active {
         color: $color-primary;
     }

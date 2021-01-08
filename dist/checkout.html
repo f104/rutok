@@ -392,20 +392,55 @@
                     </div>
                   </div>
                   <div class="js-tabs__target" id="delivery_2">
-                    <div class="r-adds-list js-scrollbar" data-scrollbar>
-                      <div class="js-scrollbar__inner">
-                        <label class="r-adds">
-                          <input type="radio" name="tab-2" checked="checked"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«Major Express»<span class="r-adds__price">от 856 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 3–4 дня</span></span></span></span>
-                        </label>
-                        <label class="r-adds">
-                          <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«СДЕК»<span class="r-adds__price">от 592 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 5–6 дней</span></span></span></span>
-                        </label>
-                        <label class="r-adds">
-                          <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«Boxberry»<span class="r-adds__price">от 490 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 3–10 дней</span></span></span></span>
-                        </label>
-                        <label class="r-adds">
-                          <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«ПЭК»<span class="r-adds__price">от 230 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 6–9 дней</span></span></span></span>
-                        </label>
+                    <!-- на инпуты навешено геокодирование от яндекса-->
+                    <!-- метку можно двигать, по карте можно кликать-->
+                    <!-- после изменения положения метки вызывается эвент app_courier_changed, в который передаются координаты (coords)-->
+                    <div class="map-courier js-map _courier">
+                      <div class="map-courier__col">
+                        <div class="map-courier__form">
+                          <div class="input js-label">
+                            <input name="city">
+                            <label>Город или населенный пункт</label>
+                          </div>
+                          <div class="input js-label">
+                            <input name="street">
+                            <label>Улица</label>
+                          </div>
+                          <div class="input js-label">
+                            <input name="building">
+                            <label>Дом</label>
+                          </div>
+                          <div class="input js-label">
+                            <input>
+                            <label>Квартира или офис</label>
+                          </div>
+                        </div>
+                        <!-- в data пишем центр и зум по-умолчанию-->
+                        <div class="map-courier__map js-map__cnt" data-center="55.750855, 37.506961" data-zoom="11"></div>
+                      </div>
+                      <div class="map-courier__col">
+                        <div class="r-adds-list js-scrollbar" data-scrollbar>
+                          <div class="js-scrollbar__inner">
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2" checked="checked"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«Major Express»<span class="r-adds__price">от 856 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 3–4 дня</span></span></span></span>
+                            </label>
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«СДЕК»<span class="r-adds__price">от 592 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 5–6 дней</span></span></span></span>
+                            </label>
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«Boxberry»<span class="r-adds__price">от 490 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 3–10 дней</span></span></span></span>
+                            </label>
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«ПЭК»<span class="r-adds__price">от 230 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 6–9 дней</span></span></span></span>
+                            </label>
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«Boxberry»<span class="r-adds__price">от 490 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 3–10 дней</span></span></span></span>
+                            </label>
+                            <label class="r-adds">
+                              <input type="radio" name="tab-2"/><span class="r-adds__inner"><span class="r-adds__content"><span class="r-adds__header">«ПЭК»<span class="r-adds__price">от 230 <span class="price-muted">₽</span></span></span><span class="r-adds__text">Курьерская служба доставки</span><span class="r-adds__list"><span class="r-adds__list__item"><i class="icon-delivery-place"></i>Курьерская доставка до вашей двери</span><span class="r-adds__list__item"><i class="icon-clock"></i>Срок доставки 6–9 дней</span></span></span></span>
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

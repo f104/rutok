@@ -22,6 +22,7 @@ let app = {
     resizeEventName: 'app_resize',
     submitEventName: 'app_submit',
     tabChangedEventName: 'app_tab_changed',
+    courierEventName: 'app_courier_changed',
     scrollToOffset: 50, // оффсет при скролле до элемента
     scrollToSpeed: 500, // скорость скролла
     mainSliderDelay: 5000, // время показа одного слайда в главном сдайдере
@@ -281,7 +282,7 @@ let app = {
         new Swiper('.js-slider', {
             slidesPerView: 'auto',
             spaceBetween: 30,
-            freeMode: true,
+            // freeMode: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',

@@ -56,6 +56,14 @@ $color-bullet: #D4DFE7;
 
     overflow: visible;
 
+    @include media-breakpoint-down(sm) {
+        width: 226px;
+        margin-left: 0;
+        .block-h {
+            width: calc(100vw - #{map-get($container-paddings, sm) * 2});
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         overflow: hidden;
     }

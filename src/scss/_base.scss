@@ -87,8 +87,13 @@
     &-right {
         text-align: right;
     }
+
     &-center {
         text-align: center;
+    }
+
+    &-muted {
+        color: rgba($color-text, .6) !important;
     }
 }
 
@@ -171,14 +176,17 @@ strong {
         height: 24px;
         flex-shrink: 0;
     }
+
     &._primary {
         background-color: #FFE7E8;
     }
+
     &._30 {
         width: 30px;
         height: 30px;
         font-size: 14px;
     }
+
     &._32 {
         width: 32px;
         height: 32px;

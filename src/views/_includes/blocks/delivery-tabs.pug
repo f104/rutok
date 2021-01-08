@@ -14,49 +14,92 @@
         #delivery_1.js-tabs__target
             include map
         #delivery_2.js-tabs__target
-            .r-adds-list.js-scrollbar(data-scrollbar)
-                .js-scrollbar__inner
-                    +r-adds(
-                        name="tab-2"
-                        checked=true
-                        title="«Major Express»"
-                        price="от 856"
-                        text="Курьерская служба доставки"
-                        list=[
-                            {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
-                            {icon: "icon-clock", text: "Срок доставки 3–4 дня"}
-                        ]
-                    )
-                    +r-adds(
-                        name="tab-2"
-                        checked=false
-                        title="«СДЕК»"
-                        price="от 592"
-                        text="Курьерская служба доставки"
-                        list=[
-                            {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
-                            {icon: "icon-clock", text: "Срок доставки 5–6 дней"}
-                        ]
-                    )
-                    +r-adds(
-                        name="tab-2"
-                        checked=false
-                        title="«Boxberry»"
-                        price="от 490"
-                        text="Курьерская служба доставки"
-                        list=[
-                            {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
-                            {icon: "icon-clock", text: "Срок доставки 3–10 дней"}
-                        ]
-                    )
-                    +r-adds(
-                        name="tab-2"
-                        checked=false
-                        title="«ПЭК»"
-                        price="от 230"
-                        text="Курьерская служба доставки"
-                        list=[
-                            {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
-                            {icon: "icon-clock", text: "Срок доставки 6–9 дней"}
-                        ]
-                    )
+            // на инпуты навешено геокодирование от яндекса
+            // метку можно двигать, по карте можно кликать
+            // после изменения положения метки вызывается эвент app_courier_changed, в который передаются координаты (coords)
+            .map-courier.js-map._courier
+                .map-courier__col
+                    .map-courier__form
+                        .input.js-label
+                            input(name="city")
+                            label Город или населенный пункт
+                        .input.js-label
+                            input(name="street")
+                            label Улица
+                        .input.js-label
+                            input(name="building")
+                            label Дом
+                        .input.js-label
+                            input
+                            label Квартира или офис
+                    // в data пишем центр и зум по-умолчанию
+                    .map-courier__map.js-map__cnt(data-center="55.750855, 37.506961" data-zoom="11")
+                .map-courier__col
+                    .r-adds-list.js-scrollbar(data-scrollbar)
+                        .js-scrollbar__inner
+                            +r-adds(
+                                name="tab-2"
+                                checked=true
+                                title="«Major Express»"
+                                price="от 856"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 3–4 дня"}
+                                ]
+                            )
+                            +r-adds(
+                                name="tab-2"
+                                checked=false
+                                title="«СДЕК»"
+                                price="от 592"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 5–6 дней"}
+                                ]
+                            )
+                            +r-adds(
+                                name="tab-2"
+                                checked=false
+                                title="«Boxberry»"
+                                price="от 490"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 3–10 дней"}
+                                ]
+                            )
+                            +r-adds(
+                                name="tab-2"
+                                checked=false
+                                title="«ПЭК»"
+                                price="от 230"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 6–9 дней"}
+                                ]
+                            )
+                            +r-adds(
+                                name="tab-2"
+                                checked=false
+                                title="«Boxberry»"
+                                price="от 490"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 3–10 дней"}
+                                ]
+                            )
+                            +r-adds(
+                                name="tab-2"
+                                checked=false
+                                title="«ПЭК»"
+                                price="от 230"
+                                text="Курьерская служба доставки"
+                                list=[
+                                    {icon: "icon-delivery-place", text: "Курьерская доставка до вашей двери"},
+                                    {icon: "icon-clock", text: "Срок доставки 6–9 дней"}
+                                ]
+                            )
