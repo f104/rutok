@@ -1,0 +1,81 @@
+extends _includes/layout-email
+
+block config
+    - var pagetitle = 'Email'
+    - var bodyClass = ''
+
+block content
+    .wrapper
+        .header
+            table
+                tr
+                    td
+                        a(href="index.html")
+                            img(src="assets/img/logo.svg" alt="rutok.ru").header__logo
+                    td
+                        .header__contacts 
+                            strong +7(495) 677–95–24
+                            span.header__contacts__muted с 9:00 до 18:00 пн-пт
+                            img(src="assets/img/phone.svg" alt="phone").header__contacts__icon
+        .intro
+            .intro__h Спасибо за покупку! Ваш заказ <strong>RT249–607</strong> успешно оформлен.
+            .intro__inner
+                p Здравствуйте, Артём!
+                p Вы оформили заказ на сайте <a href="#">rutok.ru</a>
+        .products
+            .products__h Информация о заказе:
+            table
+                thead
+                    th Наименование
+                    th Количество
+                    th Стоимость
+                tbody
+                    tr
+                        td
+                            a(href="#") Стартерный аккумулятор Delta EPS 12165
+                        td 3 шт.
+                        td 28 880 ₽
+                    tr
+                        td
+                            a(href="#") Герметизированный аккумулятор PowerSafe OPzV 250
+                        td 1 шт.
+                        td 29 320 ₽
+                    tr
+                        td
+                            a(href="#") Стартерный аккумулятор Delta EPS 12165
+                        td 1 шт.
+                        td 2 550 ₽
+                    tr._summary
+                        td Всего
+                            br
+                            | Доставка
+                            br
+                            | Итоговая сумма
+                        td 
+                            strong 5 шт.
+                        td 
+                            strong 59 870 ₽
+                                br
+                                | 2 380 ₽
+                                br
+                                | 62 570 ₽
+        .summary
+            .summary__h Детализация по заказу
+            .summary__inner
+                p <strong>Дата заказа:</strong> 20.11.2020
+                p <strong>Способ оплаты:</strong> Наличными при получении
+                p <strong>Способ доставки:</strong> Курьерская доставка
+                p <strong>Способ доставки:</strong> Курьерская доставка
+                p <strong>Телефон:</strong> +7(908) 678-69-88
+        .footer
+            table
+                tr
+                    td С благодарностью,
+                        br
+                        | интернет-магазин 
+                        strong «RUTOK»
+                    td.text-right г. Москва, Солнечный бульвар, д.46
+                        br
+                        | +7(495) 677-95-24
+                        br
+                        a(href="#") www.rutok.ru

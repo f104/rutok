@@ -1,0 +1,12 @@
+block config
+
+doctype html
+html(lang=__.lang, class="no-js")
+    head
+        block head
+            include head
+    body.body(class=bodyClass)
+        block content
+        
+        block styles
+            link(rel='stylesheet', href='assets/css/email.css?v=' + PACKAGE.version)
