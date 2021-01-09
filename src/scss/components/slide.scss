@@ -9,8 +9,12 @@
 
     &__header {
         display: flex;
-        // align-items: center;
+        align-items: center;
         justify-content: space-between;
+
+        &._top {
+            align-items: flex-start;
+        }
     }
 
     &__content {
@@ -29,7 +33,11 @@
 
     &__title {
         display: flex;
-        // align-items: center;
+        align-items: center;
+
+        #{$root}__header._top & {
+            align-items: flex-start;
+        }
 
         .r-icon {
             margin-right: 16px;
@@ -69,7 +77,10 @@
         justify-content: center;
         @include transition((color, background-color));
         cursor: pointer;
-        top: 6px;
+
+        #{$root}__header._top & {
+            top: 6px;
+        }
 
         @include hover-desktop {
             background-color: $color-primary-hover;

@@ -7,9 +7,22 @@ block config
 block content
     .block.container
         +bk(['Главная', 'Корзина'])
-        h1.page-h Корзина
+        //-h1.page-h Корзина
         
-        .cart-empty
+        .cart._complete
+            .cart__content
+                .order-info
+                    .order-info__h
+                        .r-icon
+                            i.icon-cart
+                        | В вашей корзине ещё нет товаров
+                    .order-info__rte.rte
+                        p Для добавления найдите нужный вам товар в каталоге или при помощи поиска
+                    a(href="#").btn
+                        i.icon-cart._muted
+                        | Перейти в каталог
+        
+        //-.cart-empty
             .r-icon
                 i.icon-cart
             h3.cart-empty__h В вашей корзине ещё нет товаров
