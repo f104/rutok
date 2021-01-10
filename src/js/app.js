@@ -422,7 +422,7 @@ let app = {
             new Swiper('.js-slider_md', {
                 slidesPerView: 'auto',
                 spaceBetween: 30,
-                freeMode: true,
+                // freeMode: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',

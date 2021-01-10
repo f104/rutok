@@ -59,6 +59,7 @@ $color-bullet: #D4DFE7;
     @include media-breakpoint-down(sm) {
         width: 226px;
         margin-left: 0;
+
         .block-h {
             width: calc(100vw - #{map-get($container-paddings, sm) * 2});
         }
@@ -112,6 +113,13 @@ $color-bullet: #D4DFE7;
             margin-right: 0;
             padding-left: 0;
             padding-right: 0;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            .block-h {
+                width: 100%;
+            }
         }
     }
 
@@ -185,6 +193,13 @@ $color-bullet: #D4DFE7;
 
     &._main {
         margin-top: 16px;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            .block-h {
+                width: 100%;
+            }
+        }
 
         .swiper-slide {
             width: 100%;
