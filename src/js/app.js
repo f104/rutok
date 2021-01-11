@@ -105,14 +105,13 @@ let app = {
         if (!$cnt.length) {
             return;
         }
-        let breakpoint = $cnt.offset().top + $cnt.outerHeight(),
-            breakpointOpened = breakpoint + 100;
+        let breakpoint = $cnt.offset().top + $cnt.outerHeight();
         this.window.on('scroll', () => {
             if (this.media >= this.breakpoints.lg) {
                 let scroll = this.window.scrollTop();
                 this.body.toggleClass('filter-fixed', scroll > breakpoint);
                 this.body.toggleClass('filter-transition',  scroll > breakpoint + 50);
-                $cnt.toggleClass('_opened', scroll > breakpoint + 100)
+                $cnt.toggleClass('_opened', scroll > breakpoint + 100);
             }
         });
         this.document.on(app.resizeEventName, () => {
@@ -137,7 +136,7 @@ let app = {
                     theme: 'hidden-sm',
                 });
             }
-        })
+        });
     },
 
     initClipboard() {
@@ -627,7 +626,7 @@ let app = {
                     $targetWrapper.find(`.js-tabs-filter__target[data-filter=${filter}]`).show();
                     $targetWrapper.find(`.js-tabs-filter__target[data-filter!=${filter}]`).hide();
                 } else {
-                    $targetWrapper.find(`.js-tabs-filter__target[data-filter]`).show();
+                    $targetWrapper.find('.js-tabs-filter__target[data-filter]').show();
                 }
                 $triggers.removeClass('_active');
                 $(this).addClass('_active');

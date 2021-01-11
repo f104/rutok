@@ -112,7 +112,6 @@ let forms = {
                 });
                 from.addEventListener('change', function () {
                     slider.noUiSlider.set([this.value, null]);
-                    console.log(1)
                 });
                 to.addEventListener('change', function () {
                     slider.noUiSlider.set([null, this.value]);
@@ -195,7 +194,6 @@ let forms = {
 
     initSorts() {
         $('.js-sort:not(.js-sort_init) select').each(function () {
-            let val = $(this).val();
             let $input = $(`<span class="sort__input">${$(this).find('option:selected').text()}</span>`);
             let $parent = $(this).parents('.js-sort');
             $input.appendTo($parent);

@@ -67,7 +67,7 @@ let maps = {
         let geoItems = {
             type: 'FeatureCollection',
             features: [],
-        }
+        };
         cnt.querySelectorAll('[data-geo]').forEach((item, index) => {
             let geo = item.dataset.geo;
             if (geo) {
@@ -108,7 +108,7 @@ let maps = {
                 map.setCenter(om.objects.getById(id).geometry.coordinates, this.zoom)
                     .then(() => {
                         setTimeout(() => {
-                            this.selectObject(mapCnt, items, id)
+                            this.selectObject(mapCnt, items, id);
                         }, 200);
                     });
             });
@@ -160,7 +160,7 @@ let maps = {
             if (input) {
                 inputs[el] = input;
             }
-        })
+        });
         // console.log(inputs)
         let center = [55.753215, 37.622504];
         if (mapCnt.dataset.center) {
