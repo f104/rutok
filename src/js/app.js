@@ -262,6 +262,7 @@ let app = {
                     }, app.scrollToSpeed);
                 }
             }
+            return false;
         });
     },
 
@@ -282,6 +283,7 @@ let app = {
             slidesPerView: 'auto',
             spaceBetween: 30,
             // freeMode: true,
+            watchOverflow: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -472,7 +474,7 @@ let app = {
                     }
                     $summary.append(`<div class="article-summary__h">${title}</div>`);
                     items.forEach(item => {
-                        $list.append(`<a href="#${item.id}") class="more _lg js-scrollto"><span class="more__inner">${item.text}</span></a>`);
+                        $list.append(`<a href="#${item.id}" class="more _lg js-scrollto"><span class="more__inner">${item.text}</span></a>`);
                     });
                     $summary.append($list);
                     $target.append($summary);

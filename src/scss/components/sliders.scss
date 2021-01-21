@@ -170,6 +170,9 @@ $color-bullet: #D4DFE7;
             color: rgba($color-text, .5);
             pointer-events: none;
         }
+        &.swiper-button-lock {
+            display: none;
+        }
 
         &:not(.swiper-button-disabled) {
             @include hover-desktop {

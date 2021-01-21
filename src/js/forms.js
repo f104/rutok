@@ -157,6 +157,9 @@ let forms = {
             });
             $parent.addClass('js-select_init');
         });
+        app.document.on('change', '.js-select_location select', function () {
+            location = $(this).val();
+        });
     },
 
     handleSelects() {
